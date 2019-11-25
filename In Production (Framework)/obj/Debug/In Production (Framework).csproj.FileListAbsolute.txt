@@ -17,3 +17,13 @@ C:\Users\dockt\OneDrive\Chapman\19-20\1st Semester\Visual\Final_Project\InProduc
 C:\Users\dockt\OneDrive\Chapman\19-20\1st Semester\Visual\Final_Project\InProduction(Framework)\In Production (Framework)\bin\Debug\In Production (Framework).exe.config
 C:\Users\dockt\OneDrive\Chapman\19-20\1st Semester\Visual\Final_Project\InProduction(Framework)\In Production (Framework)\bin\Debug\In Production (Framework).exe
 C:\Users\dockt\OneDrive\Chapman\19-20\1st Semester\Visual\Final_Project\InProduction(Framework)\In Production (Framework)\bin\Debug\In Production (Framework).pdb
+C:\Users\dockt\OneDrive\Chapman\19-20\1stSemester\Visual\Final_Project\InProduction(Framework)\Dodge-Project\In Production (Framework)\bin\Debug\In Production (Framework).exe.config
+C:\Users\dockt\OneDrive\Chapman\19-20\1stSemester\Visual\Final_Project\InProduction(Framework)\Dodge-Project\In Production (Framework)\bin\Debug\In Production (Framework).exe
+C:\Users\dockt\OneDrive\Chapman\19-20\1stSemester\Visual\Final_Project\InProduction(Framework)\Dodge-Project\In Production (Framework)\bin\Debug\In Production (Framework).pdb
+C:\Users\dockt\OneDrive\Chapman\19-20\1stSemester\Visual\Final_Project\InProduction(Framework)\Dodge-Project\In Production (Framework)\obj\Debug\In Production (Framework).csprojAssemblyReference.cache
+C:\Users\dockt\OneDrive\Chapman\19-20\1stSemester\Visual\Final_Project\InProduction(Framework)\Dodge-Project\In Production (Framework)\obj\Debug\In_Production__Framework_.InitialScreen.resources
+C:\Users\dockt\OneDrive\Chapman\19-20\1stSemester\Visual\Final_Project\InProduction(Framework)\Dodge-Project\In Production (Framework)\obj\Debug\In_Production__Framework_.Properties.Resources.resources
+C:\Users\dockt\OneDrive\Chapman\19-20\1stSemester\Visual\Final_Project\InProduction(Framework)\Dodge-Project\In Production (Framework)\obj\Debug\In Production (Framework).csproj.GenerateResource.cache
+C:\Users\dockt\OneDrive\Chapman\19-20\1stSemester\Visual\Final_Project\InProduction(Framework)\Dodge-Project\In Production (Framework)\obj\Debug\In Production (Framework).csproj.CoreCompileInputs.cache
+C:\Users\dockt\OneDrive\Chapman\19-20\1stSemester\Visual\Final_Project\InProduction(Framework)\Dodge-Project\In Production (Framework)\obj\Debug\In Production (Framework).exe
+C:\Users\dockt\OneDrive\Chapman\19-20\1stSemester\Visual\Final_Project\InProduction(Framework)\Dodge-Project\In Production (Framework)\obj\Debug\In Production (Framework).pdb
