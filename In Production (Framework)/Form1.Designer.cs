@@ -49,14 +49,16 @@
             this.ProductionTitleInput = new System.Windows.Forms.TextBox();
             this.AllTabs = new System.Windows.Forms.TabControl();
             this.DirectorTeamTab = new System.Windows.Forms.TabPage();
-            this.SecondADTextBox = new System.Windows.Forms.TextBox();
+            this.DirectorLabel = new System.Windows.Forms.Label();
             this.SecondADLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.FirstADTextBoxDirectingTab = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.DirectorLabel = new System.Windows.Forms.Label();
+            this.btnSet = new System.Windows.Forms.Button();
+            this.FirstADLabel = new System.Windows.Forms.Label();
+            this.SeconADTextBox = new System.Windows.Forms.TextBox();
+            this.btnDirectorAddRole = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.AllTabs.SuspendLayout();
             this.DirectorTeamTab.SuspendLayout();
@@ -64,6 +66,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnSet);
             this.tabPage2.Controls.Add(this.label18);
             this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Controls.Add(this.label16);
@@ -94,7 +97,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(885, 1169);
+            this.label18.Location = new System.Drawing.Point(198, 1175);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(294, 73);
             this.label18.TabIndex = 61;
@@ -193,7 +196,7 @@
             // ShootingTimeTextBox
             // 
             this.ShootingTimeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShootingTimeTextBox.Location = new System.Drawing.Point(1168, 574);
+            this.ShootingTimeTextBox.Location = new System.Drawing.Point(1204, 574);
             this.ShootingTimeTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.ShootingTimeTextBox.Name = "ShootingTimeTextBox";
             this.ShootingTimeTextBox.Size = new System.Drawing.Size(627, 75);
@@ -204,7 +207,7 @@
             // 
             this.CallTimeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CallTimeTextBox.ForeColor = System.Drawing.Color.Red;
-            this.CallTimeTextBox.Location = new System.Drawing.Point(1168, 426);
+            this.CallTimeTextBox.Location = new System.Drawing.Point(1204, 426);
             this.CallTimeTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.CallTimeTextBox.Name = "CallTimeTextBox";
             this.CallTimeTextBox.Size = new System.Drawing.Size(627, 75);
@@ -213,11 +216,11 @@
             // 
             // LocationTextBox
             // 
-            this.LocationTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LocationTextBox.Location = new System.Drawing.Point(1204, 1167);
+            this.LocationTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LocationTextBox.Location = new System.Drawing.Point(532, 1173);
             this.LocationTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.LocationTextBox.Name = "LocationTextBox";
-            this.LocationTextBox.Size = new System.Drawing.Size(627, 75);
+            this.LocationTextBox.Size = new System.Drawing.Size(572, 62);
             this.LocationTextBox.TabIndex = 38;
             this.LocationTextBox.TextChanged += new System.EventHandler(this.LocationTextBox_TextChanged);
             // 
@@ -227,7 +230,7 @@
             this.DPTextBox.Location = new System.Drawing.Point(538, 963);
             this.DPTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.DPTextBox.Name = "DPTextBox";
-            this.DPTextBox.Size = new System.Drawing.Size(521, 62);
+            this.DPTextBox.Size = new System.Drawing.Size(566, 62);
             this.DPTextBox.TabIndex = 37;
             this.DPTextBox.TextChanged += new System.EventHandler(this.DPTextBox_TextChanged);
             // 
@@ -257,7 +260,7 @@
             this.DirectorTextBox.Location = new System.Drawing.Point(538, 811);
             this.DirectorTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.DirectorTextBox.Name = "DirectorTextBox";
-            this.DirectorTextBox.Size = new System.Drawing.Size(521, 62);
+            this.DirectorTextBox.Size = new System.Drawing.Size(566, 62);
             this.DirectorTextBox.TabIndex = 30;
             this.DirectorTextBox.TextChanged += new System.EventHandler(this.DirectorTextBox_TextChanged);
             // 
@@ -283,11 +286,12 @@
             // 
             // DirectorTeamTab
             // 
+            this.DirectorTeamTab.Controls.Add(this.btnDirectorAddRole);
+            this.DirectorTeamTab.Controls.Add(this.SeconADTextBox);
+            this.DirectorTeamTab.Controls.Add(this.FirstADLabel);
             this.DirectorTeamTab.Controls.Add(this.DirectorLabel);
-            this.DirectorTeamTab.Controls.Add(this.SecondADTextBox);
             this.DirectorTeamTab.Controls.Add(this.SecondADLabel);
             this.DirectorTeamTab.Controls.Add(this.label2);
-            this.DirectorTeamTab.Controls.Add(this.FirstADTextBoxDirectingTab);
             this.DirectorTeamTab.Controls.Add(this.label1);
             this.DirectorTeamTab.Location = new System.Drawing.Point(12, 58);
             this.DirectorTeamTab.Name = "DirectorTeamTab";
@@ -297,19 +301,21 @@
             this.DirectorTeamTab.Text = "DirectorTeam";
             this.DirectorTeamTab.UseVisualStyleBackColor = true;
             // 
-            // SecondADTextBox
+            // DirectorLabel
             // 
-            this.SecondADTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SecondADTextBox.Location = new System.Drawing.Point(365, 428);
-            this.SecondADTextBox.Margin = new System.Windows.Forms.Padding(6);
-            this.SecondADTextBox.Name = "SecondADTextBox";
-            this.SecondADTextBox.Size = new System.Drawing.Size(521, 62);
-            this.SecondADTextBox.TabIndex = 63;
+            this.DirectorLabel.AutoSize = true;
+            this.DirectorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DirectorLabel.Location = new System.Drawing.Point(371, 108);
+            this.DirectorLabel.Name = "DirectorLabel";
+            this.DirectorLabel.Size = new System.Drawing.Size(256, 73);
+            this.DirectorLabel.TabIndex = 64;
+            this.DirectorLabel.Text = "Director";
+            this.DirectorLabel.Click += new System.EventHandler(this.DirectorLabel_Click);
             // 
             // SecondADLabel
             // 
             this.SecondADLabel.AutoSize = true;
-            this.SecondADLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SecondADLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SecondADLabel.Location = new System.Drawing.Point(70, 416);
             this.SecondADLabel.Name = "SecondADLabel";
             this.SecondADLabel.Size = new System.Drawing.Size(264, 73);
@@ -319,27 +325,18 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(70, 250);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(79, 265);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(242, 73);
             this.label2.TabIndex = 61;
             this.label2.Text = "1st AD:";
             // 
-            // FirstADTextBoxDirectingTab
-            // 
-            this.FirstADTextBoxDirectingTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirstADTextBoxDirectingTab.Location = new System.Drawing.Point(365, 262);
-            this.FirstADTextBoxDirectingTab.Margin = new System.Windows.Forms.Padding(6);
-            this.FirstADTextBoxDirectingTab.Name = "FirstADTextBoxDirectingTab";
-            this.FirstADTextBoxDirectingTab.Size = new System.Drawing.Size(521, 62);
-            this.FirstADTextBoxDirectingTab.TabIndex = 60;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(71, 83);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(60, 108);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(274, 73);
             this.label1.TabIndex = 55;
@@ -365,15 +362,44 @@
             this.label5.TabIndex = 23;
             this.label5.Text = "Director:";
             // 
-            // DirectorLabel
+            // btnSet
             // 
-            this.DirectorLabel.AutoSize = true;
-            this.DirectorLabel.Location = new System.Drawing.Point(385, 113);
-            this.DirectorLabel.Name = "DirectorLabel";
-            this.DirectorLabel.Size = new System.Drawing.Size(129, 37);
-            this.DirectorLabel.TabIndex = 64;
-            this.DirectorLabel.Text = "Director";
-            this.DirectorLabel.Click += new System.EventHandler(this.DirectorLabel_Click);
+            this.btnSet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSet.Location = new System.Drawing.Point(1886, 1128);
+            this.btnSet.Name = "btnSet";
+            this.btnSet.Size = new System.Drawing.Size(497, 150);
+            this.btnSet.TabIndex = 62;
+            this.btnSet.Text = "Assign";
+            this.btnSet.UseVisualStyleBackColor = true;
+            this.btnSet.Click += new System.EventHandler(this.BtnSet_Click);
+            // 
+            // FirstADLabel
+            // 
+            this.FirstADLabel.AutoSize = true;
+            this.FirstADLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FirstADLabel.Location = new System.Drawing.Point(371, 265);
+            this.FirstADLabel.Name = "FirstADLabel";
+            this.FirstADLabel.Size = new System.Drawing.Size(224, 73);
+            this.FirstADLabel.TabIndex = 65;
+            this.FirstADLabel.Text = "1st AD";
+            // 
+            // SeconADTextBox
+            // 
+            this.SeconADTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SeconADTextBox.Location = new System.Drawing.Point(384, 427);
+            this.SeconADTextBox.Margin = new System.Windows.Forms.Padding(6);
+            this.SeconADTextBox.Name = "SeconADTextBox";
+            this.SeconADTextBox.Size = new System.Drawing.Size(521, 62);
+            this.SeconADTextBox.TabIndex = 66;
+            // 
+            // btnDirectorAddRole
+            // 
+            this.btnDirectorAddRole.Location = new System.Drawing.Point(1268, 108);
+            this.btnDirectorAddRole.Name = "btnDirectorAddRole";
+            this.btnDirectorAddRole.Size = new System.Drawing.Size(315, 112);
+            this.btnDirectorAddRole.TabIndex = 68;
+            this.btnDirectorAddRole.Text = "Add Role";
+            this.btnDirectorAddRole.UseVisualStyleBackColor = true;
             // 
             // InitialScreen
             // 
@@ -423,10 +449,12 @@
         private System.Windows.Forms.TabPage DirectorTeamTab;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox FirstADTextBoxDirectingTab;
-        private System.Windows.Forms.TextBox SecondADTextBox;
         private System.Windows.Forms.Label SecondADLabel;
         private System.Windows.Forms.Label DirectorLabel;
+        private System.Windows.Forms.Button btnSet;
+        private System.Windows.Forms.Label FirstADLabel;
+        private System.Windows.Forms.TextBox SeconADTextBox;
+        private System.Windows.Forms.Button btnDirectorAddRole;
     }
 }
 

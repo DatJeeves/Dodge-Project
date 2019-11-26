@@ -12,6 +12,8 @@ namespace In_Production__Framework_
 {
     public partial class InitialScreen : Form
     {
+        public int intControler = 416;
+        public int directorCounter = 1;
         public InitialScreen()
         {
             InitializeComponent();
@@ -71,8 +73,47 @@ namespace In_Production__Framework_
         }        
 
         private void DirectorLabel_Click(object sender, EventArgs e)
-        {            
+        {
+            
+        }
+
+        private void BtnSet_Click(object sender, EventArgs e)
+        {
             DirectorLabel.Text = DirectorTextBox.Text;
+            FirstADLabel.Text = FirstADTextBox.Text;
+
+        }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+            if(directorCounter < 5)
+            {
+                AddNewDirectorRoleTextBox();
+                AddNewDirectorNameTextBox();
+                directorCounter++;
+            }          
+
+        }
+
+        public System.Windows.Forms.TextBox AddNewDirectorRoleTextBox()
+        {            
+            System.Windows.Forms.TextBox directorTeamRole = new System.Windows.Forms.TextBox();
+            DirectorTeamTab.Controls.Add(directorTeamRole);
+            intControler = intControler * 151;
+            // Need to increase the intController value for the next box
+            directorTeamRole.Top = intControler;
+            directorTeamRole.Left = 73;
+            directorTeamRole.Text = "Role" + this.directorCounter.ToString();
+            return directorTeamRole;
+        }
+        public System.Windows.Forms.TextBox AddNewDirectorNameTextBox()
+        {            
+            TextBox directorTeamName = new TextBox();
+            DirectorTeamTab.Controls.Add(directorTeamName);
+            directorTeamName.Top = intControler + 151;
+            directorTeamName.Left = 384;
+            directorTeamName.Text = "Name" + this.directorCounter.ToString();            
+            return directorTeamName;
         }
     }
 }
