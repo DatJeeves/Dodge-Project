@@ -400,6 +400,9 @@
             this.btnDirectorAddRole.TabIndex = 68;
             this.btnDirectorAddRole.Text = "Add Role";
             this.btnDirectorAddRole.UseVisualStyleBackColor = true;
+            // Added by Jeevan
+            this.btnDirectorAddRole.Click += new System.EventHandler(this.Button1_Click_1);
+
             // 
             // InitialScreen
             // 
@@ -421,6 +424,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void nBtnDirectorAddRole_Click(object sender, System.EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
 
         #endregion

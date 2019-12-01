@@ -86,33 +86,44 @@ namespace In_Production__Framework_
 
         private void Button1_Click_1(object sender, EventArgs e)
         {
-            if(directorCounter < 5)
+            if(directorCounter < 6)
             {
-                AddNewDirectorRoleTextBox();
-                AddNewDirectorNameTextBox();
+               AddNewDirectorRoleTextBox();
+               AddNewDirectorNameTextBox();
+                
                 directorCounter++;
             }          
 
         }
-
+        
         public System.Windows.Forms.TextBox AddNewDirectorRoleTextBox()
         {            
             System.Windows.Forms.TextBox directorTeamRole = new System.Windows.Forms.TextBox();
-            DirectorTeamTab.Controls.Add(directorTeamRole);
-            intControler = intControler * 151;
+           // DirectorTeamTab.Controls.Add(directorTeamRole);
+            intControler = intControler + 151;
             // Need to increase the intController value for the next box
-            directorTeamRole.Top = intControler;
-            directorTeamRole.Left = 73;
+            //directorTeamRole.Top = intControler;
+            //directorTeamRole.Left = 73;
+            directorTeamRole.Name = "Role" + this.directorCounter.ToString();
             directorTeamRole.Text = "Role" + this.directorCounter.ToString();
+            directorTeamRole.Size = new System.Drawing.Size(300, 2000);
+            directorTeamRole.Location = new System.Drawing.Point(80, (150+(55*this.directorCounter)));
+            directorTeamRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            
+            DirectorTeamTab.Controls.Add(directorTeamRole);
             return directorTeamRole;
-        }
+        } 
         public System.Windows.Forms.TextBox AddNewDirectorNameTextBox()
         {            
             TextBox directorTeamName = new TextBox();
             DirectorTeamTab.Controls.Add(directorTeamName);
-            directorTeamName.Top = intControler + 151;
-            directorTeamName.Left = 384;
-            directorTeamName.Text = "Name" + this.directorCounter.ToString();            
+            //directorTeamName.Top = intControler + 151;
+            //directorTeamName.Left = 384;
+            directorTeamName.Text = "Name" + this.directorCounter.ToString();
+
+            directorTeamName.Size = new System.Drawing.Size(300, 2000);
+            directorTeamName.Location = new System.Drawing.Point(400, (150 + (55 * this.directorCounter)));
+            directorTeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             return directorTeamName;
         }
     }
