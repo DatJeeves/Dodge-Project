@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnUpload = new System.Windows.Forms.Button();
+            this.btnSet = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -49,16 +51,16 @@
             this.ProductionTitleInput = new System.Windows.Forms.TextBox();
             this.AllTabs = new System.Windows.Forms.TabControl();
             this.DirectorTeamTab = new System.Windows.Forms.TabPage();
+            this.btnDirectorAddRole = new System.Windows.Forms.Button();
+            this.SeconADTextBox = new System.Windows.Forms.TextBox();
+            this.FirstADLabel = new System.Windows.Forms.Label();
             this.DirectorLabel = new System.Windows.Forms.Label();
             this.SecondADLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnSet = new System.Windows.Forms.Button();
-            this.FirstADLabel = new System.Windows.Forms.Label();
-            this.SeconADTextBox = new System.Windows.Forms.TextBox();
-            this.btnDirectorAddRole = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.AllTabs.SuspendLayout();
             this.DirectorTeamTab.SuspendLayout();
@@ -66,6 +68,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnSave);
+            this.tabPage2.Controls.Add(this.btnUpload);
             this.tabPage2.Controls.Add(this.btnSet);
             this.tabPage2.Controls.Add(this.label18);
             this.tabPage2.Controls.Add(this.label17);
@@ -92,6 +96,27 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "OverviewTab";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnUpload
+            // 
+            this.btnUpload.Location = new System.Drawing.Point(1382, 1130);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(323, 72);
+            this.btnUpload.TabIndex = 63;
+            this.btnUpload.Text = "Upload";
+            this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
+            // btnSet
+            // 
+            this.btnSet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSet.Location = new System.Drawing.Point(1886, 1128);
+            this.btnSet.Name = "btnSet";
+            this.btnSet.Size = new System.Drawing.Size(497, 150);
+            this.btnSet.TabIndex = 62;
+            this.btnSet.Text = "Assign";
+            this.btnSet.UseVisualStyleBackColor = true;
+            this.btnSet.Click += new System.EventHandler(this.BtnSet_Click);
             // 
             // label18
             // 
@@ -301,6 +326,35 @@
             this.DirectorTeamTab.Text = "DirectorTeam";
             this.DirectorTeamTab.UseVisualStyleBackColor = true;
             // 
+            // btnDirectorAddRole
+            // 
+            this.btnDirectorAddRole.Location = new System.Drawing.Point(1268, 108);
+            this.btnDirectorAddRole.Name = "btnDirectorAddRole";
+            this.btnDirectorAddRole.Size = new System.Drawing.Size(315, 112);
+            this.btnDirectorAddRole.TabIndex = 68;
+            this.btnDirectorAddRole.Text = "Add Role";
+            this.btnDirectorAddRole.UseVisualStyleBackColor = true;
+            this.btnDirectorAddRole.Click += new System.EventHandler(this.Button1_Click_1);
+            // 
+            // SeconADTextBox
+            // 
+            this.SeconADTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SeconADTextBox.Location = new System.Drawing.Point(384, 427);
+            this.SeconADTextBox.Margin = new System.Windows.Forms.Padding(6);
+            this.SeconADTextBox.Name = "SeconADTextBox";
+            this.SeconADTextBox.Size = new System.Drawing.Size(521, 62);
+            this.SeconADTextBox.TabIndex = 66;
+            // 
+            // FirstADLabel
+            // 
+            this.FirstADLabel.AutoSize = true;
+            this.FirstADLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FirstADLabel.Location = new System.Drawing.Point(371, 265);
+            this.FirstADLabel.Name = "FirstADLabel";
+            this.FirstADLabel.Size = new System.Drawing.Size(224, 73);
+            this.FirstADLabel.TabIndex = 65;
+            this.FirstADLabel.Text = "1st AD";
+            // 
             // DirectorLabel
             // 
             this.DirectorLabel.AutoSize = true;
@@ -362,60 +416,27 @@
             this.label5.TabIndex = 23;
             this.label5.Text = "Director:";
             // 
-            // btnSet
+            // btnSave
             // 
-            this.btnSet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSet.Location = new System.Drawing.Point(1886, 1128);
-            this.btnSet.Name = "btnSet";
-            this.btnSet.Size = new System.Drawing.Size(497, 150);
-            this.btnSet.TabIndex = 62;
-            this.btnSet.Text = "Assign";
-            this.btnSet.UseVisualStyleBackColor = true;
-            this.btnSet.Click += new System.EventHandler(this.BtnSet_Click);
-            // 
-            // FirstADLabel
-            // 
-            this.FirstADLabel.AutoSize = true;
-            this.FirstADLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirstADLabel.Location = new System.Drawing.Point(371, 265);
-            this.FirstADLabel.Name = "FirstADLabel";
-            this.FirstADLabel.Size = new System.Drawing.Size(224, 73);
-            this.FirstADLabel.TabIndex = 65;
-            this.FirstADLabel.Text = "1st AD";
-            // 
-            // SeconADTextBox
-            // 
-            this.SeconADTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SeconADTextBox.Location = new System.Drawing.Point(384, 427);
-            this.SeconADTextBox.Margin = new System.Windows.Forms.Padding(6);
-            this.SeconADTextBox.Name = "SeconADTextBox";
-            this.SeconADTextBox.Size = new System.Drawing.Size(521, 62);
-            this.SeconADTextBox.TabIndex = 66;
-            // 
-            // btnDirectorAddRole
-            // 
-            this.btnDirectorAddRole.Location = new System.Drawing.Point(1268, 108);
-            this.btnDirectorAddRole.Name = "btnDirectorAddRole";
-            this.btnDirectorAddRole.Size = new System.Drawing.Size(315, 112);
-            this.btnDirectorAddRole.TabIndex = 68;
-            this.btnDirectorAddRole.Text = "Add Role";
-            this.btnDirectorAddRole.UseVisualStyleBackColor = true;
-            // Added by Jeevan
-            this.btnDirectorAddRole.Click += new System.EventHandler(this.Button1_Click_1);
-
+            this.btnSave.Location = new System.Drawing.Point(1382, 1238);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(323, 72);
+            this.btnSave.TabIndex = 64;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // InitialScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2580, 1405);
+            this.ClientSize = new System.Drawing.Size(3298, 2035);
             this.Controls.Add(this.AllTabs);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "InitialScreen";
             this.Text = "InitialScreen";
-            this.Load += new System.EventHandler(this.InitialScreen_Load);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.AllTabs.ResumeLayout(false);
@@ -463,6 +484,8 @@
         private System.Windows.Forms.Label FirstADLabel;
         private System.Windows.Forms.TextBox SeconADTextBox;
         private System.Windows.Forms.Button btnDirectorAddRole;
+        private System.Windows.Forms.Button btnUpload;
+        private System.Windows.Forms.Button btnSave;
     }
 }
 

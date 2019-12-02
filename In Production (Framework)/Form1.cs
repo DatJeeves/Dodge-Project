@@ -92,7 +92,11 @@ namespace In_Production__Framework_
                AddNewDirectorNameTextBox();
                 
                 directorCounter++;
-            }          
+            }  
+            else
+            {
+                MessageBox.Show("You have reached the maximum amount of roles.");
+            }
 
         }
         
@@ -106,8 +110,8 @@ namespace In_Production__Framework_
             //directorTeamRole.Left = 73;
             directorTeamRole.Name = "Role" + this.directorCounter.ToString();
             directorTeamRole.Text = "Role" + this.directorCounter.ToString();
-            directorTeamRole.Size = new System.Drawing.Size(300, 2000);
-            directorTeamRole.Location = new System.Drawing.Point(80, (150+(55*this.directorCounter)));
+            directorTeamRole.Size = new System.Drawing.Size(80, 2000);
+            directorTeamRole.Location = new System.Drawing.Point(25, (150+(55*this.directorCounter)));
             directorTeamRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             
             DirectorTeamTab.Controls.Add(directorTeamRole);
@@ -120,11 +124,138 @@ namespace In_Production__Framework_
             //directorTeamName.Top = intControler + 151;
             //directorTeamName.Left = 384;
             directorTeamName.Text = "Name" + this.directorCounter.ToString();
-
-            directorTeamName.Size = new System.Drawing.Size(300, 2000);
-            directorTeamName.Location = new System.Drawing.Point(400, (150 + (55 * this.directorCounter)));
+            directorTeamName.Name = "Name" + this.directorCounter.ToString();
+            directorTeamName.Size = new System.Drawing.Size(170, 2000);
+            directorTeamName.Location = new System.Drawing.Point(120, (150 + (55 * this.directorCounter)));
             directorTeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             return directorTeamName;
+        }
+
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            // Default file
+            String filename = "D:\\config.txt";
+            String[] lines;
+
+            if (System.IO.File.Exists(filename))
+            {
+                lines = System.IO.File.ReadAllLines(filename);
+
+                //The lines in the file are ordered in the following manner
+                ProductionTitleInput.Text = lines[0];
+
+                DateTime tempDate = DateTime.Parse(lines[1]);
+                dateTimePicker2.Value = tempDate;
+
+                CallTimeTextBox.Text = lines[2];
+                ShootingTimeTextBox.Text = lines[3];
+                DirectorTextBox.Text = lines[4];
+                ProducerTextBox.Text = lines[5];
+                DPTextBox.Text = lines[6];
+                FirstADTextBox.Text = lines[7];
+                LocationTextBox.Text = lines[8];
+                
+                int index = 9;
+                int roleIndex = 1;
+                while (index < 19)
+                {
+                    // Check for roles 1-5
+                    if (lines[index].Length != 0) 
+                    {
+                        Control[] tbxs = DirectorTeamTab.Controls.Find("Role" + roleIndex.ToString(), true);
+                        if (tbxs != null && tbxs.Length > 0)
+                        {
+                            tbxs[0].Text = lines[index];
+                        } else
+                        {
+                            if (directorCounter < 6)
+                            {
+                                btnDirectorAddRole.PerformClick();
+                                AddNewDirectorRoleTextBox();
+                                AddNewDirectorNameTextBox();
+                                directorCounter++;
+
+                                tbxs = DirectorTeamTab.Controls.Find("Role" + roleIndex.ToString(), true);
+                                tbxs[0].Text = lines[index];
+                           
+                            }
+                        }
+
+                        //add one to index to get the name
+                        index++;
+                        if (lines[index] != null)
+                        {
+                            tbxs = DirectorTeamTab.Controls.Find("Name"+roleIndex.ToString(), true);
+                            if (tbxs != null && tbxs.Length > 0)
+                            {
+                                tbxs[0].Text = lines[index];
+                            }
+                        }
+
+                        
+                    }
+                    roleIndex++;
+                    
+                    // Go to the next line which woyud be the next role
+                    index++;
+                }
+                
+
+
+
+            } else
+            {
+                MessageBox.Show("No file found in " + filename);
+            }
+            
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            
+            // Default file
+            String filename = "D:\\config.txt";
+
+            // Create or overwrite the file
+            System.IO.StreamWriter sw = new System.IO.StreamWriter(filename, false);
+            sw.WriteLine(ProductionTitleInput.Text);
+            sw.WriteLine(dateTimePicker2.Value.ToString());
+            sw.WriteLine(CallTimeTextBox.Text);
+            sw.WriteLine(ShootingTimeTextBox.Text);
+            sw.WriteLine(DirectorTextBox.Text);
+            sw.WriteLine(ProducerTextBox.Text);
+            sw.WriteLine(DPTextBox.Text);
+            sw.WriteLine(FirstADTextBox.Text);
+            sw.WriteLine(LocationTextBox.Text);
+
+            int roleIndex = 1;
+            while (roleIndex < 6)
+            {
+                Control[] tbxs = DirectorTeamTab.Controls.Find("Role" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    sw.WriteLine(tbxs[0].Text);
+                }
+                else
+                {
+                    sw.WriteLine();
+                }
+                    
+
+                tbxs = DirectorTeamTab.Controls.Find("Name" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    sw.WriteLine(tbxs[0].Text);
+                }
+                else
+                {
+                    sw.WriteLine();
+                }
+
+                roleIndex++;
+            }
+
+            sw.Close();
         }
     }
 }
