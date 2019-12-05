@@ -36,3 +36,13 @@ C:\Users\dockt\OneDrive\Chapman\19-20\1stSemester\Visual\Final_Project\InProduct
 \\10.0.0.70\homes\Jeevan\c programs\InProduction(Framework)\Dodge-Project\In Production (Framework)\obj\Debug\In Production (Framework).csproj.GenerateResource.cache
 \\10.0.0.70\homes\Jeevan\c programs\InProduction(Framework)\Dodge-Project\In Production (Framework)\obj\Debug\In Production (Framework).exe
 \\10.0.0.70\homes\Jeevan\c programs\InProduction(Framework)\Dodge-Project\In Production (Framework)\obj\Debug\In Production (Framework).pdb
+C:\Users\arshiabehzad\Dodge-Project\In Production (Framework)\bin\Debug\In Production (Framework).exe.config
+C:\Users\arshiabehzad\Dodge-Project\In Production (Framework)\bin\Debug\In Production (Framework).exe
+C:\Users\arshiabehzad\Dodge-Project\In Production (Framework)\bin\Debug\In Production (Framework).pdb
+C:\Users\arshiabehzad\Dodge-Project\In Production (Framework)\obj\Debug\In Production (Framework).csprojAssemblyReference.cache
+C:\Users\arshiabehzad\Dodge-Project\In Production (Framework)\obj\Debug\In_Production__Framework_.InitialScreen.resources
+C:\Users\arshiabehzad\Dodge-Project\In Production (Framework)\obj\Debug\In_Production__Framework_.Properties.Resources.resources
+C:\Users\arshiabehzad\Dodge-Project\In Production (Framework)\obj\Debug\In Production (Framework).csproj.GenerateResource.cache
+C:\Users\arshiabehzad\Dodge-Project\In Production (Framework)\obj\Debug\In Production (Framework).exe
+C:\Users\arshiabehzad\Dodge-Project\In Production (Framework)\obj\Debug\In Production (Framework).pdb
+C:\Users\arshiabehzad\Dodge-Project\In Production (Framework)\obj\Debug\In Production (Framework).csproj.ResolveComReference.cache

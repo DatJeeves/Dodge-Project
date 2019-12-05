@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Office.Interop.Excel;
+using _Excel = Microsoft.Office.Interop.Excel;
 
 namespace In_Production__Framework_
 {
@@ -119,7 +121,7 @@ namespace In_Production__Framework_
         } 
         public System.Windows.Forms.TextBox AddNewDirectorNameTextBox()
         {            
-            TextBox directorTeamName = new TextBox();
+            System.Windows.Forms.TextBox directorTeamName = new System.Windows.Forms.TextBox();
             DirectorTeamTab.Controls.Add(directorTeamName);
             //directorTeamName.Top = intControler + 151;
             //directorTeamName.Left = 384;
@@ -256,6 +258,19 @@ namespace In_Production__Framework_
             }
 
             sw.Close();
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            /*Microsoft.Office.Interop.Excel.Application xla = new Microsoft.Office.Interop.Excel.Application();
+            Workbook wb = xla.Workbooks.Add(XlSheetType.xlWorksheet);
+            Worksheet ws = (Worksheet)xla.ActiveSheet;*/
+            _Application excel = new _Excel.Application();
+            Workbook wb = excel.Workbooks.Open("Book1.xlsx");
+            Worksheet ws = wb.Worksheets[1];
+
+            excel.Visible = true;
+            ws.Cells[2, 1] = ProductionTitleInput.Text;
         }
     }
 }
