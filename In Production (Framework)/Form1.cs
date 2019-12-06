@@ -111,9 +111,9 @@ namespace In_Production__Framework_
             intControler = intControler + 151;
             // Need to increase the intController value for the next box
             //directorTeamRole.Top = intControler;
-            //directorTeamRole.Left = 73;
-            directorTeamRole.Name = "Role" + this.directorCounter.ToString();
+            //directorTeamRole.Left = 73;            
             directorTeamRole.Text = "Role" + this.directorCounter.ToString();
+            directorTeamRole.Name = "DirectorRole" + this.directorCounter.ToString();
             directorTeamRole.Size = new System.Drawing.Size(80, 2000);
             directorTeamRole.Location = new System.Drawing.Point(25, (150+(55*this.directorCounter)));
             directorTeamRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -128,7 +128,7 @@ namespace In_Production__Framework_
             //directorTeamName.Top = intControler + 151;
             //directorTeamName.Left = 384;
             directorTeamName.Text = "Name" + this.directorCounter.ToString();
-            directorTeamName.Name = "Name" + this.directorCounter.ToString();
+            directorTeamName.Name = "DirectorName" + this.directorCounter.ToString();
             directorTeamName.Size = new System.Drawing.Size(170, 2000);
             directorTeamName.Location = new System.Drawing.Point(120, (150 + (55 * this.directorCounter)));
             directorTeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
