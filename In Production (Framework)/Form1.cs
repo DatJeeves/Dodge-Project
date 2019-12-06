@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
+using System.Diagnostics;
 using _Excel = Microsoft.Office.Interop.Excel;
 
 namespace In_Production__Framework_
@@ -19,6 +20,7 @@ namespace In_Production__Framework_
         public InitialScreen()
         {
             InitializeComponent();
+            
         }
 
         
@@ -262,15 +264,21 @@ namespace In_Production__Framework_
 
         private void button1_Click_2(object sender, EventArgs e)
         {
+            //MessageBox.Show(System.IO.Directory.GetCurrentDirectory());
             /*Microsoft.Office.Interop.Excel.Application xla = new Microsoft.Office.Interop.Excel.Application();
             Workbook wb = xla.Workbooks.Add(XlSheetType.xlWorksheet);
             Worksheet ws = (Worksheet)xla.ActiveSheet;*/
             _Application excel = new _Excel.Application();
-            Workbook wb = excel.Workbooks.Open("Book1.xlsx");
+            string workbookPath = System.Windows.Forms.Application.StartupPath + @"\template.xlsx";
+            Workbook wb = excel.Workbooks.Open(workbookPath);
             Worksheet ws = wb.Worksheets[1];
 
             excel.Visible = true;
-            ws.Cells[2, 1] = ProductionTitleInput.Text;
+            ws.Cells[1,12] = ProductionTitleInput.Text;
+            ws.Cells[2,5] = DirectorTextBox.Text;
+            ws.Cells[3, 5] = ProducerTextBox.Text;
+            ws.Cells[7,12] = CallTimeTextBox.Text;
+            ws.Cells[7, 23] = ShootingTimeTextBox.Text;
         }
     }
 }
