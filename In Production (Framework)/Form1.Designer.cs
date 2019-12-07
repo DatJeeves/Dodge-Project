@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.ShootingTime = new System.Windows.Forms.DateTimePicker();
+            this.CallTime = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnUpload = new System.Windows.Forms.Button();
@@ -58,13 +60,34 @@
             this.SecondADLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.CameraTeamTab = new System.Windows.Forms.TabPage();
+            this.btnAddDP = new System.Windows.Forms.Button();
+            this.DoPLabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ArtTeamTab = new System.Windows.Forms.TabPage();
+            this.btnAddArt = new System.Windows.Forms.Button();
+            this.SoundTeamTab = new System.Windows.Forms.TabPage();
+            this.btnAddSound = new System.Windows.Forms.Button();
+            this.EditorTeamTab = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.GripTeamTab = new System.Windows.Forms.TabPage();
+            this.btnGrip = new System.Windows.Forms.Button();
+            this.MakeUpTeamTab = new System.Windows.Forms.TabPage();
+            this.btnAddMakeUp = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.CallTime = new System.Windows.Forms.DateTimePicker();
-            this.ShootingTime = new System.Windows.Forms.DateTimePicker();
+            this.SceneTeamTab = new System.Windows.Forms.TabPage();
+            this.btnAddScene = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.AllTabs.SuspendLayout();
             this.DirectorTeamTab.SuspendLayout();
+            this.CameraTeamTab.SuspendLayout();
+            this.ArtTeamTab.SuspendLayout();
+            this.SoundTeamTab.SuspendLayout();
+            this.EditorTeamTab.SuspendLayout();
+            this.GripTeamTab.SuspendLayout();
+            this.MakeUpTeamTab.SuspendLayout();
+            this.SceneTeamTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage2
@@ -99,6 +122,29 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "OverviewTab";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // ShootingTime
+            // 
+            this.ShootingTime.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShootingTime.CustomFormat = "     hh : mm tt";
+            this.ShootingTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShootingTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ShootingTime.Location = new System.Drawing.Point(375, 197);
+            this.ShootingTime.Name = "ShootingTime";
+            this.ShootingTime.ShowUpDown = true;
+            this.ShootingTime.Size = new System.Drawing.Size(200, 35);
+            this.ShootingTime.TabIndex = 67;
+            // 
+            // CallTime
+            // 
+            this.CallTime.CustomFormat = "     hh : mm tt";
+            this.CallTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CallTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.CallTime.Location = new System.Drawing.Point(375, 145);
+            this.CallTime.Name = "CallTime";
+            this.CallTime.ShowUpDown = true;
+            this.CallTime.Size = new System.Drawing.Size(200, 35);
+            this.CallTime.TabIndex = 66;
             // 
             // button1
             // 
@@ -253,7 +299,7 @@
             this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(375, 74);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(291, 38);
             this.dateTimePicker2.TabIndex = 45;
@@ -263,7 +309,7 @@
             // 
             this.LocationTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LocationTextBox.Location = new System.Drawing.Point(168, 417);
-            this.LocationTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LocationTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.LocationTextBox.Name = "LocationTextBox";
             this.LocationTextBox.Size = new System.Drawing.Size(183, 26);
             this.LocationTextBox.TabIndex = 38;
@@ -273,7 +319,7 @@
             // 
             this.DPTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DPTextBox.Location = new System.Drawing.Point(170, 339);
-            this.DPTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DPTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.DPTextBox.Name = "DPTextBox";
             this.DPTextBox.Size = new System.Drawing.Size(181, 26);
             this.DPTextBox.TabIndex = 37;
@@ -283,7 +329,7 @@
             // 
             this.FirstADTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FirstADTextBox.Location = new System.Drawing.Point(588, 339);
-            this.FirstADTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FirstADTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.FirstADTextBox.Name = "FirstADTextBox";
             this.FirstADTextBox.Size = new System.Drawing.Size(167, 26);
             this.FirstADTextBox.TabIndex = 35;
@@ -293,7 +339,7 @@
             // 
             this.ProducerTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProducerTextBox.Location = new System.Drawing.Point(588, 284);
-            this.ProducerTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ProducerTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.ProducerTextBox.Name = "ProducerTextBox";
             this.ProducerTextBox.Size = new System.Drawing.Size(167, 26);
             this.ProducerTextBox.TabIndex = 33;
@@ -303,7 +349,7 @@
             // 
             this.DirectorTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DirectorTextBox.Location = new System.Drawing.Point(170, 284);
-            this.DirectorTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DirectorTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.DirectorTextBox.Name = "DirectorTextBox";
             this.DirectorTextBox.Size = new System.Drawing.Size(181, 26);
             this.DirectorTextBox.TabIndex = 30;
@@ -313,7 +359,7 @@
             // 
             this.ProductionTitleInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductionTitleInput.Location = new System.Drawing.Point(375, 17);
-            this.ProductionTitleInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ProductionTitleInput.Margin = new System.Windows.Forms.Padding(2);
             this.ProductionTitleInput.Name = "ProductionTitleInput";
             this.ProductionTitleInput.Size = new System.Drawing.Size(329, 38);
             this.ProductionTitleInput.TabIndex = 29;
@@ -323,6 +369,13 @@
             // 
             this.AllTabs.Controls.Add(this.tabPage2);
             this.AllTabs.Controls.Add(this.DirectorTeamTab);
+            this.AllTabs.Controls.Add(this.CameraTeamTab);
+            this.AllTabs.Controls.Add(this.ArtTeamTab);
+            this.AllTabs.Controls.Add(this.SoundTeamTab);
+            this.AllTabs.Controls.Add(this.EditorTeamTab);
+            this.AllTabs.Controls.Add(this.GripTeamTab);
+            this.AllTabs.Controls.Add(this.MakeUpTeamTab);
+            this.AllTabs.Controls.Add(this.SceneTeamTab);
             this.AllTabs.Location = new System.Drawing.Point(1, 4);
             this.AllTabs.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.AllTabs.Name = "AllTabs";
@@ -350,7 +403,7 @@
             // 
             // btnDirectorAddRole
             // 
-            this.btnDirectorAddRole.Location = new System.Drawing.Point(400, 37);
+            this.btnDirectorAddRole.Location = new System.Drawing.Point(640, 37);
             this.btnDirectorAddRole.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.btnDirectorAddRole.Name = "btnDirectorAddRole";
             this.btnDirectorAddRole.Size = new System.Drawing.Size(99, 40);
@@ -363,7 +416,7 @@
             // 
             this.SeconADTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SeconADTextBox.Location = new System.Drawing.Point(121, 150);
-            this.SeconADTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SeconADTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.SeconADTextBox.Name = "SeconADTextBox";
             this.SeconADTextBox.Size = new System.Drawing.Size(167, 26);
             this.SeconADTextBox.TabIndex = 66;
@@ -427,6 +480,159 @@
             this.label1.Size = new System.Drawing.Size(94, 26);
             this.label1.TabIndex = 55;
             this.label1.Text = "Director:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // CameraTeamTab
+            // 
+            this.CameraTeamTab.Controls.Add(this.btnAddDP);
+            this.CameraTeamTab.Controls.Add(this.DoPLabel);
+            this.CameraTeamTab.Controls.Add(this.label3);
+            this.CameraTeamTab.Location = new System.Drawing.Point(4, 22);
+            this.CameraTeamTab.Margin = new System.Windows.Forms.Padding(2);
+            this.CameraTeamTab.Name = "CameraTeamTab";
+            this.CameraTeamTab.Padding = new System.Windows.Forms.Padding(2);
+            this.CameraTeamTab.Size = new System.Drawing.Size(773, 459);
+            this.CameraTeamTab.TabIndex = 3;
+            this.CameraTeamTab.Text = "Camera";
+            this.CameraTeamTab.UseVisualStyleBackColor = true;
+            // 
+            // btnAddDP
+            // 
+            this.btnAddDP.Location = new System.Drawing.Point(640, 37);
+            this.btnAddDP.Name = "btnAddDP";
+            this.btnAddDP.Size = new System.Drawing.Size(99, 40);
+            this.btnAddDP.TabIndex = 2;
+            this.btnAddDP.Text = "Add Role";
+            this.btnAddDP.UseVisualStyleBackColor = true;
+            this.btnAddDP.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // DoPLabel
+            // 
+            this.DoPLabel.AutoSize = true;
+            this.DoPLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DoPLabel.Location = new System.Drawing.Point(100, 37);
+            this.DoPLabel.Name = "DoPLabel";
+            this.DoPLabel.Size = new System.Drawing.Size(55, 26);
+            this.DoPLabel.TabIndex = 1;
+            this.DoPLabel.Text = "DoP";
+            this.DoPLabel.Click += new System.EventHandler(this.DoPLabel_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(19, 37);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 25);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "DoP:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // ArtTeamTab
+            // 
+            this.ArtTeamTab.Controls.Add(this.btnAddArt);
+            this.ArtTeamTab.Location = new System.Drawing.Point(4, 22);
+            this.ArtTeamTab.Name = "ArtTeamTab";
+            this.ArtTeamTab.Padding = new System.Windows.Forms.Padding(3);
+            this.ArtTeamTab.Size = new System.Drawing.Size(773, 459);
+            this.ArtTeamTab.TabIndex = 4;
+            this.ArtTeamTab.Text = "Art";
+            this.ArtTeamTab.UseVisualStyleBackColor = true;
+            // 
+            // btnAddArt
+            // 
+            this.btnAddArt.Location = new System.Drawing.Point(640, 37);
+            this.btnAddArt.Name = "btnAddArt";
+            this.btnAddArt.Size = new System.Drawing.Size(99, 40);
+            this.btnAddArt.TabIndex = 0;
+            this.btnAddArt.Text = "Add Role";
+            this.btnAddArt.UseVisualStyleBackColor = true;
+            this.btnAddArt.Click += new System.EventHandler(this.btnAddArt_Click);
+            // 
+            // SoundTeamTab
+            // 
+            this.SoundTeamTab.Controls.Add(this.btnAddSound);
+            this.SoundTeamTab.Location = new System.Drawing.Point(4, 22);
+            this.SoundTeamTab.Name = "SoundTeamTab";
+            this.SoundTeamTab.Padding = new System.Windows.Forms.Padding(3);
+            this.SoundTeamTab.Size = new System.Drawing.Size(773, 459);
+            this.SoundTeamTab.TabIndex = 5;
+            this.SoundTeamTab.Text = "Sound";
+            this.SoundTeamTab.UseVisualStyleBackColor = true;
+            // 
+            // btnAddSound
+            // 
+            this.btnAddSound.Location = new System.Drawing.Point(640, 37);
+            this.btnAddSound.Name = "btnAddSound";
+            this.btnAddSound.Size = new System.Drawing.Size(99, 40);
+            this.btnAddSound.TabIndex = 0;
+            this.btnAddSound.Text = "Add Role";
+            this.btnAddSound.UseVisualStyleBackColor = true;
+            this.btnAddSound.Click += new System.EventHandler(this.btnAddSound_Click);
+            // 
+            // EditorTeamTab
+            // 
+            this.EditorTeamTab.Controls.Add(this.button2);
+            this.EditorTeamTab.Location = new System.Drawing.Point(4, 22);
+            this.EditorTeamTab.Name = "EditorTeamTab";
+            this.EditorTeamTab.Padding = new System.Windows.Forms.Padding(3);
+            this.EditorTeamTab.Size = new System.Drawing.Size(773, 459);
+            this.EditorTeamTab.TabIndex = 6;
+            this.EditorTeamTab.Text = "Editorial / Post";
+            this.EditorTeamTab.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(640, 37);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(99, 40);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Add Role";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // GripTeamTab
+            // 
+            this.GripTeamTab.AutoScroll = true;
+            this.GripTeamTab.Controls.Add(this.btnGrip);
+            this.GripTeamTab.Location = new System.Drawing.Point(4, 22);
+            this.GripTeamTab.Name = "GripTeamTab";
+            this.GripTeamTab.Padding = new System.Windows.Forms.Padding(3);
+            this.GripTeamTab.Size = new System.Drawing.Size(773, 459);
+            this.GripTeamTab.TabIndex = 7;
+            this.GripTeamTab.Text = "Grip / Electric";
+            this.GripTeamTab.UseVisualStyleBackColor = true;
+            // 
+            // btnGrip
+            // 
+            this.btnGrip.Location = new System.Drawing.Point(640, 37);
+            this.btnGrip.Name = "btnGrip";
+            this.btnGrip.Size = new System.Drawing.Size(99, 40);
+            this.btnGrip.TabIndex = 0;
+            this.btnGrip.Text = "Add Role";
+            this.btnGrip.UseVisualStyleBackColor = true;
+            this.btnGrip.Click += new System.EventHandler(this.btnGrip_Click);
+            // 
+            // MakeUpTeamTab
+            // 
+            this.MakeUpTeamTab.Controls.Add(this.btnAddMakeUp);
+            this.MakeUpTeamTab.Location = new System.Drawing.Point(4, 22);
+            this.MakeUpTeamTab.Name = "MakeUpTeamTab";
+            this.MakeUpTeamTab.Padding = new System.Windows.Forms.Padding(3);
+            this.MakeUpTeamTab.Size = new System.Drawing.Size(773, 459);
+            this.MakeUpTeamTab.TabIndex = 8;
+            this.MakeUpTeamTab.Text = "Make Up / Hair";
+            this.MakeUpTeamTab.UseVisualStyleBackColor = true;
+            // 
+            // btnAddMakeUp
+            // 
+            this.btnAddMakeUp.Location = new System.Drawing.Point(640, 37);
+            this.btnAddMakeUp.Name = "btnAddMakeUp";
+            this.btnAddMakeUp.Size = new System.Drawing.Size(99, 40);
+            this.btnAddMakeUp.TabIndex = 0;
+            this.btnAddMakeUp.Text = "Add Role";
+            this.btnAddMakeUp.UseVisualStyleBackColor = true;
+            this.btnAddMakeUp.Click += new System.EventHandler(this.btnAddMakeUp_Click);
             // 
             // label6
             // 
@@ -450,28 +656,26 @@
             this.label5.TabIndex = 23;
             this.label5.Text = "Director:";
             // 
-            // CallTime
+            // SceneTeamTab
             // 
-            this.CallTime.CustomFormat = "     hh : mm tt";
-            this.CallTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CallTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.CallTime.Location = new System.Drawing.Point(375, 145);
-            this.CallTime.Name = "CallTime";
-            this.CallTime.ShowUpDown = true;
-            this.CallTime.Size = new System.Drawing.Size(200, 35);
-            this.CallTime.TabIndex = 66;
+            this.SceneTeamTab.Controls.Add(this.btnAddScene);
+            this.SceneTeamTab.Location = new System.Drawing.Point(4, 22);
+            this.SceneTeamTab.Name = "SceneTeamTab";
+            this.SceneTeamTab.Padding = new System.Windows.Forms.Padding(3);
+            this.SceneTeamTab.Size = new System.Drawing.Size(773, 459);
+            this.SceneTeamTab.TabIndex = 9;
+            this.SceneTeamTab.Text = "Behind The Scenes";
+            this.SceneTeamTab.UseVisualStyleBackColor = true;
             // 
-            // ShootingTime
+            // btnAddScene
             // 
-            this.ShootingTime.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShootingTime.CustomFormat = "     hh : mm tt";
-            this.ShootingTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShootingTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ShootingTime.Location = new System.Drawing.Point(375, 197);
-            this.ShootingTime.Name = "ShootingTime";
-            this.ShootingTime.ShowUpDown = true;
-            this.ShootingTime.Size = new System.Drawing.Size(200, 35);
-            this.ShootingTime.TabIndex = 67;
+            this.btnAddScene.Location = new System.Drawing.Point(640, 37);
+            this.btnAddScene.Name = "btnAddScene";
+            this.btnAddScene.Size = new System.Drawing.Size(99, 40);
+            this.btnAddScene.TabIndex = 0;
+            this.btnAddScene.Text = "Add Role";
+            this.btnAddScene.UseVisualStyleBackColor = true;
+            this.btnAddScene.Click += new System.EventHandler(this.btnAddScene_Click);
             // 
             // InitialScreen
             // 
@@ -481,7 +685,7 @@
             this.Controls.Add(this.AllTabs);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "InitialScreen";
             this.Text = " ";
             this.tabPage2.ResumeLayout(false);
@@ -489,6 +693,14 @@
             this.AllTabs.ResumeLayout(false);
             this.DirectorTeamTab.ResumeLayout(false);
             this.DirectorTeamTab.PerformLayout();
+            this.CameraTeamTab.ResumeLayout(false);
+            this.CameraTeamTab.PerformLayout();
+            this.ArtTeamTab.ResumeLayout(false);
+            this.SoundTeamTab.ResumeLayout(false);
+            this.EditorTeamTab.ResumeLayout(false);
+            this.GripTeamTab.ResumeLayout(false);
+            this.MakeUpTeamTab.ResumeLayout(false);
+            this.SceneTeamTab.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -534,6 +746,22 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DateTimePicker CallTime;
         private System.Windows.Forms.DateTimePicker ShootingTime;
+        private System.Windows.Forms.TabPage CameraTeamTab;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label DoPLabel;
+        private System.Windows.Forms.Button btnAddDP;
+        private System.Windows.Forms.TabPage ArtTeamTab;
+        private System.Windows.Forms.Button btnAddArt;
+        private System.Windows.Forms.TabPage SoundTeamTab;
+        private System.Windows.Forms.Button btnAddSound;
+        private System.Windows.Forms.TabPage EditorTeamTab;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TabPage GripTeamTab;
+        private System.Windows.Forms.Button btnGrip;
+        private System.Windows.Forms.TabPage MakeUpTeamTab;
+        private System.Windows.Forms.Button btnAddMakeUp;
+        private System.Windows.Forms.TabPage SceneTeamTab;
+        private System.Windows.Forms.Button btnAddScene;
     }
 }
 
