@@ -116,8 +116,19 @@ namespace In_Production__Framework_
             System.Windows.Forms.TextBox directorTeamRole = new System.Windows.Forms.TextBox();
             DirectorTeamTab.Controls.Add(directorTeamRole);
             intControler = intControler + 151;
-                                  
-            directorTeamRole.Text = "Role" + this.directorCounter.ToString();
+            switch (this.directorCounter)
+            {
+                case 1:
+                    directorTeamRole.Text = "2nd AD";
+                    directorTeamRole.Name = "secondADRole";
+                    break;
+                default:
+                    directorTeamRole.Text = directorTeamRole.Text = "Role" + this.directorCounter.ToString();
+                    directorTeamRole.Name = "DirectorRole" + this.directorCounter.ToString();
+                    break;
+
+            }                      
+            
             directorTeamRole.Tag = directorTeamRole.Text;
             directorTeamRole.Name = "DirectorRole" + this.directorCounter.ToString();
             directorTeamRole.Size = new System.Drawing.Size(80, 2000);
@@ -1244,6 +1255,44 @@ namespace In_Production__Framework_
             else
             {
                 MessageBox.Show("You have reached the maximum amount of Scene roles.");
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (directorCounter != 1)
+            {
+                DelDirectorRoleTextBox();
+                DelDirectorNameTextBox();
+
+                directorCounter--;
+            }
+            else
+            {
+                MessageBox.Show("You cannot delete anymore roles.");
+            }
+        }
+      
+        //Jeevans
+        public void DelDirectorRoleTextBox()
+        {
+            int deleteIndex = directorCounter - 1;
+            // Find the last one
+            Control[] tbxs = DirectorTeamTab.Controls.Find("DirectorRole" + deleteIndex.ToString(), true);
+            if (tbxs != null && tbxs.Length > 0)
+            {
+                DirectorTeamTab.Controls.Remove(tbxs[0]);
+            }
+
+        }
+        public void DelDirectorNameTextBox()
+        {
+            int deleteIndex = directorCounter - 1;
+            // Find the last one
+            Control[] tbxs = DirectorTeamTab.Controls.Find("DirectorName" + deleteIndex.ToString(), true);
+            if (tbxs != null && tbxs.Length > 0)
+            {
+                DirectorTeamTab.Controls.Remove(tbxs[0]);
             }
         }
     }
