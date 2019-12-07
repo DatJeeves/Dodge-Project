@@ -40,16 +40,6 @@ namespace In_Production__Framework_
             string productionTitle = ProductionTitleInput.Text;
         }
 
-        private void CallTimeTextBox_TextChanged(object sender, EventArgs e)
-        {
-            string callTime = CallTimeTextBox.Text;
-        }
-
-        private void ShootingTimeTextBox_TextChanged(object sender, EventArgs e)
-        {
-            string shootingTime = ShootingTimeTextBox.Text;
-        }
-
         private void DirectorTextBox_TextChanged(object sender, EventArgs e)
         {
             string directorName = DirectorTextBox.Text;
@@ -143,8 +133,7 @@ namespace In_Production__Framework_
         }
 
         private void btnUpload_Click(object sender, EventArgs e)
-        {
-            String fileContent;
+        {           
             String filename = "D:\\config.txt";
 
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -156,7 +145,6 @@ namespace In_Production__Framework_
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 filename = openFileDialog.FileName;
-                MessageBox.Show(filename);
 
                 // Default file
 
@@ -169,11 +157,10 @@ namespace In_Production__Framework_
                     //The lines in the file are ordered in the following manner
                     ProductionTitleInput.Text = lines[0];
 
-                    DateTime tempDate = DateTime.Parse(lines[1]);
-                    dateTimePicker2.Value = tempDate;
-
-                    CallTimeTextBox.Text = lines[2];
-                    ShootingTimeTextBox.Text = lines[3];
+                    
+                    dateTimePicker2.Value = DateTime.Parse(lines[1]);
+                    CallTime.Value = DateTime.Parse(lines[2]);
+                    ShootingTime.Value = DateTime.Parse(lines[3]);
                     DirectorTextBox.Text = lines[4];
                     ProducerTextBox.Text = lines[5];
                     DPTextBox.Text = lines[6];
@@ -254,8 +241,8 @@ namespace In_Production__Framework_
                 System.IO.StreamWriter sw = new System.IO.StreamWriter(filename, false);
                 sw.WriteLine(ProductionTitleInput.Text);
                 sw.WriteLine(dateTimePicker2.Value.ToString());
-                sw.WriteLine(CallTimeTextBox.Text);
-                sw.WriteLine(ShootingTimeTextBox.Text);
+                sw.WriteLine(CallTime.Value.ToString());
+                sw.WriteLine(ShootingTime.Value.ToString());
                 sw.WriteLine(DirectorTextBox.Text);
                 sw.WriteLine(ProducerTextBox.Text);
                 sw.WriteLine(DPTextBox.Text);
@@ -307,8 +294,10 @@ namespace In_Production__Framework_
             ws.Cells[1,12] = ProductionTitleInput.Text;
             ws.Cells[2,5] = DirectorTextBox.Text;
             ws.Cells[3, 5] = ProducerTextBox.Text;
-            ws.Cells[7,12] = CallTimeTextBox.Text;
-            ws.Cells[7, 23] = ShootingTimeTextBox.Text;
+            
+            // Changed CallTimeTextBox to be a datePicker - Jeevan, this needs updating for that
+            //ws.Cells[7,12] = CallTimeTextBox.Text;
+            //ws.Cells[7, 23] = ShootingTimeTextBox.Text;
         }
 
         private void input_GainFocus(object sender, EventArgs e)
@@ -324,6 +313,11 @@ namespace In_Production__Framework_
         {
             var input = (System.Windows.Forms.TextBox)sender;
             input.Text = input.Tag.ToString();
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
