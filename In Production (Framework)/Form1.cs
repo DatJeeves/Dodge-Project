@@ -25,6 +25,14 @@ namespace In_Production__Framework_
         public int gripCounter = 1;
         public int makeUpCounter = 1;
         public int sceneCounter = 1;
+        public int maxDirectorCount = 6;
+        public int maxDopCounter = 6;
+        public int maxArtCounter = 7;
+        public int maxSoundCounter = 7;
+        public int maxEditorCounter = 3;
+        public int maxGripCounter = 19;
+        public int maxMakeUpCounter = 8;
+        public int maxSceneCounter = 2;
         public InitialScreen()
         {
             InitializeComponent();
@@ -89,7 +97,7 @@ namespace In_Production__Framework_
 
         private void Button1_Click_1(object sender, EventArgs e)
         {
-            if(directorCounter < 6)
+            if(directorCounter < maxDirectorCount)
             {
                AddNewDirectorRoleTextBox();
                AddNewDirectorNameTextBox();
@@ -144,7 +152,7 @@ namespace In_Production__Framework_
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = "D:\\";
             openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-            openFileDialog.FilterIndex = 2;
+            openFileDialog.FilterIndex = 1;
             openFileDialog.RestoreDirectory = true;
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -160,9 +168,7 @@ namespace In_Production__Framework_
                     lines = System.IO.File.ReadAllLines(filename);
 
                     //The lines in the file are ordered in the following manner
-                    ProductionTitleInput.Text = lines[0];
-
-                    
+                    ProductionTitleInput.Text = lines[0];                             
                     dateTimePicker2.Value = DateTime.Parse(lines[1]);
                     CallTime.Value = DateTime.Parse(lines[2]);
                     ShootingTime.Value = DateTime.Parse(lines[3]);
@@ -173,27 +179,30 @@ namespace In_Production__Framework_
                     LocationTextBox.Text = lines[8];
 
                     int index = 9;
+
+                    // Load Director Tab
                     int roleIndex = 1;
-                    while (index < 19)
+                    ;
+                    while (roleIndex < maxDirectorCount)
                     {
                         // Check for roles 1-5
                         if (lines[index].Length != 0)
                         {
-                            Control[] tbxs = DirectorTeamTab.Controls.Find("Role" + roleIndex.ToString(), true);
+                            Control[] tbxs = DirectorTeamTab.Controls.Find("DirectorRole" + roleIndex.ToString(), true);
                             if (tbxs != null && tbxs.Length > 0)
                             {
                                 tbxs[0].Text = lines[index];
                             }
                             else
                             {
-                                if (directorCounter < 6)
+                                if (directorCounter < maxDirectorCount)
                                 {
                                     btnDirectorAddRole.PerformClick();
                                     AddNewDirectorRoleTextBox();
                                     AddNewDirectorNameTextBox();
                                     directorCounter++;
 
-                                    tbxs = DirectorTeamTab.Controls.Find("Role" + roleIndex.ToString(), true);
+                                    tbxs = DirectorTeamTab.Controls.Find("DirectorRole" + roleIndex.ToString(), true);
                                     tbxs[0].Text = lines[index];
 
                                 }
@@ -203,21 +212,375 @@ namespace In_Production__Framework_
                             index++;
                             if (lines[index] != null)
                             {
-                                tbxs = DirectorTeamTab.Controls.Find("Name" + roleIndex.ToString(), true);
+                                tbxs = DirectorTeamTab.Controls.Find("DirectorName" + roleIndex.ToString(), true);
                                 if (tbxs != null && tbxs.Length > 0)
                                 {
                                     tbxs[0].Text = lines[index];
                                 }
                             }
-
-
+                        } 
+                        else
+                        {
+                            //Skipp this line
+                            index++;
                         }
+
                         roleIndex++;
 
-                        // Go to the next line which woyud be the next role
+                        // Go to the next line which would be the next role
                         index++;
                     }
 
+                    // Load DoP Tab
+                    roleIndex = 1;
+                    
+                    while (roleIndex < maxDopCounter)
+                    {
+                        
+                        if (lines[index].Length != 0)
+                        {
+                            Control[] tbxs = CameraTeamTab.Controls.Find("dopRole" + roleIndex.ToString(), true);
+                            if (tbxs != null && tbxs.Length > 0)
+                            {
+                                tbxs[0].Text = lines[index];
+                            }
+                            else
+                            {
+                                if (dopCounter < maxDopCounter)
+                                {
+                                    btnAddDP.PerformClick();
+                                    AddNewDoPRoleTextBox();
+                                    AddNewDoPNameTextBox();
+                                    dopCounter++;
+
+                                    tbxs = CameraTeamTab.Controls.Find("dopRole" + roleIndex.ToString(), true);
+                                    tbxs[0].Text = lines[index];
+
+                                }
+                            }
+
+                            //add one to index to get the name
+                            index++;
+                            if (lines[index] != null)
+                            {
+                                tbxs = CameraTeamTab.Controls.Find("dopName" + roleIndex.ToString(), true);
+                                if (tbxs != null && tbxs.Length > 0)
+                                {
+                                    tbxs[0].Text = lines[index];
+                                }
+                            }
+                        }
+                        else
+                        {
+                            //Skipp this line
+                            index++;
+                        }
+                        roleIndex++;
+
+                        // Go to the next line which would be the next role
+                        index++;
+                    }
+
+                    // Load Arts Tab
+                    roleIndex = 1;
+
+                    while (roleIndex < maxArtCounter)
+                    {
+
+                        if (lines[index].Length != 0)
+                        {
+                            Control[] tbxs = ArtTeamTab.Controls.Find("artRole" + roleIndex.ToString(), true);
+                            if (tbxs != null && tbxs.Length > 0)
+                            {
+                                tbxs[0].Text = lines[index];
+                            }
+                            else
+                            {
+                                if (artCounter < maxArtCounter)
+                                {
+                                    btnAddArt.PerformClick();
+                                    AddNewArtRoleTextBox();
+                                    AddNewArtNameTextBox();
+                                    artCounter++;
+
+                                    tbxs = ArtTeamTab.Controls.Find("artRole" + roleIndex.ToString(), true);
+                                    tbxs[0].Text = lines[index];
+
+                                }
+                            }
+
+                            //add one to index to get the name
+                            index++;
+                            if (lines[index] != null)
+                            {
+                                tbxs = ArtTeamTab.Controls.Find("artName" + roleIndex.ToString(), true);
+                                if (tbxs != null && tbxs.Length > 0)
+                                {
+                                    tbxs[0].Text = lines[index];
+                                }
+                            }
+                        }
+                        else
+                        {
+                            //Skipp this line
+                            index++;
+                        }
+                        roleIndex++;
+
+                        // Go to the next line which would be the next role
+                        index++;
+                    }
+
+                    // Load Sounds Tab
+                    roleIndex = 1;
+
+                    while (roleIndex < maxSoundCounter)
+                    {
+
+                        if (lines[index].Length != 0)
+                        {
+                            Control[] tbxs = SoundTeamTab.Controls.Find("soundRole" + roleIndex.ToString(), true);
+                            if (tbxs != null && tbxs.Length > 0)
+                            {
+                                tbxs[0].Text = lines[index];
+                            }
+                            else
+                            {
+                                if (soundCounter < maxSoundCounter)
+                                {
+                                    btnAddSound.PerformClick();
+                                    AddNewSoundRoleTextBox();
+                                    AddNewSoundNameTextBox();
+                                    soundCounter++;
+
+                                    tbxs = SoundTeamTab.Controls.Find("soundRole" + roleIndex.ToString(), true);
+                                    tbxs[0].Text = lines[index];
+
+                                }
+                            }
+
+                            //add one to index to get the name
+                            index++;
+                            if (lines[index] != null)
+                            {
+                                tbxs = SoundTeamTab.Controls.Find("soundName" + roleIndex.ToString(), true);
+                                if (tbxs != null && tbxs.Length > 0)
+                                {
+                                    tbxs[0].Text = lines[index];
+                                }
+                            }
+                        }
+                        else
+                        {
+                            //Skipp this line
+                            index++;
+                        }
+                        roleIndex++;
+
+                        // Go to the next line which would be the next role
+                        index++;
+                    }
+
+                    
+                    // Load Editors Tab
+                    roleIndex = 1;
+
+                    while (roleIndex < maxEditorCounter)
+                    {
+
+                        if (lines[index].Length != 0)
+                        {
+                            Control[] tbxs = EditorTeamTab.Controls.Find("editorRole" + roleIndex.ToString(), true);
+                            if (tbxs != null && tbxs.Length > 0)
+                            {
+                                tbxs[0].Text = lines[index];
+                            }
+                            else
+                            {
+                                if (editorCounter < maxEditorCounter)
+                                {
+                                    button2.PerformClick();
+                                    AddNewEditorRoleTextBox();
+                                    AddNewEditorNameTextBox();
+                                    editorCounter++;
+
+                                    tbxs = EditorTeamTab.Controls.Find("editorRole" + roleIndex.ToString(), true);
+                                    tbxs[0].Text = lines[index];
+
+                                }
+                            }
+
+                            //add one to index to get the name
+                            index++;
+                            if (lines[index] != null)
+                            {
+                                tbxs = EditorTeamTab.Controls.Find("editorName" + roleIndex.ToString(), true);
+                                if (tbxs != null && tbxs.Length > 0)
+                                {
+                                    tbxs[0].Text = lines[index];
+                                }
+                            }
+                        }
+                        else
+                        {
+                            //Skipp this line
+                            index++;
+                        }
+                        roleIndex++;
+
+                        // Go to the next line which would be the next role
+                        index++;
+                    }
+
+                    // Load Grips Tab
+                    roleIndex = 1;
+
+                    while (roleIndex < maxGripCounter)
+                    {
+
+                        if (lines[index].Length != 0)
+                        {
+                            Control[] tbxs = GripTeamTab.Controls.Find("gripRole" + roleIndex.ToString(), true);
+                            if (tbxs != null && tbxs.Length > 0)
+                            {
+                                tbxs[0].Text = lines[index];
+                            }
+                            else
+                            {
+                                if (gripCounter < maxGripCounter)
+                                {
+                                    btnGrip.PerformClick();
+                                    AddNewGripRoleTextBox();
+                                    AddNewGripNameTextBox();
+                                    gripCounter++;
+
+                                    tbxs = GripTeamTab.Controls.Find("gripRole" + roleIndex.ToString(), true);
+                                    tbxs[0].Text = lines[index];
+
+                                }
+                            }
+
+                            //add one to index to get the name
+                            index++;
+                            if (lines[index] != null)
+                            {
+                                tbxs = GripTeamTab.Controls.Find("gripName" + roleIndex.ToString(), true);
+                                if (tbxs != null && tbxs.Length > 0)
+                                {
+                                    tbxs[0].Text = lines[index];
+                                }
+                            }
+                        }
+                        else
+                        {
+                            //Skipp this line
+                            index++;
+                        }
+                        roleIndex++;
+
+                        // Go to the next line which would be the next role
+                        index++;
+                    }
+
+                    // Load MakeUps Tab
+                    roleIndex = 1;
+
+                    while (roleIndex < maxMakeUpCounter)
+                    {
+
+                        if (lines[index].Length != 0)
+                        {
+                            Control[] tbxs = MakeUpTeamTab.Controls.Find("makeUpRole" + roleIndex.ToString(), true);
+                            if (tbxs != null && tbxs.Length > 0)
+                            {
+                                tbxs[0].Text = lines[index];
+                            }
+                            else
+                            {
+                                if (makeUpCounter < maxMakeUpCounter)
+                                {
+                                    btnAddMakeUp.PerformClick();
+                                    AddNewMakeUpRoleTextBox();
+                                    AddNewMakeUpNameTextBox();
+                                    makeUpCounter++;
+
+                                    tbxs = MakeUpTeamTab.Controls.Find("makeUpRole" + roleIndex.ToString(), true);
+                                    tbxs[0].Text = lines[index];
+
+                                }
+                            }
+
+                            //add one to index to get the name
+                            index++;
+                            if (lines[index] != null)
+                            {
+                                tbxs = MakeUpTeamTab.Controls.Find("makeUpName" + roleIndex.ToString(), true);
+                                if (tbxs != null && tbxs.Length > 0)
+                                {
+                                    tbxs[0].Text = lines[index];
+                                }
+                            }
+                        }
+                        else
+                        {
+                            //Skipp this line
+                            index++;
+                        }
+                        roleIndex++;
+
+                        // Go to the next line which would be the next role
+                        index++;
+                    }
+
+                    // Load Scenes Tab
+                    roleIndex = 1;
+
+                    while (roleIndex < maxSceneCounter)
+                    {
+
+                        if (lines[index].Length != 0)
+                        {
+                            Control[] tbxs = SceneTeamTab.Controls.Find("sceneRole" + roleIndex.ToString(), true);
+                            if (tbxs != null && tbxs.Length > 0)
+                            {
+                                tbxs[0].Text = lines[index];
+                            }
+                            else
+                            {
+                                if (sceneCounter < maxSceneCounter)
+                                {
+                                    btnAddScene.PerformClick();
+                                    AddNewSceneRoleTextBox();
+                                    AddNewSceneNameTextBox();
+                                    sceneCounter++;
+
+                                    tbxs = SceneTeamTab.Controls.Find("sceneRole" + roleIndex.ToString(), true);
+                                    tbxs[0].Text = lines[index];
+
+                                }
+                            }
+
+                            //add one to index to get the name
+                            index++;
+                            if (lines[index] != null)
+                            {
+                                tbxs = SceneTeamTab.Controls.Find("sceneName" + roleIndex.ToString(), true);
+                                if (tbxs != null && tbxs.Length > 0)
+                                {
+                                    tbxs[0].Text = lines[index];
+                                }
+                            }
+                        }
+                        else
+                        {
+                            //Skipp this line
+                            index++;
+                        }
+                        roleIndex++;
+
+                        // Go to the next line which would be the next role
+                        index++;
+                    }
                 }
                 
             }
@@ -255,9 +618,9 @@ namespace In_Production__Framework_
                 sw.WriteLine(LocationTextBox.Text);
 
                 int roleIndex = 1;
-                while (roleIndex < 6)
+                while (roleIndex < maxDirectorCount)
                 {
-                    Control[] tbxs = DirectorTeamTab.Controls.Find("Role" + roleIndex.ToString(), true);
+                    Control[] tbxs = DirectorTeamTab.Controls.Find("DirectorRole" + roleIndex.ToString(), true);
                     if (tbxs != null && tbxs.Length > 0)
                     {
                         sw.WriteLine(tbxs[0].Text);
@@ -268,7 +631,7 @@ namespace In_Production__Framework_
                     }
 
 
-                    tbxs = DirectorTeamTab.Controls.Find("Name" + roleIndex.ToString(), true);
+                    tbxs = DirectorTeamTab.Controls.Find("DirectorName" + roleIndex.ToString(), true);
                     if (tbxs != null && tbxs.Length > 0)
                     {
                         sw.WriteLine(tbxs[0].Text);
@@ -280,6 +643,196 @@ namespace In_Production__Framework_
 
                     roleIndex++;
                 }
+                
+                roleIndex = 1;
+                while (roleIndex < maxDopCounter)
+                {
+                    Control[] tbxs = CameraTeamTab.Controls.Find("dopRole" + roleIndex.ToString(), true);
+                    if (tbxs != null && tbxs.Length > 0)
+                    {
+                        sw.WriteLine(tbxs[0].Text);
+                    }
+                    else
+                    {
+                        sw.WriteLine();
+                    }
+
+
+                    tbxs = CameraTeamTab.Controls.Find("dopName" + roleIndex.ToString(), true);
+                    if (tbxs != null && tbxs.Length > 0)
+                    {
+                        sw.WriteLine(tbxs[0].Text);
+                    }
+                    else
+                    {
+                        sw.WriteLine();
+                    }
+
+                    roleIndex++;
+                }
+
+                roleIndex = 1;
+                while (roleIndex < maxArtCounter)
+                {
+                    Control[] tbxs = ArtTeamTab.Controls.Find("artRole" + roleIndex.ToString(), true);
+                    if (tbxs != null && tbxs.Length > 0)
+                    {
+                        sw.WriteLine(tbxs[0].Text);
+                    }
+                    else
+                    {
+                        sw.WriteLine();
+                    }
+
+
+                    tbxs = ArtTeamTab.Controls.Find("artName" + roleIndex.ToString(), true);
+                    if (tbxs != null && tbxs.Length > 0)
+                    {
+                        sw.WriteLine(tbxs[0].Text);
+                    }
+                    else
+                    {
+                        sw.WriteLine();
+                    }
+
+                    roleIndex++;
+                }
+
+                roleIndex = 1;
+                while (roleIndex < maxSoundCounter)
+                {
+                    Control[] tbxs = SoundTeamTab.Controls.Find("soundRole" + roleIndex.ToString(), true);
+                    if (tbxs != null && tbxs.Length > 0)
+                    {
+                        sw.WriteLine(tbxs[0].Text);
+                    }
+                    else
+                    {
+                        sw.WriteLine();
+                    }
+
+
+                    tbxs = SoundTeamTab.Controls.Find("soundName" + roleIndex.ToString(), true);
+                    if (tbxs != null && tbxs.Length > 0)
+                    {
+                        sw.WriteLine(tbxs[0].Text);
+                    }
+                    else
+                    {
+                        sw.WriteLine();
+                    }
+
+                    roleIndex++;
+                }
+
+                roleIndex = 1;
+                while (roleIndex < maxEditorCounter)
+                {
+                    Control[] tbxs = EditorTeamTab.Controls.Find("editorRole" + roleIndex.ToString(), true);
+                    if (tbxs != null && tbxs.Length > 0)
+                    {
+                        sw.WriteLine(tbxs[0].Text);
+                    }
+                    else
+                    {
+                        sw.WriteLine();
+                    }
+
+
+                    tbxs = EditorTeamTab.Controls.Find("editorName" + roleIndex.ToString(), true);
+                    if (tbxs != null && tbxs.Length > 0)
+                    {
+                        sw.WriteLine(tbxs[0].Text);
+                    }
+                    else
+                    {
+                        sw.WriteLine();
+                    }
+
+                    roleIndex++;
+                }
+
+                roleIndex = 1;
+                while (roleIndex < maxGripCounter)
+                {
+                    Control[] tbxs = GripTeamTab.Controls.Find("gripRole" + roleIndex.ToString(), true);
+                    if (tbxs != null && tbxs.Length > 0)
+                    {
+                        sw.WriteLine(tbxs[0].Text);
+                    }
+                    else
+                    {
+                        sw.WriteLine();
+                    }
+
+
+                    tbxs = GripTeamTab.Controls.Find("gripName" + roleIndex.ToString(), true);
+                    if (tbxs != null && tbxs.Length > 0)
+                    {
+                        sw.WriteLine(tbxs[0].Text);
+                    }
+                    else
+                    {
+                        sw.WriteLine();
+                    }
+
+                    roleIndex++;
+                }
+
+                roleIndex = 1;
+                while (roleIndex < maxMakeUpCounter)
+                {
+                    Control[] tbxs = MakeUpTeamTab.Controls.Find("makeUpRole" + roleIndex.ToString(), true);
+                    if (tbxs != null && tbxs.Length > 0)
+                    {
+                        sw.WriteLine(tbxs[0].Text);
+                    }
+                    else
+                    {
+                        sw.WriteLine();
+                    }
+
+
+                    tbxs = MakeUpTeamTab.Controls.Find("makeUpName" + roleIndex.ToString(), true);
+                    if (tbxs != null && tbxs.Length > 0)
+                    {
+                        sw.WriteLine(tbxs[0].Text);
+                    }
+                    else
+                    {
+                        sw.WriteLine();
+                    }
+
+                    roleIndex++;
+                }
+
+                roleIndex = 1;
+                while (roleIndex < maxSceneCounter)
+                {
+                    Control[] tbxs = SceneTeamTab.Controls.Find("sceneRole" + roleIndex.ToString(), true);
+                    if (tbxs != null && tbxs.Length > 0)
+                    {
+                        sw.WriteLine(tbxs[0].Text);
+                    }
+                    else
+                    {
+                        sw.WriteLine();
+                    }
+
+
+                    tbxs = SceneTeamTab.Controls.Find("sceneName" + roleIndex.ToString(), true);
+                    if (tbxs != null && tbxs.Length > 0)
+                    {
+                        sw.WriteLine(tbxs[0].Text);
+                    }
+                    else
+                    {
+                        sw.WriteLine();
+                    }
+
+                    roleIndex++;
+                }
+
                 sw.Close();
             }
         }
@@ -385,7 +938,7 @@ namespace In_Production__Framework_
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (dopCounter < 6)
+            if (dopCounter < maxDopCounter)
             {
                 AddNewDoPRoleTextBox();
                 AddNewDoPNameTextBox();
@@ -435,7 +988,7 @@ namespace In_Production__Framework_
 
         private void btnAddArt_Click(object sender, EventArgs e)
         {
-            if (artCounter < 7)
+            if (artCounter < maxArtCounter)
             {
                 AddNewArtRoleTextBox();
                 AddNewArtNameTextBox();
@@ -483,7 +1036,7 @@ namespace In_Production__Framework_
 
         private void btnAddSound_Click(object sender, EventArgs e)
         {
-            if (soundCounter < 7)
+            if (soundCounter < maxSoundCounter)
             {
                 AddNewSoundRoleTextBox();
                 AddNewSoundNameTextBox();
@@ -532,7 +1085,7 @@ namespace In_Production__Framework_
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            if (editorCounter < 3)
+            if (editorCounter < maxEditorCounter)
             {
                 AddNewEditorRoleTextBox();
                 AddNewEditorNameTextBox();
@@ -581,7 +1134,7 @@ namespace In_Production__Framework_
 
         private void btnGrip_Click(object sender, EventArgs e)
         {
-            if (gripCounter < 19)
+            if (gripCounter < maxGripCounter)
             {
                 AddNewGripRoleTextBox();
                 AddNewGripNameTextBox();
@@ -631,7 +1184,7 @@ namespace In_Production__Framework_
 
         private void btnAddMakeUp_Click(object sender, EventArgs e)
         {
-            if (makeUpCounter < 8)
+            if (makeUpCounter < maxMakeUpCounter)
             {
                 AddNewMakeUpRoleTextBox();
                 AddNewMakeUpNameTextBox();
@@ -680,7 +1233,7 @@ namespace In_Production__Framework_
         }
         private void btnAddScene_Click(object sender, EventArgs e)
         {
-            if (sceneCounter < 2)
+            if (sceneCounter < maxSceneCounter)
             {
                 AddNewSceneRoleTextBox();
                 AddNewSceneNameTextBox();
