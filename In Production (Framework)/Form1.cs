@@ -25,7 +25,7 @@ namespace In_Production__Framework_
         public int gripCounter = 1;
         public int makeUpCounter = 1;
         public int sceneCounter = 1;
-        public int maxDirectorCount = 6;
+        public int maxDirectorCount = 7;
         public int maxDopCounter = 6;
         public int maxArtCounter = 7;
         public int maxSoundCounter = 7;
@@ -119,20 +119,18 @@ namespace In_Production__Framework_
             switch (this.directorCounter)
             {
                 case 1:
-                    directorTeamRole.Text = "2nd AD";
-                    directorTeamRole.Name = "secondADRole";
+                    directorTeamRole.Text = "2nd AD";                  
                     break;
                 default:
-                    directorTeamRole.Text = directorTeamRole.Text = "Role" + this.directorCounter.ToString();
-                    directorTeamRole.Name = "DirectorRole" + this.directorCounter.ToString();
+                    directorTeamRole.Text = directorTeamRole.Text = "Role" + this.directorCounter.ToString();                
                     break;
 
-            }                      
-            
+            }
+            directorTeamRole.Name = "DirectorRole" + this.directorCounter.ToString();
             directorTeamRole.Tag = directorTeamRole.Text;
             directorTeamRole.Name = "DirectorRole" + this.directorCounter.ToString();
             directorTeamRole.Size = new System.Drawing.Size(80, 2000);
-            directorTeamRole.Location = new System.Drawing.Point(25, (150+(55*this.directorCounter)));
+            directorTeamRole.Location = new System.Drawing.Point(25, (100+(55*this.directorCounter)));
             directorTeamRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             
             directorTeamRole.Enter += input_GainFocus;
@@ -148,7 +146,7 @@ namespace In_Production__Framework_
             directorTeamName.Tag = directorTeamName.Text;
             directorTeamName.Name = "DirectorName" + this.directorCounter.ToString();
             directorTeamName.Size = new System.Drawing.Size(170, 2000);
-            directorTeamName.Location = new System.Drawing.Point(120, (150 + (55 * this.directorCounter)));
+            directorTeamName.Location = new System.Drawing.Point(120, (100 + (55 * this.directorCounter)));
             directorTeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             directorTeamName.Enter += input_GainFocus;
             directorTeamName.Leave += input_LoseFocus;
@@ -918,8 +916,19 @@ namespace In_Production__Framework_
             System.Windows.Forms.TextBox dopTeamRole = new System.Windows.Forms.TextBox();
             CameraTeamTab.Controls.Add(dopTeamRole);
             intControler = intControler + 151;
+            switch (this.dopCounter)
+            {
+                case 1:
+                    dopTeamRole.Text = "1st AC";
+                    break;
+                case 2:
+                    dopTeamRole.Text = "2nd AC";
+                    break;
+                default:
+                    dopTeamRole.Text = "Role" + this.dopCounter.ToString();
+                    break;
 
-            dopTeamRole.Text = "Role" + this.dopCounter.ToString();
+            }
             dopTeamRole.Tag = dopTeamRole.Text;
             dopTeamRole.Name = "dopRole" + this.dopCounter.ToString();
             dopTeamRole.Size = new System.Drawing.Size(80, 2000);
@@ -968,11 +977,21 @@ namespace In_Production__Framework_
             System.Windows.Forms.TextBox artTeamRole = new System.Windows.Forms.TextBox();
             ArtTeamTab.Controls.Add(artTeamRole);
             intControler = intControler + 151;
+            switch (this.artCounter)
+            {
+                case 1:
+                    artTeamRole.Text = "Production Designer";
+                    break;
+                
+                default:
+                    artTeamRole.Text = "Role" + this.artCounter.ToString();
+                    break;
 
-            artTeamRole.Text = "Role" + this.artCounter.ToString();
+            }
+         
             artTeamRole.Tag = artTeamRole.Text;
             artTeamRole.Name = "artRole" + this.artCounter.ToString();
-            artTeamRole.Size = new System.Drawing.Size(80, 2000);
+            artTeamRole.Size = new System.Drawing.Size(200, 2000);
             artTeamRole.Location = new System.Drawing.Point(25, (10 + (55 * this.artCounter)));
             artTeamRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
@@ -989,7 +1008,7 @@ namespace In_Production__Framework_
             artTeamName.Tag = artTeamName.Text;
             artTeamName.Name = "artName" + this.artCounter.ToString();
             artTeamName.Size = new System.Drawing.Size(170, 2000);
-            artTeamName.Location = new System.Drawing.Point(120, (10 + (55 * this.artCounter)));
+            artTeamName.Location = new System.Drawing.Point(250, (10 + (55 * this.artCounter)));
             artTeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             artTeamName.Enter += input_GainFocus;
             artTeamName.Leave += input_LoseFocus;
@@ -1017,10 +1036,23 @@ namespace In_Production__Framework_
             SoundTeamTab.Controls.Add(soundTeamRole);
             intControler = intControler + 151;
 
-            soundTeamRole.Text = "Role" + this.soundCounter.ToString();
+            switch (this.soundCounter)
+            {
+                case 1:
+                    soundTeamRole.Text = "Sound Mixer";
+                    break;
+                case 2:
+                    soundTeamRole.Text = "Boom Op";
+                    break;
+                default:
+                    soundTeamRole.Text = "Role" + this.soundCounter.ToString();
+                    break;
+
+            }
+           
             soundTeamRole.Tag = soundTeamRole.Text;
             soundTeamRole.Name = "soundRole" + this.soundCounter.ToString();
-            soundTeamRole.Size = new System.Drawing.Size(80, 2000);
+            soundTeamRole.Size = new System.Drawing.Size(200, 2000);
             soundTeamRole.Location = new System.Drawing.Point(25, (10 + (55 * this.soundCounter)));
             soundTeamRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
@@ -1037,7 +1069,7 @@ namespace In_Production__Framework_
             soundTeamName.Tag = soundTeamName.Text;
             soundTeamName.Name = "soundName" + this.soundCounter.ToString();
             soundTeamName.Size = new System.Drawing.Size(170, 2000);
-            soundTeamName.Location = new System.Drawing.Point(120, (10 + (55 * this.soundCounter)));
+            soundTeamName.Location = new System.Drawing.Point(250, (10 + (55 * this.soundCounter)));
             soundTeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             soundTeamName.Enter += input_GainFocus;
             soundTeamName.Leave += input_LoseFocus;
@@ -1066,7 +1098,20 @@ namespace In_Production__Framework_
             EditorTeamTab.Controls.Add(editorTeamRole);
             intControler = intControler + 151;
 
-            editorTeamRole.Text = "Role" + this.editorCounter.ToString();
+            switch (this.editorCounter)
+            {
+                case 1:
+                    editorTeamRole.Text = "Editor";
+                    break;
+                case 2:
+                    editorTeamRole.Text = "DIT";
+                    break;
+                default:
+                    editorTeamRole.Text = "Role" + this.editorCounter.ToString();
+                    break;
+
+            }
+          
             editorTeamRole.Tag = editorTeamRole.Text;
             editorTeamRole.Name = "editorRole" + this.editorCounter.ToString();
             editorTeamRole.Size = new System.Drawing.Size(80, 2000);
@@ -1114,11 +1159,31 @@ namespace In_Production__Framework_
             System.Windows.Forms.TextBox gripTeamRole = new System.Windows.Forms.TextBox();
             GripTeamTab.Controls.Add(gripTeamRole);
             intControler = intControler + 151;
+            switch (this.gripCounter)
+            {
+                case 1:
+                    gripTeamRole.Text = "Gaffer";
+                    break;
+                case 2:
+                    gripTeamRole.Text = "Key Grip";
+                    break;
+                case 3:
+                    gripTeamRole.Text = "BBG";
+                    break;
+                case 4:
+                    gripTeamRole.Text = "BBE";
+                    break;
+                case 5:
+                    gripTeamRole.Text = "Dolly Grip";
+                    break;
+                default:
+                    gripTeamRole.Text = "Role" + this.gripCounter.ToString();
+                    break;
 
-            gripTeamRole.Text = "Role" + this.gripCounter.ToString();
+            }
             gripTeamRole.Tag = gripTeamRole.Text;
             gripTeamRole.Name = "gripRole" + this.gripCounter.ToString();
-            gripTeamRole.Size = new System.Drawing.Size(80, 2000);
+            gripTeamRole.Size = new System.Drawing.Size(200, 2000);
             gripTeamRole.Location = new System.Drawing.Point(25, (2 + (55 * this.gripCounter)));
             gripTeamRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
@@ -1135,7 +1200,7 @@ namespace In_Production__Framework_
             gripTeamName.Tag = gripTeamName.Text;
             gripTeamName.Name = "gripName" + this.gripCounter.ToString();
             gripTeamName.Size = new System.Drawing.Size(170, 2000);
-            gripTeamName.Location = new System.Drawing.Point(120, (2 + (55 * this.gripCounter)));
+            gripTeamName.Location = new System.Drawing.Point(250, (2 + (55 * this.gripCounter)));
             gripTeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             gripTeamName.Enter += input_GainFocus;
             gripTeamName.Leave += input_LoseFocus;
@@ -1164,11 +1229,20 @@ namespace In_Production__Framework_
             System.Windows.Forms.TextBox makeUpTeamRole = new System.Windows.Forms.TextBox();
             MakeUpTeamTab.Controls.Add(makeUpTeamRole);
             intControler = intControler + 151;
+            switch (this.makeUpCounter)
+            {
+                case 1:
+                    makeUpTeamRole.Text = "Make-up / Hair";
+                    break;
 
-            makeUpTeamRole.Text = "Role" + this.makeUpCounter.ToString();
+                default:
+                    makeUpTeamRole.Text = "Role" + this.makeUpCounter.ToString();
+                    break;
+
+            }
             makeUpTeamRole.Tag = makeUpTeamRole.Text;
             makeUpTeamRole.Name = "makeUpRole" + this.makeUpCounter.ToString();
-            makeUpTeamRole.Size = new System.Drawing.Size(80, 2000);
+            makeUpTeamRole.Size = new System.Drawing.Size(200, 2000);
             makeUpTeamRole.Location = new System.Drawing.Point(25, (2 + (55 * this.makeUpCounter)));
             makeUpTeamRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
@@ -1185,7 +1259,7 @@ namespace In_Production__Framework_
             makeUpTeamName.Tag = makeUpTeamName.Text;
             makeUpTeamName.Name = "makeUpName" + this.makeUpCounter.ToString();
             makeUpTeamName.Size = new System.Drawing.Size(170, 2000);
-            makeUpTeamName.Location = new System.Drawing.Point(120, (2 + (55 * this.makeUpCounter)));
+            makeUpTeamName.Location = new System.Drawing.Point(250, (2 + (55 * this.makeUpCounter)));
             makeUpTeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             makeUpTeamName.Enter += input_GainFocus;
             makeUpTeamName.Leave += input_LoseFocus;
@@ -1214,11 +1288,21 @@ namespace In_Production__Framework_
             System.Windows.Forms.TextBox sceneTeamRole = new System.Windows.Forms.TextBox();
             SceneTeamTab.Controls.Add(sceneTeamRole);
             intControler = intControler + 151;
+            switch (this.sceneCounter)
+            {
+                case 1:
+                    sceneTeamRole.Text = "BTS Photographer";
+                    break;
 
-            sceneTeamRole.Text = "Role" + this.sceneCounter.ToString();
+                default:
+                    sceneTeamRole.Text = "Role" + this.sceneCounter.ToString();
+                    break;
+
+            }
+
             sceneTeamRole.Tag = sceneTeamRole.Text;
             sceneTeamRole.Name = "sceneRole" + this.sceneCounter.ToString();
-            sceneTeamRole.Size = new System.Drawing.Size(80, 2000);
+            sceneTeamRole.Size = new System.Drawing.Size(200, 2000);
             sceneTeamRole.Location = new System.Drawing.Point(25, (2 + (55 * this.sceneCounter)));
             sceneTeamRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
@@ -1235,7 +1319,7 @@ namespace In_Production__Framework_
             sceneTeamName.Tag = sceneTeamName.Text;
             sceneTeamName.Name = "sceneName" + this.sceneCounter.ToString();
             sceneTeamName.Size = new System.Drawing.Size(170, 2000);
-            sceneTeamName.Location = new System.Drawing.Point(120, (2 + (55 * this.sceneCounter)));
+            sceneTeamName.Location = new System.Drawing.Point(250, (2 + (55 * this.sceneCounter)));
             sceneTeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             sceneTeamName.Enter += input_GainFocus;
             sceneTeamName.Leave += input_LoseFocus;
@@ -1295,6 +1379,261 @@ namespace In_Production__Framework_
                 DirectorTeamTab.Controls.Remove(tbxs[0]);
             }
         }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            if (dopCounter != 1)
+            {
+                DelDoPRoleTextBox();
+                DelDoPNameTextBox();
+
+                dopCounter--;
+            }
+            else
+            {
+                MessageBox.Show("You cannot delete anymore roles.");
+            }
+        }
+
+        public void DelDoPRoleTextBox()
+        {
+            int deleteIndex = dopCounter - 1;
+            // Find the last one
+            Control[] tbxs = CameraTeamTab.Controls.Find("DoPRole" + deleteIndex.ToString(), true);
+            if (tbxs != null && tbxs.Length > 0)
+            {
+                CameraTeamTab.Controls.Remove(tbxs[0]);
+            }
+
+        }
+        public void DelDoPNameTextBox()
+        {
+            int deleteIndex = dopCounter - 1;
+            // Find the last one
+            Control[] tbxs = CameraTeamTab.Controls.Find("DoPName" + deleteIndex.ToString(), true);
+            if (tbxs != null && tbxs.Length > 0)
+            {
+                CameraTeamTab.Controls.Remove(tbxs[0]);
+            }
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (artCounter != 1)
+            {
+                DelArtRoleTextBox();
+                DelArtNameTextBox();
+
+                artCounter--;
+            }
+            else
+            {
+                MessageBox.Show("You cannot delete anymore roles.");
+            }
+        }
+
+        public void DelArtRoleTextBox()
+        {
+            int deleteIndex = artCounter - 1;
+            // Find the last one
+            Control[] tbxs = ArtTeamTab.Controls.Find("ArtRole" + deleteIndex.ToString(), true);
+            if (tbxs != null && tbxs.Length > 0)
+            {
+                ArtTeamTab.Controls.Remove(tbxs[0]);
+            }
+
+        }
+        public void DelArtNameTextBox()
+        {
+            int deleteIndex = artCounter - 1;
+            // Find the last one
+            Control[] tbxs = ArtTeamTab.Controls.Find("ArtName" + deleteIndex.ToString(), true);
+            if (tbxs != null && tbxs.Length > 0)
+            {
+                ArtTeamTab.Controls.Remove(tbxs[0]);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (soundCounter != 1)
+            {
+                DelSoundRoleTextBox();
+                DelSoundNameTextBox();
+
+                soundCounter--;
+            }
+            else
+            {
+                MessageBox.Show("You cannot delete anymore roles.");
+            }
+        }
+        public void DelSoundRoleTextBox()
+        {
+            int deleteIndex = soundCounter - 1;
+            // Find the last one
+            Control[] tbxs = SoundTeamTab.Controls.Find("SoundRole" + deleteIndex.ToString(), true);
+            if (tbxs != null && tbxs.Length > 0)
+            {
+                SoundTeamTab.Controls.Remove(tbxs[0]);
+            }
+
+        }
+        public void DelSoundNameTextBox()
+        {
+            int deleteIndex = soundCounter - 1;
+            // Find the last one
+            Control[] tbxs = SoundTeamTab.Controls.Find("SoundName" + deleteIndex.ToString(), true);
+            if (tbxs != null && tbxs.Length > 0)
+            {
+                SoundTeamTab.Controls.Remove(tbxs[0]);
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (editorCounter != 1)
+            {
+                DelEditorRoleTextBox();
+                DelEditorNameTextBox();
+
+                editorCounter--;
+            }
+            else
+            {
+                MessageBox.Show("You cannot delete anymore roles.");
+            }
+        }
+        public void DelEditorRoleTextBox()
+        {
+            int deleteIndex = editorCounter - 1;
+            // Find the last one
+            Control[] tbxs = EditorTeamTab.Controls.Find("EditorRole" + deleteIndex.ToString(), true);
+            if (tbxs != null && tbxs.Length > 0)
+            {
+                EditorTeamTab.Controls.Remove(tbxs[0]);
+            }
+
+        }
+        public void DelEditorNameTextBox()
+        {
+            int deleteIndex = editorCounter - 1;
+            // Find the last one
+            Control[] tbxs = EditorTeamTab.Controls.Find("EditorName" + deleteIndex.ToString(), true);
+            if (tbxs != null && tbxs.Length > 0)
+            {
+                EditorTeamTab.Controls.Remove(tbxs[0]);
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (gripCounter != 1)
+            {
+                DelGripRoleTextBox();
+                DelGripNameTextBox();
+
+                gripCounter--;
+            }
+            else
+            {
+                MessageBox.Show("You cannot delete anymore roles.");
+            }
+        }
+        public void DelGripRoleTextBox()
+        {
+            int deleteIndex = gripCounter - 1;
+            // Find the last one
+            Control[] tbxs = GripTeamTab.Controls.Find("GripRole" + deleteIndex.ToString(), true);
+            if (tbxs != null && tbxs.Length > 0)
+            {
+                GripTeamTab.Controls.Remove(tbxs[0]);
+            }
+
+        }
+        public void DelGripNameTextBox()
+        {
+            int deleteIndex = gripCounter - 1;
+            // Find the last one
+            Control[] tbxs = GripTeamTab.Controls.Find("GripName" + deleteIndex.ToString(), true);
+            if (tbxs != null && tbxs.Length > 0)
+            {
+                GripTeamTab.Controls.Remove(tbxs[0]);
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (makeUpCounter != 1)
+            {
+                DelMakeUpRoleTextBox();
+                DelMakeUpNameTextBox();
+
+                makeUpCounter--;
+            }
+            else
+            {
+                MessageBox.Show("You cannot delete anymore roles.");
+            }
+        }
+        public void DelMakeUpRoleTextBox()
+        {
+            int deleteIndex = makeUpCounter - 1;
+            // Find the last one
+            Control[] tbxs = MakeUpTeamTab.Controls.Find("makeUpRole" + deleteIndex.ToString(), true);
+            if (tbxs != null && tbxs.Length > 0)
+            {
+                MakeUpTeamTab.Controls.Remove(tbxs[0]);
+            }
+
+        }
+        public void DelMakeUpNameTextBox()
+        {
+            int deleteIndex = makeUpCounter - 1;
+            // Find the last one
+            Control[] tbxs = MakeUpTeamTab.Controls.Find("makeUpName" + deleteIndex.ToString(), true);
+            if (tbxs != null && tbxs.Length > 0)
+            {
+                MakeUpTeamTab.Controls.Remove(tbxs[0]);
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (sceneCounter != 1)
+            {
+                DelSceneRoleTextBox();
+                DelSceneNameTextBox();
+
+                sceneCounter--;
+            }
+            else
+            {
+                MessageBox.Show("You cannot delete anymore roles.");
+            }
+        }
+
+        public void DelSceneRoleTextBox()
+        {
+            int deleteIndex = sceneCounter - 1;
+            // Find the last one
+            Control[] tbxs = SceneTeamTab.Controls.Find("sceneRole" + deleteIndex.ToString(), true);
+            if (tbxs != null && tbxs.Length > 0)
+            {
+                SceneTeamTab.Controls.Remove(tbxs[0]);
+            }
+
+        }
+        public void DelSceneNameTextBox()
+        {
+            int deleteIndex = sceneCounter - 1;
+            // Find the last one
+            Control[] tbxs = SceneTeamTab.Controls.Find("sceneName" + deleteIndex.ToString(), true);
+            if (tbxs != null && tbxs.Length > 0)
+            {
+                SceneTeamTab.Controls.Remove(tbxs[0]);
+            }
+        }
     }
+
 }
  

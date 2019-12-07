@@ -77,6 +77,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnDelDir = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.AllTabs.SuspendLayout();
             this.DirectorTeamTab.SuspendLayout();
@@ -460,6 +467,7 @@
             // 
             // CameraTeamTab
             // 
+            this.CameraTeamTab.Controls.Add(this.button3);
             this.CameraTeamTab.Controls.Add(this.btnAddDP);
             this.CameraTeamTab.Controls.Add(this.DoPLabel);
             this.CameraTeamTab.Controls.Add(this.label3);
@@ -490,9 +498,9 @@
             this.DoPLabel.Location = new System.Drawing.Point(183, 68);
             this.DoPLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.DoPLabel.Name = "DoPLabel";
-            this.DoPLabel.Size = new System.Drawing.Size(91, 42);
+            this.DoPLabel.Size = new System.Drawing.Size(297, 42);
             this.DoPLabel.TabIndex = 1;
-            this.DoPLabel.Text = "DoP";
+            this.DoPLabel.Text = "Director of Photo";
             this.DoPLabel.Click += new System.EventHandler(this.DoPLabel_Click);
             // 
             // label3
@@ -509,6 +517,7 @@
             // 
             // ArtTeamTab
             // 
+            this.ArtTeamTab.Controls.Add(this.button4);
             this.ArtTeamTab.Controls.Add(this.btnAddArt);
             this.ArtTeamTab.Location = new System.Drawing.Point(4, 33);
             this.ArtTeamTab.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
@@ -532,6 +541,7 @@
             // 
             // SoundTeamTab
             // 
+            this.SoundTeamTab.Controls.Add(this.button5);
             this.SoundTeamTab.Controls.Add(this.btnAddSound);
             this.SoundTeamTab.Location = new System.Drawing.Point(4, 33);
             this.SoundTeamTab.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
@@ -555,6 +565,7 @@
             // 
             // EditorTeamTab
             // 
+            this.EditorTeamTab.Controls.Add(this.button6);
             this.EditorTeamTab.Controls.Add(this.button2);
             this.EditorTeamTab.Location = new System.Drawing.Point(4, 33);
             this.EditorTeamTab.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
@@ -579,6 +590,7 @@
             // GripTeamTab
             // 
             this.GripTeamTab.AutoScroll = true;
+            this.GripTeamTab.Controls.Add(this.button7);
             this.GripTeamTab.Controls.Add(this.btnGrip);
             this.GripTeamTab.Location = new System.Drawing.Point(4, 33);
             this.GripTeamTab.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
@@ -602,6 +614,7 @@
             // 
             // MakeUpTeamTab
             // 
+            this.MakeUpTeamTab.Controls.Add(this.button8);
             this.MakeUpTeamTab.Controls.Add(this.btnAddMakeUp);
             this.MakeUpTeamTab.Location = new System.Drawing.Point(4, 33);
             this.MakeUpTeamTab.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
@@ -625,6 +638,7 @@
             // 
             // SceneTeamTab
             // 
+            this.SceneTeamTab.Controls.Add(this.button9);
             this.SceneTeamTab.Controls.Add(this.btnAddScene);
             this.SceneTeamTab.Location = new System.Drawing.Point(4, 33);
             this.SceneTeamTab.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
@@ -677,6 +691,76 @@
             this.btnDelDir.Text = "Del Role";
             this.btnDelDir.UseVisualStyleBackColor = true;
             this.btnDelDir.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(1173, 181);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(177, 74);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Del Role";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(1173, 181);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(182, 74);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "Del Role";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(1173, 181);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(181, 74);
+            this.button5.TabIndex = 1;
+            this.button5.Text = "Del Role";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(1173, 181);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(181, 74);
+            this.button6.TabIndex = 1;
+            this.button6.Text = "Del Role";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(1173, 181);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(181, 74);
+            this.button7.TabIndex = 1;
+            this.button7.Text = "Del Role";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(1173, 181);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(181, 74);
+            this.button8.TabIndex = 1;
+            this.button8.Text = "Del Role";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(1173, 181);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(181, 74);
+            this.button9.TabIndex = 1;
+            this.button9.Text = "Del Role";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // InitialScreen
             // 
@@ -762,6 +846,13 @@
         private System.Windows.Forms.TabPage SceneTeamTab;
         private System.Windows.Forms.Button btnAddScene;
         private System.Windows.Forms.Button btnDelDir;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
     }
 }
 
