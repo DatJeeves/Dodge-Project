@@ -92,9 +92,9 @@
             this.tabPage2.Controls.Add(this.DirectorTextBox);
             this.tabPage2.Controls.Add(this.ProductionTitleInput);
             this.tabPage2.Location = new System.Drawing.Point(12, 58);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(2447, 1311);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "OverviewTab";
@@ -104,7 +104,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.button1.Location = new System.Drawing.Point(2062, 1128);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(379, 177);
             this.button1.TabIndex = 65;
@@ -115,7 +115,7 @@
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(1204, 1233);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(323, 72);
             this.btnSave.TabIndex = 64;
@@ -126,7 +126,7 @@
             // btnUpload
             // 
             this.btnUpload.Location = new System.Drawing.Point(1204, 1128);
-            this.btnUpload.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpload.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(323, 72);
             this.btnUpload.TabIndex = 63;
@@ -138,7 +138,7 @@
             // 
             this.btnSet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSet.Location = new System.Drawing.Point(1548, 1128);
-            this.btnSet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSet.Margin = new System.Windows.Forms.Padding(4);
             this.btnSet.Name = "btnSet";
             this.btnSet.Size = new System.Drawing.Size(506, 177);
             this.btnSet.TabIndex = 62;
@@ -250,7 +250,7 @@
             // 
             this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Location = new System.Drawing.Point(1159, 239);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(6);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(912, 62);
             this.dateTimePicker2.TabIndex = 45;
@@ -259,7 +259,7 @@
             // 
             this.ShootingTimeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ShootingTimeTextBox.Location = new System.Drawing.Point(1204, 574);
-            this.ShootingTimeTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ShootingTimeTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.ShootingTimeTextBox.Name = "ShootingTimeTextBox";
             this.ShootingTimeTextBox.Size = new System.Drawing.Size(627, 75);
             this.ShootingTimeTextBox.TabIndex = 43;
@@ -270,7 +270,7 @@
             this.CallTimeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CallTimeTextBox.ForeColor = System.Drawing.Color.Red;
             this.CallTimeTextBox.Location = new System.Drawing.Point(1204, 426);
-            this.CallTimeTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.CallTimeTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.CallTimeTextBox.Name = "CallTimeTextBox";
             this.CallTimeTextBox.Size = new System.Drawing.Size(627, 75);
             this.CallTimeTextBox.TabIndex = 40;
@@ -280,7 +280,7 @@
             // 
             this.LocationTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LocationTextBox.Location = new System.Drawing.Point(532, 1173);
-            this.LocationTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.LocationTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.LocationTextBox.Name = "LocationTextBox";
             this.LocationTextBox.Size = new System.Drawing.Size(572, 62);
             this.LocationTextBox.TabIndex = 38;
@@ -290,7 +290,7 @@
             // 
             this.DPTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DPTextBox.Location = new System.Drawing.Point(538, 963);
-            this.DPTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.DPTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.DPTextBox.Name = "DPTextBox";
             this.DPTextBox.Size = new System.Drawing.Size(566, 62);
             this.DPTextBox.TabIndex = 37;
@@ -300,7 +300,7 @@
             // 
             this.FirstADTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FirstADTextBox.Location = new System.Drawing.Point(1862, 980);
-            this.FirstADTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.FirstADTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.FirstADTextBox.Name = "FirstADTextBox";
             this.FirstADTextBox.Size = new System.Drawing.Size(521, 62);
             this.FirstADTextBox.TabIndex = 35;
@@ -310,7 +310,7 @@
             // 
             this.ProducerTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProducerTextBox.Location = new System.Drawing.Point(1862, 812);
-            this.ProducerTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ProducerTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.ProducerTextBox.Name = "ProducerTextBox";
             this.ProducerTextBox.Size = new System.Drawing.Size(521, 62);
             this.ProducerTextBox.TabIndex = 33;
@@ -320,7 +320,7 @@
             // 
             this.DirectorTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DirectorTextBox.Location = new System.Drawing.Point(538, 810);
-            this.DirectorTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.DirectorTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.DirectorTextBox.Name = "DirectorTextBox";
             this.DirectorTextBox.Size = new System.Drawing.Size(566, 62);
             this.DirectorTextBox.TabIndex = 30;
@@ -330,7 +330,7 @@
             // 
             this.ProductionTitleInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductionTitleInput.Location = new System.Drawing.Point(1168, 48);
-            this.ProductionTitleInput.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ProductionTitleInput.Margin = new System.Windows.Forms.Padding(6);
             this.ProductionTitleInput.Name = "ProductionTitleInput";
             this.ProductionTitleInput.Size = new System.Drawing.Size(1031, 98);
             this.ProductionTitleInput.TabIndex = 29;
@@ -341,7 +341,7 @@
             this.AllTabs.Controls.Add(this.tabPage2);
             this.AllTabs.Controls.Add(this.DirectorTeamTab);
             this.AllTabs.Location = new System.Drawing.Point(1, 12);
-            this.AllTabs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AllTabs.Margin = new System.Windows.Forms.Padding(4);
             this.AllTabs.Name = "AllTabs";
             this.AllTabs.SelectedIndex = 0;
             this.AllTabs.Size = new System.Drawing.Size(2471, 1381);
@@ -357,9 +357,9 @@
             this.DirectorTeamTab.Controls.Add(this.label2);
             this.DirectorTeamTab.Controls.Add(this.label1);
             this.DirectorTeamTab.Location = new System.Drawing.Point(12, 58);
-            this.DirectorTeamTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DirectorTeamTab.Margin = new System.Windows.Forms.Padding(4);
             this.DirectorTeamTab.Name = "DirectorTeamTab";
-            this.DirectorTeamTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DirectorTeamTab.Padding = new System.Windows.Forms.Padding(4);
             this.DirectorTeamTab.Size = new System.Drawing.Size(2447, 1311);
             this.DirectorTeamTab.TabIndex = 2;
             this.DirectorTeamTab.Text = "DirectorTeam";
@@ -368,7 +368,7 @@
             // btnDirectorAddRole
             // 
             this.btnDirectorAddRole.Location = new System.Drawing.Point(1268, 107);
-            this.btnDirectorAddRole.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDirectorAddRole.Margin = new System.Windows.Forms.Padding(4);
             this.btnDirectorAddRole.Name = "btnDirectorAddRole";
             this.btnDirectorAddRole.Size = new System.Drawing.Size(315, 112);
             this.btnDirectorAddRole.TabIndex = 68;
@@ -380,10 +380,14 @@
             // 
             this.SeconADTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SeconADTextBox.Location = new System.Drawing.Point(384, 427);
-            this.SeconADTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.SeconADTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.SeconADTextBox.Name = "SeconADTextBox";
             this.SeconADTextBox.Size = new System.Drawing.Size(521, 62);
             this.SeconADTextBox.TabIndex = 66;
+            this.SeconADTextBox.Tag = "2nd AD Name";
+            this.SeconADTextBox.Text = "2nd AD Name";
+            this.SeconADTextBox.Enter += new System.EventHandler(this.input_GainFocus);
+            this.SeconADTextBox.Leave += new System.EventHandler(this.input_LoseFocus);
             // 
             // FirstADLabel
             // 
@@ -467,11 +471,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(3298, 2035);
+            this.ClientSize = new System.Drawing.Size(2489, 1415);
             this.Controls.Add(this.AllTabs);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "InitialScreen";
             this.Text = "InitialScreen";
             this.tabPage2.ResumeLayout(false);

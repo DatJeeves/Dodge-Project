@@ -128,10 +128,13 @@ namespace In_Production__Framework_
             //directorTeamName.Top = intControler + 151;
             //directorTeamName.Left = 384;
             directorTeamName.Text = "Name" + this.directorCounter.ToString();
+            directorTeamName.Tag = directorTeamName.Text;
             directorTeamName.Name = "DirectorName" + this.directorCounter.ToString();
             directorTeamName.Size = new System.Drawing.Size(170, 2000);
             directorTeamName.Location = new System.Drawing.Point(120, (150 + (55 * this.directorCounter)));
             directorTeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            directorTeamName.Enter += input_GainFocus;
+            directorTeamName.Leave += input_LoseFocus;
             return directorTeamName;
         }
 
@@ -279,6 +282,21 @@ namespace In_Production__Framework_
             ws.Cells[3, 5] = ProducerTextBox.Text;
             ws.Cells[7,12] = CallTimeTextBox.Text;
             ws.Cells[7, 23] = ShootingTimeTextBox.Text;
+        }
+
+        private void input_GainFocus(object sender, EventArgs e)
+        {
+            var input = (System.Windows.Forms.TextBox)sender;
+            if(input.Text == input.Tag.ToString())
+            {
+                input.Text = "";
+            }
+        }
+
+        private void input_LoseFocus(object sender, EventArgs e)
+        {
+            var input = (System.Windows.Forms.TextBox)sender;
+            input.Text = input.Tag.ToString();
         }
     }
 }
