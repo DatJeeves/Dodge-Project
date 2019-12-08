@@ -25,6 +25,7 @@ namespace In_Production__Framework_
         public int gripCounter = 1;
         public int makeUpCounter = 1;
         public int sceneCounter = 1;
+        public int actorCounter = 1;
         public int maxDirectorCount = 7;
         public int maxDopCounter = 6;
         public int maxArtCounter = 7;
@@ -33,6 +34,7 @@ namespace In_Production__Framework_
         public int maxGripCounter = 19;
         public int maxMakeUpCounter = 8;
         public int maxSceneCounter = 2;
+        public int maxActorCounter = 4;
         public InitialScreen()
         {
             InitializeComponent();
@@ -1934,6 +1936,117 @@ namespace In_Production__Framework_
         }
 
         private void ShootingTime_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+        public System.Windows.Forms.TextBox AddNewActorRoleTextBox()
+        {
+            System.Windows.Forms.TextBox actorTeamRole = new System.Windows.Forms.TextBox();
+            ActorTeamTab.Controls.Add(actorTeamRole);
+            intControler = intControler + 151;
+            actorTeamRole.Text = "Role" + this.actorCounter.ToString();
+            actorTeamRole.Tag = actorTeamRole.Text;
+            actorTeamRole.Name = "actorRole" + this.actorCounter.ToString();
+            actorTeamRole.Size = new System.Drawing.Size(200, 2000);
+            actorTeamRole.Location = new System.Drawing.Point(25, (60 + (70 * this.actorCounter)));
+            actorTeamRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+            actorTeamRole.Enter += input_GainFocus;
+            actorTeamRole.Leave += input_LoseFocus;
+            return actorTeamRole;
+        }
+        public System.Windows.Forms.TextBox AddNewActorNameTextBox()
+        {
+            System.Windows.Forms.TextBox actorTeamName = new System.Windows.Forms.TextBox();
+            ActorTeamTab.Controls.Add(actorTeamName);
+
+            actorTeamName.Text = "Name" + this.actorCounter.ToString();
+            actorTeamName.Tag = actorTeamName.Text;
+            actorTeamName.Name = "actorName" + this.actorCounter.ToString();
+            actorTeamName.Size = new System.Drawing.Size(170, 2000);
+            actorTeamName.Location = new System.Drawing.Point(240, (60 + (70 * this.actorCounter)));
+            actorTeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            actorTeamName.Enter += input_GainFocus;
+            actorTeamName.Leave += input_LoseFocus;
+
+            return actorTeamName;
+        }
+
+        public System.Windows.Forms.DateTimePicker AddNewActorMakeUpTime()
+        {
+            System.Windows.Forms.DateTimePicker actorMakeUpdateTimePicker = new System.Windows.Forms.DateTimePicker();
+            ActorTeamTab.Controls.Add(actorMakeUpdateTimePicker);
+
+            actorMakeUpdateTimePicker.Tag = actorMakeUpdateTimePicker.Text;
+            actorMakeUpdateTimePicker.Name = "actorMakeUpdateTimePicker" + this.actorCounter.ToString();
+            actorMakeUpdateTimePicker.Size = new System.Drawing.Size(170, 100);
+            actorMakeUpdateTimePicker.Location = new System.Drawing.Point(425, (60 + (70 * this.actorCounter)));
+            actorMakeUpdateTimePicker.CustomFormat = "hh:mm tt";
+            actorMakeUpdateTimePicker.Format = DateTimePickerFormat.Custom;
+            actorMakeUpdateTimePicker.ShowCheckBox = true;
+            actorMakeUpdateTimePicker.ShowUpDown = true;
+            // Set the Makeup time to be Call Time + 20 Mins
+            actorMakeUpdateTimePicker.Value = CallTime.Value;
+            actorMakeUpdateTimePicker.Value = actorMakeUpdateTimePicker.Value.AddMinutes(20);
+
+            return actorMakeUpdateTimePicker;
+        }
+
+        public System.Windows.Forms.DateTimePicker AddNewActorSetTime()
+        {
+            System.Windows.Forms.DateTimePicker actorSetTimedateTimePicker = new System.Windows.Forms.DateTimePicker();
+            ActorTeamTab.Controls.Add(actorSetTimedateTimePicker);
+
+            actorSetTimedateTimePicker.Tag = actorSetTimedateTimePicker.Text;
+            actorSetTimedateTimePicker.Name = "actorSetTimedateTimePicker" + this.actorCounter.ToString();
+            actorSetTimedateTimePicker.Size = new System.Drawing.Size(170, 100);
+            actorSetTimedateTimePicker.Location = new System.Drawing.Point(425, (85 + (70 * this.actorCounter)));
+            actorSetTimedateTimePicker.CustomFormat = "hh:mm tt";
+            actorSetTimedateTimePicker.Format = DateTimePickerFormat.Custom;
+            actorSetTimedateTimePicker.ShowCheckBox = true;
+            actorSetTimedateTimePicker.ShowUpDown = true;
+
+            // Set the Shoot time to be Call Time
+            actorSetTimedateTimePicker.Value = ShootingTime.Value;
+
+            return actorSetTimedateTimePicker;
+        }
+        public System.Windows.Forms.TextBox AddNewActorCommentsTextBox()
+        {
+            System.Windows.Forms.TextBox actorComments = new System.Windows.Forms.TextBox();
+            ActorTeamTab.Controls.Add(actorComments);
+
+            actorComments.Text = "Comments" + this.actorCounter.ToString();
+            actorComments.Tag = actorComments.Text;
+            actorComments.Name = "actorComments" + this.actorCounter.ToString();
+            actorComments.Size = new System.Drawing.Size(170, 2000);
+            actorComments.Location = new System.Drawing.Point(600, (60 + (70 * this.actorCounter)));
+            actorComments.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            actorComments.Enter += input_GainFocus;
+            actorComments.Leave += input_LoseFocus;
+
+            return actorComments;
+        }
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (actorCounter < maxActorCounter)
+            {
+                AddNewActorRoleTextBox();
+                AddNewActorNameTextBox();
+                AddNewActorMakeUpTime();
+                AddNewActorSetTime();
+                AddNewActorCommentsTextBox();
+
+                actorCounter++;
+
+            }
+            else
+            {
+                MessageBox.Show("You have reached the maximum amount of Actor roles.");
+            }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }
