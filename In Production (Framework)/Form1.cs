@@ -853,11 +853,12 @@ namespace In_Production__Framework_
             Worksheet ws = (Worksheet)xla.ActiveSheet;*/
             string callTimeSub = CallTime.Value.ToString();
             int found = callTimeSub.IndexOf(":");
-            callTimeSub = callTimeSub.Substring(found - 2);
+            callTimeSub = callTimeSub.Substring(found - 2, 5) + callTimeSub.Substring(found + 6);
 
             string shootingTimeSub = ShootingTime.Value.ToString();
             found = shootingTimeSub.IndexOf(":");
-            shootingTimeSub = shootingTimeSub.Substring(found - 2);
+            MessageBox.Show(ShootingTime.Value.ToString());
+            shootingTimeSub = shootingTimeSub.Substring(found - 2, 5) + shootingTimeSub.Substring(found + 6);
 
             _Application excel = new _Excel.Application();
             string workbookPath = System.Windows.Forms.Application.StartupPath + @"\template.xlsx";
@@ -1143,10 +1144,12 @@ namespace In_Production__Framework_
                 if (tbxs != null && tbxs.Length > 0)
                 {
                     ws.Cells[row, col] = tbxs[0].Text;
+                    ws.Cells[row, 37] = callTimeSub;
                 }
                 else
                 {
                     ws.Cells[row, col] = "";
+                    ws.Cells[row, 37] = "";
 
                 }
                 row++;
