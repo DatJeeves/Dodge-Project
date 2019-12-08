@@ -774,7 +774,6 @@ namespace In_Production__Framework_
                         sw.WriteLine();
                     }
 
-
                     tbxs = GripTeamTab.Controls.Find("gripName" + roleIndex.ToString(), true);
                     if (tbxs != null && tbxs.Length > 0)
                     {
@@ -852,6 +851,14 @@ namespace In_Production__Framework_
             /*Microsoft.Office.Interop.Excel.Application xla = new Microsoft.Office.Interop.Excel.Application();
             Workbook wb = xla.Workbooks.Add(XlSheetType.xlWorksheet);
             Worksheet ws = (Worksheet)xla.ActiveSheet;*/
+            string callTimeSub = CallTime.Value.ToString();
+            int found = callTimeSub.IndexOf(":");
+            callTimeSub = callTimeSub.Substring(found - 2);
+
+            string shootingTimeSub = ShootingTime.Value.ToString();
+            found = shootingTimeSub.IndexOf(":");
+            shootingTimeSub = shootingTimeSub.Substring(found - 2);
+
             _Application excel = new _Excel.Application();
             string workbookPath = System.Windows.Forms.Application.StartupPath + @"\template.xlsx";
             Workbook wb = excel.Workbooks.Open(workbookPath);
@@ -860,11 +867,295 @@ namespace In_Production__Framework_
             excel.Visible = true;
             ws.Cells[1,12] = ProductionTitleInput.Text;
             ws.Cells[2,5] = DirectorTextBox.Text;
-            ws.Cells[3, 5] = ProducerTextBox.Text;
-            
-            // Changed CallTimeTextBox to be a datePicker - Jeevan, this needs updating for that
-            //ws.Cells[7,12] = CallTimeTextBox.Text;
-            //ws.Cells[7, 23] = ShootingTimeTextBox.Text;
+            ws.Cells[3,5] = ProducerTextBox.Text;
+            ws.Cells[34, 1] = ProducerTextBox.Text;
+            ws.Cells[34, 7] = FirstADTextBox.Text;
+            ws.Cells[42, 9] = DirectorTextBox.Text;
+            ws.Cells[41, 9] = ProducerTextBox.Text;
+            ws.Cells[43, 9] = FirstADTextBox.Text;
+            ws.Cells[42, 17] = callTimeSub;
+            ws.Cells[41, 17] = callTimeSub;
+            ws.Cells[43, 17] = callTimeSub;
+            ws.Cells[7, 12] = callTimeSub;
+            ws.Cells[7, 23] = shootingTimeSub;
+            ws.Cells[9,5] = FirstADTextBox.Text;
+            ws.Cells[12,18] = dateTimePicker2.Value.ToString();
+            ws.Cells[1, 32] = dateTimePicker2.Value.ToString();
+            ws.Cells[15, 34] = LocationTextBox.Text;
+            ws.Cells[51, 9] = DPTextBox.Text;
+            ws.Cells[51, 17] = callTimeSub;
+            ws.Cells[36, 31] = dateTimePicker2.Value.ToString();
+
+            int roleIndex = 1;
+            int row = 44;
+            int col = 1;
+            while (roleIndex < maxDirectorCount)
+            {
+                col = 1;
+                Control[] tbxs = DirectorTeamTab.Controls.Find("DirectorRole" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    ws.Cells[row, col] = tbxs[0].Text;
+                    ws.Cells[row, 17] = callTimeSub;
+                }
+                else
+                {
+                    ws.Cells[row, col] = "";
+                    ws.Cells[row, 17] = "";
+                }
+                col = 9;
+
+                tbxs = DirectorTeamTab.Controls.Find("DirectorName" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    ws.Cells[row, col] = tbxs[0].Text;
+                }
+                else
+                {
+                    ws.Cells[row, col] = "";
+                }
+                row++;
+
+                roleIndex++;
+            }
+
+            roleIndex = 1;
+            row = 41;
+            col = 21;
+            while (roleIndex < maxArtCounter)
+            {
+                col = 21;
+                Control[] tbxs = ArtTeamTab.Controls.Find("artRole" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    ws.Cells[row, col] = tbxs[0].Text;
+                    ws.Cells[row, 37] = callTimeSub;
+                }
+                else
+                {
+                    ws.Cells[row, col] = "";
+                    ws.Cells[row, 37] = "";
+
+                }
+                col = 29;
+
+                tbxs = ArtTeamTab.Controls.Find("artName" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    ws.Cells[row, col] = tbxs[0].Text;
+                }
+                else
+                {
+                    ws.Cells[row, col] = "";
+                    
+                }
+                row++;
+
+                roleIndex++;
+            }
+
+            roleIndex = 1;
+            row = 48;
+            col = 21;
+            while (roleIndex < maxSoundCounter)
+            {
+                col = 21;
+                Control[] tbxs = SoundTeamTab.Controls.Find("soundRole" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    ws.Cells[row, col] = tbxs[0].Text;
+                    ws.Cells[row, 37] = callTimeSub;
+                }
+                else
+                {
+                    ws.Cells[row, col] = "";
+                    ws.Cells[row, 37] = "";
+                }
+                col = 29;
+
+                tbxs = SoundTeamTab.Controls.Find("soundName" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    ws.Cells[row, col] = tbxs[0].Text;
+                }
+                else
+                {
+                    ws.Cells[row, col] = "";
+                }
+                row++;
+
+                roleIndex++;
+            }
+
+            roleIndex = 1;
+            row = 52;
+            col = 1;
+            while (roleIndex < maxDopCounter)
+            {
+                col = 1;
+                Control[] tbxs = CameraTeamTab.Controls.Find("dopRole" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    ws.Cells[row, col] = tbxs[0].Text;
+                    ws.Cells[row, 17] = callTimeSub;
+                }
+                else
+                {
+                    ws.Cells[row, col] = "";
+                    ws.Cells[row, 17] = "";
+                }
+                col = 9;
+
+                tbxs = CameraTeamTab.Controls.Find("dopName" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    ws.Cells[row, col] = tbxs[0].Text;
+                }
+                else
+                {
+                    ws.Cells[row, col] = "";
+                }
+                row++;
+
+                roleIndex++;
+            }
+
+            roleIndex = 1;
+            row = 55;
+            col = 21;
+            while (roleIndex < maxEditorCounter)
+            {
+                col = 21;
+                Control[] tbxs = EditorTeamTab.Controls.Find("editorRole" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    ws.Cells[row, col] = tbxs[0].Text;
+                    ws.Cells[row, 37] = callTimeSub;
+                }
+                else
+                {
+                    ws.Cells[row, col] = "";
+                    ws.Cells[row, 37] = "";
+                }
+                col = 29;
+
+                tbxs = EditorTeamTab.Controls.Find("editorName" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    ws.Cells[row, col] = tbxs[0].Text;
+                }
+                else
+                {
+                    ws.Cells[row, col] = "";
+                }
+                row++;
+
+                roleIndex++;
+            }
+
+            roleIndex = 1;
+            row = 58;
+            col = 21;
+            while (roleIndex < maxMakeUpCounter)
+            {
+                col = 21;
+                Control[] tbxs = MakeUpTeamTab.Controls.Find("makeUpRole" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    ws.Cells[row, col] = tbxs[0].Text;
+                    ws.Cells[row, 37] = callTimeSub;
+                }
+                else
+                {
+                    ws.Cells[row, col] = "";
+                    ws.Cells[row, 37] = "";
+                }
+                col = 29;
+
+                tbxs = MakeUpTeamTab.Controls.Find("makeUpName" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    ws.Cells[row, col] = tbxs[0].Text;
+                }
+                else
+                {
+                    ws.Cells[row, col] = "";
+                }
+                row++;
+
+                roleIndex++;
+            }
+
+            roleIndex = 1;
+            row = 58;
+            col = 1;
+            while (roleIndex < maxGripCounter)
+            {
+                col = 1;
+                Control[] tbxs = GripTeamTab.Controls.Find("gripRole" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    ws.Cells[row, col] = tbxs[0].Text;
+                    ws.Cells[row, 17] = callTimeSub;
+                }
+                else
+                {
+                    ws.Cells[row, col] = "";
+                    ws.Cells[row, 17] = "";
+                }
+                col = 9;
+
+                tbxs = GripTeamTab.Controls.Find("gripName" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    ws.Cells[row, col] = tbxs[0].Text;
+                }
+                else
+                {
+                    ws.Cells[row, col] = "";
+                }
+                row++;
+
+                roleIndex++;
+            }
+
+            roleIndex = 1;
+            row = 41;
+            col = 21;
+            while (roleIndex < maxSceneCounter)
+            {
+                col = 21;
+                Control[] tbxs = SceneTeamTab.Controls.Find("sceneRole" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    ws.Cells[row, col] = tbxs[0].Text;
+                    ws.Cells[row, 37] = callTimeSub;
+                }
+                else
+                {
+                    ws.Cells[row, col] = "";
+                    ws.Cells[row, 37] = "";
+
+                }
+                col = 29;
+
+                tbxs = SceneTeamTab.Controls.Find("sceneName" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    ws.Cells[row, col] = tbxs[0].Text;
+                }
+                else
+                {
+                    ws.Cells[row, col] = "";
+
+                }
+                row++;
+
+                roleIndex++;
+            }
+
+            MessageBox.Show("Exported To Excel Sucesfully. Remember to 'Save As' so you don't overwrite the template file");
+
         }
 
         private void input_GainFocus(object sender, EventArgs e)
@@ -1632,6 +1923,16 @@ namespace In_Production__Framework_
             {
                 SceneTeamTab.Controls.Remove(tbxs[0]);
             }
+        }
+
+        private void CallTime_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ShootingTime_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 
