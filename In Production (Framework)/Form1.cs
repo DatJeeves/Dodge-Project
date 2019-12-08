@@ -94,6 +94,9 @@ namespace In_Production__Framework_
             DirectorLabel.Text = DirectorTextBox.Text;
             FirstADLabel.Text = FirstADTextBox.Text;
             DoPLabel.Text = DPTextBox.Text;
+            lblLocationValue.Text = LocationTextBox.Text;
+            dtpLunchTime.Value =  CallTime.Value;
+            dtpLunchTime.Value = dtpLunchTime.Value.AddMinutes(60);
 
         }
 
@@ -2047,6 +2050,97 @@ namespace In_Production__Framework_
         }
 
         private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void DelActorRoleTextBox()
+        {
+            int deleteIndex = actorCounter - 1;
+            // Find the last one
+            Control[] tbxs = ActorTeamTab.Controls.Find("actorRole" + deleteIndex.ToString(), true);
+            if (tbxs != null && tbxs.Length > 0)
+            {
+                ActorTeamTab.Controls.Remove(tbxs[0]);
+            }
+
+        }
+        public void DelActorNameTextBox()
+        {
+            int deleteIndex = actorCounter - 1;
+            // Find the last one
+            Control[] tbxs = ActorTeamTab.Controls.Find("actorName" + deleteIndex.ToString(), true);
+            if (tbxs != null && tbxs.Length > 0)
+            {
+                ActorTeamTab.Controls.Remove(tbxs[0]);
+            }
+        }
+
+        public void DelActorMakeUpTime()
+        {
+            int deleteIndex = actorCounter - 1;
+            // Find the last one
+            Control[] tbxs = ActorTeamTab.Controls.Find("actorMakeUpdateTimePicker" + deleteIndex.ToString(), true);
+            if (tbxs != null && tbxs.Length > 0)
+            {
+                ActorTeamTab.Controls.Remove(tbxs[0]);
+            }
+        }
+        public void DelActorSetTime()
+        {
+            int deleteIndex = actorCounter - 1;
+            // Find the last one
+            Control[] tbxs = ActorTeamTab.Controls.Find("actorSetTimedateTimePicker" + deleteIndex.ToString(), true);
+            if (tbxs != null && tbxs.Length > 0)
+            {
+                ActorTeamTab.Controls.Remove(tbxs[0]);
+            }
+        }
+
+        public void DelActorCommentsTextBox()
+        {
+            int deleteIndex = actorCounter - 1;
+            // Find the last one
+            Control[] tbxs = ActorTeamTab.Controls.Find("actorComments" + deleteIndex.ToString(), true);
+            if (tbxs != null && tbxs.Length > 0)
+            {
+                ActorTeamTab.Controls.Remove(tbxs[0]);
+            }
+        }
+        private void button11_Click(object sender, EventArgs e)
+        {
+            if (actorCounter != 1)
+            {
+                DelActorRoleTextBox();
+                DelActorNameTextBox();
+                DelActorMakeUpTime();
+                DelActorSetTime();
+                DelActorCommentsTextBox();
+
+                actorCounter--;
+            }
+            else
+            {
+                MessageBox.Show("You cannot delete anymore roles.");
+            }
+        }
+
+        private void lblLocation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label26_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label27_Click(object sender, EventArgs e)
         {
 
         }
