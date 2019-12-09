@@ -696,7 +696,9 @@ namespace In_Production__Framework_
                     textBoxWeatherHigh.Text = lines[index++];
                     textBoxWeatherLow.Text = lines[index++];
                     textBoxParking.Text = lines[index++];
-                    textBoxHospital.Text = lines[index];
+                    textBoxHospital.Text = lines[index++];
+                    textBoxShootNumber.Text = lines[index++];
+                    textBoxTotalShootDay.Text = lines[index];
                 }
 
             }
@@ -1015,6 +1017,8 @@ namespace In_Production__Framework_
                 sw.WriteLine(textBoxWeatherLow.Text);
                 sw.WriteLine(textBoxParking.Text);
                 sw.WriteLine(textBoxHospital.Text);
+                sw.WriteLine(textBoxShootNumber.Text);
+                sw.WriteLine(textBoxTotalShootDay.Text);
                 sw.Close();
             }
         }
