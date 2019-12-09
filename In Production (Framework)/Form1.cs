@@ -38,10 +38,10 @@ namespace In_Production__Framework_
         public InitialScreen()
         {
             InitializeComponent();
-            
+
         }
 
-        
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -62,7 +62,7 @@ namespace In_Production__Framework_
         {
             string directorName = DirectorTextBox.Text;
         }
-    
+
 
         private void ProducerTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -82,11 +82,11 @@ namespace In_Production__Framework_
         private void LocationTextBox_TextChanged(object sender, EventArgs e)
         {
             string location = LocationTextBox.Text;
-        }        
+        }
 
         private void DirectorLabel_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void BtnSet_Click(object sender, EventArgs e)
@@ -95,39 +95,39 @@ namespace In_Production__Framework_
             FirstADLabel.Text = FirstADTextBox.Text;
             DoPLabel.Text = DPTextBox.Text;
             lblLocationValue.Text = LocationTextBox.Text;
-            dtpLunchTime.Value =  CallTime.Value;
+            dtpLunchTime.Value = CallTime.Value;
             dtpLunchTime.Value = dtpLunchTime.Value.AddMinutes(60);
- 
+
         }
 
         private void Button1_Click_1(object sender, EventArgs e)
         {
-            if(directorCounter < maxDirectorCount)
+            if (directorCounter < maxDirectorCount)
             {
-               AddNewDirectorRoleTextBox();
-               AddNewDirectorNameTextBox();
-                
+                AddNewDirectorRoleTextBox();
+                AddNewDirectorNameTextBox();
+
                 directorCounter++;
-            }  
+            }
             else
             {
                 MessageBox.Show("You have reached the maximum amount of roles.");
             }
 
         }
-        
+
         public System.Windows.Forms.TextBox AddNewDirectorRoleTextBox()
-        {            
+        {
             System.Windows.Forms.TextBox directorTeamRole = new System.Windows.Forms.TextBox();
             DirectorTeamTab.Controls.Add(directorTeamRole);
             intControler = intControler + 151;
             switch (this.directorCounter)
             {
                 case 1:
-                    directorTeamRole.Text = "2nd AD";                  
+                    directorTeamRole.Text = "2nd AD";
                     break;
                 default:
-                    directorTeamRole.Text = directorTeamRole.Text = "Role" + this.directorCounter.ToString();                
+                    directorTeamRole.Text = directorTeamRole.Text = "Role" + this.directorCounter.ToString();
                     break;
 
             }
@@ -135,18 +135,18 @@ namespace In_Production__Framework_
             directorTeamRole.Tag = directorTeamRole.Text;
             directorTeamRole.Name = "DirectorRole" + this.directorCounter.ToString();
             directorTeamRole.Size = new System.Drawing.Size(80, 2000);
-            directorTeamRole.Location = new System.Drawing.Point(25, (100+(55*this.directorCounter)));
+            directorTeamRole.Location = new System.Drawing.Point(25, (100 + (55 * this.directorCounter)));
             directorTeamRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            
+
             directorTeamRole.Enter += input_GainFocus;
             directorTeamRole.Leave += input_LoseFocus;
             return directorTeamRole;
-        } 
+        }
         public System.Windows.Forms.TextBox AddNewDirectorNameTextBox()
-        {            
+        {
             System.Windows.Forms.TextBox directorTeamName = new System.Windows.Forms.TextBox();
             DirectorTeamTab.Controls.Add(directorTeamName);
-            
+
             directorTeamName.Text = "Name" + this.directorCounter.ToString();
             directorTeamName.Tag = directorTeamName.Text;
             directorTeamName.Name = "DirectorName" + this.directorCounter.ToString();
@@ -155,12 +155,12 @@ namespace In_Production__Framework_
             directorTeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             directorTeamName.Enter += input_GainFocus;
             directorTeamName.Leave += input_LoseFocus;
-          
+
             return directorTeamName;
         }
 
         private void btnUpload_Click(object sender, EventArgs e)
-        {           
+        {
             String filename = "D:\\config.txt";
 
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -182,7 +182,7 @@ namespace In_Production__Framework_
                     lines = System.IO.File.ReadAllLines(filename);
                     int index = 0;
                     //The lines in the file are ordered in the following manner
-                    ProductionTitleInput.Text = lines[index++];                             
+                    ProductionTitleInput.Text = lines[index++];
                     dateTimePicker2.Value = DateTime.Parse(lines[index++]);
                     CallTime.Value = DateTime.Parse(lines[index++]);
                     ShootingTime.Value = DateTime.Parse(lines[index++]);
@@ -231,7 +231,7 @@ namespace In_Production__Framework_
                                     tbxs[0].Text = lines[index];
                                 }
                             }
-                        } 
+                        }
                         else
                         {
                             //Skipp this line
@@ -246,10 +246,10 @@ namespace In_Production__Framework_
 
                     // Load DoP Tab
                     roleIndex = 1;
-                    
+
                     while (roleIndex < maxDopCounter)
                     {
-                        
+
                         if (lines[index].Length != 0)
                         {
                             Control[] tbxs = CameraTeamTab.Controls.Find("dopRole" + roleIndex.ToString(), true);
@@ -394,7 +394,7 @@ namespace In_Production__Framework_
                         index++;
                     }
 
-                    
+
                     // Load Editors Tab
                     roleIndex = 1;
 
@@ -678,7 +678,7 @@ namespace In_Production__Framework_
                             //Skipp this line
                             index++;
                         }
-                       
+
                         roleIndex++;
 
                         // Go to the next line which would be the next role
@@ -694,13 +694,13 @@ namespace In_Production__Framework_
                     textBoxParking.Text = lines[index++];
                     textBoxHospital.Text = lines[index];
                 }
-                
+
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            
+
             // Default file
             String filename = "";
 
@@ -756,7 +756,7 @@ namespace In_Production__Framework_
 
                     roleIndex++;
                 }
-                
+
                 roleIndex = 1;
                 while (roleIndex < maxDopCounter)
                 {
@@ -1036,9 +1036,9 @@ namespace In_Production__Framework_
             Worksheet ws = wb.Worksheets[1];
 
             excel.Visible = true;
-            ws.Cells[1,12] = ProductionTitleInput.Text;
-            ws.Cells[2,5] = DirectorTextBox.Text;
-            ws.Cells[3,5] = ProducerTextBox.Text;
+            ws.Cells[1, 12] = ProductionTitleInput.Text;
+            ws.Cells[2, 5] = DirectorTextBox.Text;
+            ws.Cells[3, 5] = ProducerTextBox.Text;
             ws.Cells[34, 1] = ProducerTextBox.Text;
             ws.Cells[34, 7] = FirstADTextBox.Text;
             ws.Cells[42, 9] = DirectorTextBox.Text;
@@ -1049,8 +1049,8 @@ namespace In_Production__Framework_
             ws.Cells[43, 17] = callTimeSub;
             ws.Cells[7, 12] = callTimeSub;
             ws.Cells[7, 23] = shootingTimeSub;
-            ws.Cells[9,5] = FirstADTextBox.Text;
-            ws.Cells[12,18] = dateTimePicker2.Value.ToString();
+            ws.Cells[9, 5] = FirstADTextBox.Text;
+            ws.Cells[12, 18] = dateTimePicker2.Value.ToString();
             ws.Cells[1, 32] = dateTimePicker2.Value.ToString();
             ws.Cells[15, 34] = LocationTextBox.Text;
             ws.Cells[51, 9] = DPTextBox.Text;
@@ -1118,7 +1118,7 @@ namespace In_Production__Framework_
                 else
                 {
                     ws.Cells[row, col] = "";
-                    
+
                 }
                 row++;
 
@@ -1334,7 +1334,7 @@ namespace In_Production__Framework_
         private void input_GainFocus(object sender, EventArgs e)
         {
             var input = (System.Windows.Forms.TextBox)sender;
-            if(input.Text == input.Tag.ToString())
+            if (input.Text == input.Tag.ToString())
             {
                 // We need to save the old value in case we need to reset it
                 tempValue = input.Tag.ToString();
@@ -1346,7 +1346,7 @@ namespace In_Production__Framework_
         {
             // input is the text that they entered
             var input = (System.Windows.Forms.TextBox)sender;
-            
+
             // input.Tag is the original value of the text box. 
             // So if they entered a value use that otherwise leave as is
             if (input.Text.Length == 0)
@@ -1446,13 +1446,13 @@ namespace In_Production__Framework_
                 case 1:
                     artTeamRole.Text = "Production Designer";
                     break;
-                
+
                 default:
                     artTeamRole.Text = "Role" + this.artCounter.ToString();
                     break;
 
             }
-         
+
             artTeamRole.Tag = artTeamRole.Text;
             artTeamRole.Name = "artRole" + this.artCounter.ToString();
             artTeamRole.Size = new System.Drawing.Size(200, 2000);
@@ -1513,7 +1513,7 @@ namespace In_Production__Framework_
                     break;
 
             }
-           
+
             soundTeamRole.Tag = soundTeamRole.Text;
             soundTeamRole.Name = "soundRole" + this.soundCounter.ToString();
             soundTeamRole.Size = new System.Drawing.Size(200, 2000);
@@ -1575,7 +1575,7 @@ namespace In_Production__Framework_
                     break;
 
             }
-          
+
             editorTeamRole.Tag = editorTeamRole.Text;
             editorTeamRole.Name = "editorRole" + this.editorCounter.ToString();
             editorTeamRole.Size = new System.Drawing.Size(80, 2000);
@@ -1737,7 +1737,7 @@ namespace In_Production__Framework_
             {
                 AddNewMakeUpRoleTextBox();
                 AddNewMakeUpNameTextBox();
-                
+
                 makeUpCounter++;
 
             }
@@ -1820,7 +1820,7 @@ namespace In_Production__Framework_
                 MessageBox.Show("You cannot delete anymore roles.");
             }
         }
-      
+
         //Jeevans
         public void DelDirectorRoleTextBox()
         {
@@ -2309,7 +2309,123 @@ namespace In_Production__Framework_
         {
 
         }
-    }
 
+        private void chkBoxArt_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkBoxArt.Checked)
+            {
+                if (!AllTabs.TabPages.Contains(ArtTeamTab))
+                {
+                    AllTabs.TabPages.Add(ArtTeamTab);
+                }
+
+            }
+            else
+            {
+                if (AllTabs.TabPages.Contains(ArtTeamTab))
+                {
+                    AllTabs.TabPages.Remove(ArtTeamTab);
+                }
+
+            }
+        }
+
+        private void chkBoxSound_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkBoxSound.Checked)
+            {
+                if (!AllTabs.TabPages.Contains(SoundTeamTab))
+                {
+                    AllTabs.TabPages.Add(SoundTeamTab);
+                }
+
+            }
+            else
+            {
+                if (AllTabs.TabPages.Contains(SoundTeamTab))
+                {
+                    AllTabs.TabPages.Remove(SoundTeamTab);
+                }
+
+            }
+        }
+
+        private void chkBoxEditorial_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkBoxEditorial.Checked)
+            {
+                if (!AllTabs.TabPages.Contains(EditorTeamTab))
+                {
+                    AllTabs.TabPages.Add(EditorTeamTab);
+                }
+
+            }
+            else
+            {
+                if (AllTabs.TabPages.Contains(EditorTeamTab))
+                {
+                    AllTabs.TabPages.Remove(EditorTeamTab);
+                }
+
+            }
+        }
+
+        private void chkBoxGrip_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkBoxGrip.Checked)
+            {
+                if (!AllTabs.TabPages.Contains(GripTeamTab))
+                {
+                    AllTabs.TabPages.Add(GripTeamTab);
+                }
+
+            }
+            else
+            {
+                if (AllTabs.TabPages.Contains(GripTeamTab))
+                {
+                    AllTabs.TabPages.Remove(GripTeamTab);
+                }
+
+            }
+        }
+
+        private void chkBoxMakeUp_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkBoxMakeUp.Checked)
+            {
+                if (!AllTabs.TabPages.Contains(MakeUpTeamTab))
+                {
+                    AllTabs.TabPages.Add(MakeUpTeamTab);
+                }
+
+            }
+            else
+            {
+                if (AllTabs.TabPages.Contains(MakeUpTeamTab))
+                {
+                    AllTabs.TabPages.Remove(MakeUpTeamTab);
+                }
+            }
+        }
+        private void chkBoxScenes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkBoxScenes.Checked)
+            {
+                if (!AllTabs.TabPages.Contains(SceneTeamTab))
+                {
+                    AllTabs.TabPages.Add(SceneTeamTab);
+                }
+
+            }
+            else
+            {
+                if (AllTabs.TabPages.Contains(SceneTeamTab))
+                {
+                    AllTabs.TabPages.Remove(SceneTeamTab);
+                }
+            }
+        }
+    }
 }
  
