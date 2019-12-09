@@ -125,6 +125,13 @@
             this.lblLocation = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtBoxShootNumber = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.BoxTotalShootDay = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.tabPage2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.AllTabs.SuspendLayout();
@@ -141,10 +148,12 @@
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.panel5);
             this.tabPage2.Controls.Add(this.panel4);
             this.tabPage2.Controls.Add(this.setPhone);
             this.tabPage2.Controls.Add(this.label20);
@@ -190,7 +199,7 @@
             this.panel4.Controls.Add(this.chkBoxSound);
             this.panel4.Controls.Add(this.chkBoxArt);
             this.panel4.Location = new System.Drawing.Point(447, 482);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(323, 88);
             this.panel4.TabIndex = 76;
@@ -211,8 +220,8 @@
             this.chkBoxScenes.AutoSize = true;
             this.chkBoxScenes.Checked = true;
             this.chkBoxScenes.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkBoxScenes.Location = new System.Drawing.Point(207, 60);
-            this.chkBoxScenes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkBoxScenes.Location = new System.Drawing.Point(204, 60);
+            this.chkBoxScenes.Margin = new System.Windows.Forms.Padding(2);
             this.chkBoxScenes.Name = "chkBoxScenes";
             this.chkBoxScenes.Size = new System.Drawing.Size(120, 17);
             this.chkBoxScenes.TabIndex = 75;
@@ -225,8 +234,8 @@
             this.chkBoxMakeUp.AutoSize = true;
             this.chkBoxMakeUp.Checked = true;
             this.chkBoxMakeUp.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkBoxMakeUp.Location = new System.Drawing.Point(207, 41);
-            this.chkBoxMakeUp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkBoxMakeUp.Location = new System.Drawing.Point(204, 41);
+            this.chkBoxMakeUp.Margin = new System.Windows.Forms.Padding(2);
             this.chkBoxMakeUp.Name = "chkBoxMakeUp";
             this.chkBoxMakeUp.Size = new System.Drawing.Size(100, 17);
             this.chkBoxMakeUp.TabIndex = 74;
@@ -239,8 +248,8 @@
             this.chkBoxGrip.AutoSize = true;
             this.chkBoxGrip.Checked = true;
             this.chkBoxGrip.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkBoxGrip.Location = new System.Drawing.Point(207, 22);
-            this.chkBoxGrip.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkBoxGrip.Location = new System.Drawing.Point(204, 22);
+            this.chkBoxGrip.Margin = new System.Windows.Forms.Padding(2);
             this.chkBoxGrip.Name = "chkBoxGrip";
             this.chkBoxGrip.Size = new System.Drawing.Size(45, 17);
             this.chkBoxGrip.TabIndex = 73;
@@ -254,7 +263,7 @@
             this.chkBoxEditorial.Checked = true;
             this.chkBoxEditorial.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkBoxEditorial.Location = new System.Drawing.Point(17, 60);
-            this.chkBoxEditorial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkBoxEditorial.Margin = new System.Windows.Forms.Padding(2);
             this.chkBoxEditorial.Name = "chkBoxEditorial";
             this.chkBoxEditorial.Size = new System.Drawing.Size(95, 17);
             this.chkBoxEditorial.TabIndex = 72;
@@ -268,7 +277,7 @@
             this.chkBoxSound.Checked = true;
             this.chkBoxSound.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkBoxSound.Location = new System.Drawing.Point(17, 41);
-            this.chkBoxSound.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkBoxSound.Margin = new System.Windows.Forms.Padding(2);
             this.chkBoxSound.Name = "chkBoxSound";
             this.chkBoxSound.Size = new System.Drawing.Size(57, 17);
             this.chkBoxSound.TabIndex = 71;
@@ -282,7 +291,7 @@
             this.chkBoxArt.Checked = true;
             this.chkBoxArt.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkBoxArt.Location = new System.Drawing.Point(17, 22);
-            this.chkBoxArt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkBoxArt.Margin = new System.Windows.Forms.Padding(2);
             this.chkBoxArt.Name = "chkBoxArt";
             this.chkBoxArt.Size = new System.Drawing.Size(39, 17);
             this.chkBoxArt.TabIndex = 70;
@@ -294,7 +303,7 @@
             // 
             this.setPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.setPhone.Location = new System.Drawing.Point(170, 433);
-            this.setPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.setPhone.Margin = new System.Windows.Forms.Padding(2);
             this.setPhone.Name = "setPhone";
             this.setPhone.Size = new System.Drawing.Size(183, 26);
             this.setPhone.TabIndex = 69;
@@ -489,7 +498,7 @@
             this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(375, 74);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(395, 38);
             this.dateTimePicker2.TabIndex = 45;
@@ -499,7 +508,7 @@
             // 
             this.LocationTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LocationTextBox.Location = new System.Drawing.Point(170, 397);
-            this.LocationTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LocationTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.LocationTextBox.Name = "LocationTextBox";
             this.LocationTextBox.Size = new System.Drawing.Size(183, 26);
             this.LocationTextBox.TabIndex = 38;
@@ -509,7 +518,7 @@
             // 
             this.DPTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DPTextBox.Location = new System.Drawing.Point(170, 339);
-            this.DPTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DPTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.DPTextBox.Name = "DPTextBox";
             this.DPTextBox.Size = new System.Drawing.Size(181, 26);
             this.DPTextBox.TabIndex = 37;
@@ -519,7 +528,7 @@
             // 
             this.FirstADTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FirstADTextBox.Location = new System.Drawing.Point(588, 339);
-            this.FirstADTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FirstADTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.FirstADTextBox.Name = "FirstADTextBox";
             this.FirstADTextBox.Size = new System.Drawing.Size(184, 26);
             this.FirstADTextBox.TabIndex = 35;
@@ -529,7 +538,7 @@
             // 
             this.ProducerTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProducerTextBox.Location = new System.Drawing.Point(588, 284);
-            this.ProducerTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ProducerTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.ProducerTextBox.Name = "ProducerTextBox";
             this.ProducerTextBox.Size = new System.Drawing.Size(184, 26);
             this.ProducerTextBox.TabIndex = 33;
@@ -539,7 +548,7 @@
             // 
             this.DirectorTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DirectorTextBox.Location = new System.Drawing.Point(170, 284);
-            this.DirectorTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DirectorTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.DirectorTextBox.Name = "DirectorTextBox";
             this.DirectorTextBox.Size = new System.Drawing.Size(181, 26);
             this.DirectorTextBox.TabIndex = 30;
@@ -549,7 +558,7 @@
             // 
             this.ProductionTitleInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductionTitleInput.Location = new System.Drawing.Point(375, 17);
-            this.ProductionTitleInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ProductionTitleInput.Margin = new System.Windows.Forms.Padding(2);
             this.ProductionTitleInput.Name = "ProductionTitleInput";
             this.ProductionTitleInput.Size = new System.Drawing.Size(397, 38);
             this.ProductionTitleInput.TabIndex = 29;
@@ -595,7 +604,7 @@
             // btnDelDir
             // 
             this.btnDelDir.Location = new System.Drawing.Point(640, 98);
-            this.btnDelDir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelDir.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelDir.Name = "btnDelDir";
             this.btnDelDir.Size = new System.Drawing.Size(96, 40);
             this.btnDelDir.TabIndex = 69;
@@ -667,9 +676,9 @@
             this.CameraTeamTab.Controls.Add(this.DoPLabel);
             this.CameraTeamTab.Controls.Add(this.label3);
             this.CameraTeamTab.Location = new System.Drawing.Point(4, 22);
-            this.CameraTeamTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CameraTeamTab.Margin = new System.Windows.Forms.Padding(2);
             this.CameraTeamTab.Name = "CameraTeamTab";
-            this.CameraTeamTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CameraTeamTab.Padding = new System.Windows.Forms.Padding(2);
             this.CameraTeamTab.Size = new System.Drawing.Size(932, 581);
             this.CameraTeamTab.TabIndex = 3;
             this.CameraTeamTab.Text = "Camera";
@@ -678,7 +687,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(640, 98);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(97, 40);
             this.button3.TabIndex = 3;
@@ -724,7 +733,7 @@
             this.ArtTeamTab.Controls.Add(this.btnAddArt);
             this.ArtTeamTab.Location = new System.Drawing.Point(4, 22);
             this.ArtTeamTab.Name = "ArtTeamTab";
-            this.ArtTeamTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.ArtTeamTab.Padding = new System.Windows.Forms.Padding(3);
             this.ArtTeamTab.Size = new System.Drawing.Size(932, 581);
             this.ArtTeamTab.TabIndex = 4;
             this.ArtTeamTab.Text = "Art";
@@ -733,7 +742,7 @@
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(640, 98);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(99, 40);
             this.button4.TabIndex = 1;
@@ -757,7 +766,7 @@
             this.SoundTeamTab.Controls.Add(this.btnAddSound);
             this.SoundTeamTab.Location = new System.Drawing.Point(4, 22);
             this.SoundTeamTab.Name = "SoundTeamTab";
-            this.SoundTeamTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.SoundTeamTab.Padding = new System.Windows.Forms.Padding(3);
             this.SoundTeamTab.Size = new System.Drawing.Size(932, 581);
             this.SoundTeamTab.TabIndex = 5;
             this.SoundTeamTab.Text = "Sound";
@@ -766,7 +775,7 @@
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(640, 98);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(99, 40);
             this.button5.TabIndex = 1;
@@ -790,7 +799,7 @@
             this.EditorTeamTab.Controls.Add(this.button2);
             this.EditorTeamTab.Location = new System.Drawing.Point(4, 22);
             this.EditorTeamTab.Name = "EditorTeamTab";
-            this.EditorTeamTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.EditorTeamTab.Padding = new System.Windows.Forms.Padding(3);
             this.EditorTeamTab.Size = new System.Drawing.Size(932, 581);
             this.EditorTeamTab.TabIndex = 6;
             this.EditorTeamTab.Text = "Editorial / Post";
@@ -799,7 +808,7 @@
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(640, 98);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(99, 40);
             this.button6.TabIndex = 1;
@@ -824,7 +833,7 @@
             this.GripTeamTab.Controls.Add(this.btnGrip);
             this.GripTeamTab.Location = new System.Drawing.Point(4, 22);
             this.GripTeamTab.Name = "GripTeamTab";
-            this.GripTeamTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.GripTeamTab.Padding = new System.Windows.Forms.Padding(3);
             this.GripTeamTab.Size = new System.Drawing.Size(932, 581);
             this.GripTeamTab.TabIndex = 7;
             this.GripTeamTab.Text = "Grip / Electric";
@@ -833,7 +842,7 @@
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(640, 98);
-            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(99, 40);
             this.button7.TabIndex = 1;
@@ -857,7 +866,7 @@
             this.MakeUpTeamTab.Controls.Add(this.btnAddMakeUp);
             this.MakeUpTeamTab.Location = new System.Drawing.Point(4, 22);
             this.MakeUpTeamTab.Name = "MakeUpTeamTab";
-            this.MakeUpTeamTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.MakeUpTeamTab.Padding = new System.Windows.Forms.Padding(3);
             this.MakeUpTeamTab.Size = new System.Drawing.Size(932, 581);
             this.MakeUpTeamTab.TabIndex = 8;
             this.MakeUpTeamTab.Text = "Make Up / Hair";
@@ -866,7 +875,7 @@
             // button8
             // 
             this.button8.Location = new System.Drawing.Point(640, 98);
-            this.button8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(99, 40);
             this.button8.TabIndex = 1;
@@ -890,7 +899,7 @@
             this.SceneTeamTab.Controls.Add(this.btnAddScene);
             this.SceneTeamTab.Location = new System.Drawing.Point(4, 22);
             this.SceneTeamTab.Name = "SceneTeamTab";
-            this.SceneTeamTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.SceneTeamTab.Padding = new System.Windows.Forms.Padding(3);
             this.SceneTeamTab.Size = new System.Drawing.Size(932, 581);
             this.SceneTeamTab.TabIndex = 9;
             this.SceneTeamTab.Text = "Behind The Scenes";
@@ -899,7 +908,7 @@
             // button9
             // 
             this.button9.Location = new System.Drawing.Point(640, 98);
-            this.button9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(99, 40);
             this.button9.TabIndex = 1;
@@ -929,9 +938,9 @@
             this.ActorTeamTab.Controls.Add(this.label4);
             this.ActorTeamTab.Controls.Add(this.button10);
             this.ActorTeamTab.Location = new System.Drawing.Point(4, 22);
-            this.ActorTeamTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ActorTeamTab.Margin = new System.Windows.Forms.Padding(2);
             this.ActorTeamTab.Name = "ActorTeamTab";
-            this.ActorTeamTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ActorTeamTab.Padding = new System.Windows.Forms.Padding(2);
             this.ActorTeamTab.Size = new System.Drawing.Size(932, 581);
             this.ActorTeamTab.TabIndex = 10;
             this.ActorTeamTab.Text = "Actors";
@@ -941,7 +950,7 @@
             // 
             this.dtpScriptDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpScriptDate.Location = new System.Drawing.Point(142, 18);
-            this.dtpScriptDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpScriptDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpScriptDate.Name = "dtpScriptDate";
             this.dtpScriptDate.Size = new System.Drawing.Size(281, 26);
             this.dtpScriptDate.TabIndex = 8;
@@ -961,7 +970,7 @@
             // button11
             // 
             this.button11.Location = new System.Drawing.Point(640, 5);
-            this.button11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button11.Margin = new System.Windows.Forms.Padding(2);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(99, 22);
             this.button11.TabIndex = 6;
@@ -1023,7 +1032,7 @@
             // button10
             // 
             this.button10.Location = new System.Drawing.Point(640, 42);
-            this.button10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button10.Margin = new System.Windows.Forms.Padding(2);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(99, 35);
             this.button10.TabIndex = 0;
@@ -1041,9 +1050,9 @@
             this.LocationTeamTab.Controls.Add(this.lblLocationValue);
             this.LocationTeamTab.Controls.Add(this.lblLocation);
             this.LocationTeamTab.Location = new System.Drawing.Point(4, 22);
-            this.LocationTeamTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LocationTeamTab.Margin = new System.Windows.Forms.Padding(2);
             this.LocationTeamTab.Name = "LocationTeamTab";
-            this.LocationTeamTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LocationTeamTab.Padding = new System.Windows.Forms.Padding(2);
             this.LocationTeamTab.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.LocationTeamTab.Size = new System.Drawing.Size(932, 581);
             this.LocationTeamTab.TabIndex = 11;
@@ -1056,7 +1065,7 @@
             this.dtpLunchTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpLunchTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpLunchTime.Location = new System.Drawing.Point(373, 55);
-            this.dtpLunchTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpLunchTime.Margin = new System.Windows.Forms.Padding(2);
             this.dtpLunchTime.Name = "dtpLunchTime";
             this.dtpLunchTime.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtpLunchTime.ShowUpDown = true;
@@ -1082,7 +1091,7 @@
             this.panel3.Controls.Add(this.dtpSunset);
             this.panel3.Controls.Add(this.dtpSunRise);
             this.panel3.Location = new System.Drawing.Point(230, 92);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(266, 88);
             this.panel3.TabIndex = 17;
@@ -1115,7 +1124,7 @@
             this.dtpSunset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpSunset.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpSunset.Location = new System.Drawing.Point(143, 41);
-            this.dtpSunset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpSunset.Margin = new System.Windows.Forms.Padding(2);
             this.dtpSunset.Name = "dtpSunset";
             this.dtpSunset.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtpSunset.ShowUpDown = true;
@@ -1128,7 +1137,7 @@
             this.dtpSunRise.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpSunRise.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpSunRise.Location = new System.Drawing.Point(23, 41);
-            this.dtpSunRise.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpSunRise.Margin = new System.Windows.Forms.Padding(2);
             this.dtpSunRise.Name = "dtpSunRise";
             this.dtpSunRise.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtpSunRise.ShowUpDown = true;
@@ -1144,7 +1153,7 @@
             this.panel2.Controls.Add(this.textBoxWeatherHigh);
             this.panel2.Controls.Add(this.label21);
             this.panel2.Location = new System.Drawing.Point(230, 212);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(266, 92);
             this.panel2.TabIndex = 16;
@@ -1175,7 +1184,7 @@
             // 
             this.textBoxWeatherLow.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxWeatherLow.Location = new System.Drawing.Point(179, 49);
-            this.textBoxWeatherLow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxWeatherLow.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxWeatherLow.Name = "textBoxWeatherLow";
             this.textBoxWeatherLow.Size = new System.Drawing.Size(58, 26);
             this.textBoxWeatherLow.TabIndex = 4;
@@ -1186,7 +1195,7 @@
             // 
             this.textBoxWeatherHigh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxWeatherHigh.Location = new System.Drawing.Point(111, 49);
-            this.textBoxWeatherHigh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxWeatherHigh.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxWeatherHigh.Name = "textBoxWeatherHigh";
             this.textBoxWeatherHigh.Size = new System.Drawing.Size(59, 26);
             this.textBoxWeatherHigh.TabIndex = 3;
@@ -1212,7 +1221,7 @@
             this.panel1.Controls.Add(this.textBoxParking);
             this.panel1.Controls.Add(this.label27);
             this.panel1.Location = new System.Drawing.Point(230, 320);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(266, 128);
             this.panel1.TabIndex = 15;
@@ -1222,7 +1231,7 @@
             this.textBoxHospital.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxHospital.ForeColor = System.Drawing.Color.Red;
             this.textBoxHospital.Location = new System.Drawing.Point(10, 100);
-            this.textBoxHospital.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxHospital.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxHospital.Name = "textBoxHospital";
             this.textBoxHospital.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxHospital.Size = new System.Drawing.Size(254, 26);
@@ -1245,7 +1254,7 @@
             // 
             this.textBoxParking.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxParking.Location = new System.Drawing.Point(10, 29);
-            this.textBoxParking.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxParking.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxParking.Name = "textBoxParking";
             this.textBoxParking.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxParking.Size = new System.Drawing.Size(254, 26);
@@ -1312,6 +1321,78 @@
             this.label5.TabIndex = 23;
             this.label5.Text = "Director:";
             // 
+            // txtBoxShootNumber
+            // 
+            this.txtBoxShootNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxShootNumber.Location = new System.Drawing.Point(16, 49);
+            this.txtBoxShootNumber.Name = "txtBoxShootNumber";
+            this.txtBoxShootNumber.Size = new System.Drawing.Size(54, 26);
+            this.txtBoxShootNumber.TabIndex = 77;
+            this.txtBoxShootNumber.Text = "1";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(85, 51);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(13, 20);
+            this.label30.TabIndex = 78;
+            this.label30.Text = "/";
+            // 
+            // BoxTotalShootDay
+            // 
+            this.BoxTotalShootDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BoxTotalShootDay.Location = new System.Drawing.Point(115, 49);
+            this.BoxTotalShootDay.Name = "BoxTotalShootDay";
+            this.BoxTotalShootDay.Size = new System.Drawing.Size(54, 26);
+            this.BoxTotalShootDay.TabIndex = 79;
+            this.BoxTotalShootDay.Text = "5";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel5.Controls.Add(this.label33);
+            this.panel5.Controls.Add(this.label32);
+            this.panel5.Controls.Add(this.label31);
+            this.panel5.Controls.Add(this.BoxTotalShootDay);
+            this.panel5.Controls.Add(this.label30);
+            this.panel5.Controls.Add(this.txtBoxShootNumber);
+            this.panel5.Location = new System.Drawing.Point(170, 482);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(184, 87);
+            this.panel5.TabIndex = 80;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(13, 28);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(66, 13);
+            this.label31.TabIndex = 80;
+            this.label31.Text = "Day Number";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(113, 28);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(58, 13);
+            this.label32.TabIndex = 81;
+            this.label32.Text = "Total Days";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(50, 4);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(89, 13);
+            this.label33.TabIndex = 82;
+            this.label33.Text = "Shooting Days";
+            // 
             // InitialScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1320,7 +1401,7 @@
             this.Controls.Add(this.AllTabs);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "InitialScreen";
             this.Text = " ";
             this.tabPage2.ResumeLayout(false);
@@ -1348,6 +1429,8 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1456,6 +1539,13 @@
         private System.Windows.Forms.CheckBox chkBoxEditorial;
         private System.Windows.Forms.CheckBox chkBoxSound;
         private System.Windows.Forms.CheckBox chkBoxArt;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox BoxTotalShootDay;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox txtBoxShootNumber;
     }
 }
 
