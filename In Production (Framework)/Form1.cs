@@ -97,6 +97,10 @@ namespace In_Production__Framework_
             lblLocationValue.Text = LocationTextBox.Text;
             dtpLunchTime.Value = CallTime.Value;
             dtpLunchTime.Value = dtpLunchTime.Value.AddMinutes(60);
+            if (CallTime.Value > ShootingTime.Value)
+            {
+                MessageBox.Show ("Warning your Call Time is later than your Shoot Time!");
+            }
 
         }
 
@@ -2100,12 +2104,18 @@ namespace In_Production__Framework_
 
         private void CallTime_ValueChanged(object sender, EventArgs e)
         {
-
+            if (CallTime.Value > ShootingTime.Value)
+            {
+                MessageBox.Show("Warning your Call Time is later than your Shoot Time!");
+            }
         }
 
         private void ShootingTime_ValueChanged(object sender, EventArgs e)
         {
-
+            if (CallTime.Value > ShootingTime.Value)
+            {
+                MessageBox.Show("Warning your Call Time is later than your Shoot Time!");
+            }
         }
         public System.Windows.Forms.TextBox AddNewActorRoleTextBox()
         {
