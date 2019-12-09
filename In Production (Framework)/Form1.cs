@@ -180,19 +180,18 @@ namespace In_Production__Framework_
                 if (System.IO.File.Exists(filename))
                 {
                     lines = System.IO.File.ReadAllLines(filename);
-
+                    int index = 0;
                     //The lines in the file are ordered in the following manner
-                    ProductionTitleInput.Text = lines[0];                             
-                    dateTimePicker2.Value = DateTime.Parse(lines[1]);
-                    CallTime.Value = DateTime.Parse(lines[2]);
-                    ShootingTime.Value = DateTime.Parse(lines[3]);
-                    DirectorTextBox.Text = lines[4];
-                    ProducerTextBox.Text = lines[5];
-                    DPTextBox.Text = lines[6];
-                    FirstADTextBox.Text = lines[7];
-                    LocationTextBox.Text = lines[8];
-
-                    int index = 9;
+                    ProductionTitleInput.Text = lines[index++];                             
+                    dateTimePicker2.Value = DateTime.Parse(lines[index++]);
+                    CallTime.Value = DateTime.Parse(lines[index++]);
+                    ShootingTime.Value = DateTime.Parse(lines[index++]);
+                    DirectorTextBox.Text = lines[index++];
+                    ProducerTextBox.Text = lines[index++];
+                    DPTextBox.Text = lines[index++];
+                    FirstADTextBox.Text = lines[index++];
+                    LocationTextBox.Text = lines[index++];
+                    setPhone.Text = lines[index++];
 
                     // Load Director Tab
                     int roleIndex = 1;
@@ -386,7 +385,7 @@ namespace In_Production__Framework_
                         }
                         else
                         {
-                            //Skipp this line
+                            //Skip this line
                             index++;
                         }
                         roleIndex++;
@@ -595,6 +594,105 @@ namespace In_Production__Framework_
                         // Go to the next line which would be the next role
                         index++;
                     }
+
+                    // Load Actors Tab
+                    dtpScriptDate.Text = lines[index];
+                    index++;
+
+                    roleIndex = 1;
+
+                    while (roleIndex < maxActorCounter)
+                    {
+
+                        if (lines[index].Length != 0)
+                        {
+                            Control[] tbxs = ActorTeamTab.Controls.Find("actorRole" + roleIndex.ToString(), true);
+                            if (tbxs != null && tbxs.Length > 0)
+                            {
+                                tbxs[0].Text = lines[index];
+                            }
+                            else
+                            {
+                                if (actorCounter < maxActorCounter)
+                                {
+                                    button10.PerformClick();
+                                    AddNewActorRoleTextBox();
+                                    AddNewActorNameTextBox();
+                                    AddNewActorMakeUpTime();
+                                    AddNewActorSetTime();
+                                    AddNewActorCommentsTextBox();
+                                    actorCounter++;
+
+                                    tbxs = ActorTeamTab.Controls.Find("actorRole" + roleIndex.ToString(), true);
+                                    tbxs[0].Text = lines[index];
+
+                                }
+                            }
+
+                            //add one to index to get the name
+                            index++;
+                            if (lines[index] != null)
+                            {
+                                tbxs = ActorTeamTab.Controls.Find("actorName" + roleIndex.ToString(), true);
+                                if (tbxs != null && tbxs.Length > 0)
+                                {
+                                    tbxs[0].Text = lines[index];
+                                }
+                            }
+
+                            //add one to index to get the MakeUp Time
+                            index++;
+                            if (lines[index] != null)
+                            {
+                                tbxs = ActorTeamTab.Controls.Find("actorMakeUpdateTimePicker" + roleIndex.ToString(), true);
+                                if (tbxs != null && tbxs.Length > 0)
+                                {
+                                    tbxs[0].Text = lines[index];
+                                }
+                            }
+
+                            //add one to index to get the Set Time
+                            index++;
+                            if (lines[index] != null)
+                            {
+                                tbxs = ActorTeamTab.Controls.Find("actorSetTimedateTimePicker" + roleIndex.ToString(), true);
+                                if (tbxs != null && tbxs.Length > 0)
+                                {
+                                    tbxs[0].Text = lines[index];
+                                }
+                            }
+
+                            //add one to index to get the Comments
+                            index++;
+                            if (lines[index] != null)
+                            {
+                                tbxs = ActorTeamTab.Controls.Find("actorComments" + roleIndex.ToString(), true);
+                                if (tbxs != null && tbxs.Length > 0)
+                                {
+                                    tbxs[0].Text = lines[index];
+                                }
+                            }
+                        }
+                        else
+                        {
+                            //Skipp this line
+                            index++;
+                        }
+                       
+                        roleIndex++;
+
+                        // Go to the next line which would be the next role
+                        index++;
+                    }
+
+                    // Load Location Tab
+                    dtpLunchTime.Text = lines[index++];
+                    dtpSunRise.Text = lines[index++];
+                    dtpSunset.Text = lines[index++];
+                    textBoxWeatherHigh.Text = lines[index++];
+                    textBoxWeatherLow.Text = lines[index++];
+                    textBoxParking.Text = lines[index++];
+                    textBoxHospital.Text = lines[index];
                 }
                 
             }
@@ -630,6 +728,7 @@ namespace In_Production__Framework_
                 sw.WriteLine(DPTextBox.Text);
                 sw.WriteLine(FirstADTextBox.Text);
                 sw.WriteLine(LocationTextBox.Text);
+                sw.WriteLine(setPhone.Text);
 
                 int roleIndex = 1;
                 while (roleIndex < maxDirectorCount)
@@ -846,6 +945,72 @@ namespace In_Production__Framework_
                     roleIndex++;
                 }
 
+                sw.WriteLine(dtpScriptDate.Text);
+
+                roleIndex = 1;
+                while (roleIndex < maxActorCounter)
+                {
+                    Control[] tbxs = ActorTeamTab.Controls.Find("actorRole" + roleIndex.ToString(), true);
+                    if (tbxs != null && tbxs.Length > 0)
+                    {
+                        sw.WriteLine(tbxs[0].Text);
+                    }
+                    else
+                    {
+                        sw.WriteLine();
+                    }
+
+
+                    tbxs = ActorTeamTab.Controls.Find("actorName" + roleIndex.ToString(), true);
+                    if (tbxs != null && tbxs.Length > 0)
+                    {
+                        sw.WriteLine(tbxs[0].Text);
+                    }
+                    else
+                    {
+                        sw.WriteLine();
+                    }
+
+                    tbxs = ActorTeamTab.Controls.Find("actorMakeUpdateTimePicker" + roleIndex.ToString(), true);
+                    if (tbxs != null && tbxs.Length > 0)
+                    {
+                        sw.WriteLine(tbxs[0].Text);
+                    }
+                    else
+                    {
+                        sw.WriteLine();
+                    }
+
+                    tbxs = ActorTeamTab.Controls.Find("actorSetTimedateTimePicker" + roleIndex.ToString(), true);
+                    if (tbxs != null && tbxs.Length > 0)
+                    {
+                        sw.WriteLine(tbxs[0].Text);
+                    }
+                    else
+                    {
+                        sw.WriteLine();
+                    }
+
+                    tbxs = ActorTeamTab.Controls.Find("actorComments" + roleIndex.ToString(), true);
+                    if (tbxs != null && tbxs.Length > 0)
+                    {
+                        sw.WriteLine(tbxs[0].Text);
+                    }
+                    else
+                    {
+                        sw.WriteLine();
+                    }
+
+                    roleIndex++;
+                }
+
+                sw.WriteLine(dtpLunchTime.Text);
+                sw.WriteLine(dtpSunRise.Text);
+                sw.WriteLine(dtpSunset.Text);
+                sw.WriteLine(textBoxWeatherHigh.Text);
+                sw.WriteLine(textBoxWeatherLow.Text);
+                sw.WriteLine(textBoxParking.Text);
+                sw.WriteLine(textBoxHospital.Text);
                 sw.Close();
             }
         }
