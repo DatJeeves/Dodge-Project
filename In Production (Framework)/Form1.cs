@@ -15,6 +15,7 @@ namespace In_Production__Framework_
 {
     public partial class InitialScreen : Form
     {
+        //Initialize variables we will use to regulate the methods
         public int intControler = 416;
         public String tempValue = "";
         public int directorCounter = 1;
@@ -45,22 +46,40 @@ namespace In_Production__Framework_
         }
 
 
-
+        /*
+            * This will assign the production title input
+            * @Param string prodText              
+            * @Return is void
+            **/
         private void button1_Click(object sender, EventArgs e)
         {
             string prodText = ProductionTitleInput.Text;
         }
-
+        
+        //Can't delete otherwise there will be a display error in the form
         private void InitialScreen_Load(object sender, EventArgs e)
         {
 
         }
 
+        /*
+            * This will assign input text into the production textbox
+            * @Param string productionTitle              
+            * @Return is void
+            **/
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
             string productionTitle = ProductionTitleInput.Text;
         }
 
+        /*
+            * This will construct a defalt Player
+            * @Param string name
+            * @Param string nationality
+            * @Param string favoriteMeme
+            * @Param int number   
+            * @Return is void
+            **/
         private void DirectorTextBox_TextChanged(object sender, EventArgs e)
         {
             string directorName = DirectorTextBox.Text;
