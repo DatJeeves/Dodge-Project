@@ -698,7 +698,18 @@ namespace In_Production__Framework_
                     textBoxParking.Text = lines[index++];
                     textBoxHospital.Text = lines[index++];
                     textBoxShootNumber.Text = lines[index++];
-                    textBoxTotalShootDay.Text = lines[index];
+                    textBoxTotalShootDay.Text = lines[index++];
+
+                    textBoxArtsInfo.Text = lines[index++];
+                    textBoxCameraInfo.Text = lines[index++];
+                    textBoxGripInfo.Text = lines[index++];
+                    textBoxElectricInfo.Text = lines[index++];
+                    textBoxMakeUpInfo.Text = lines[index++];
+                    textBoxWardrobeInfo.Text = lines[index++];
+                    textBoxLaborInfo.Text = lines[index++];
+                    textBoxProductionInfo.Text = lines[index++];
+                    textBoxLocationInfo.Text = lines[index++];
+                    textBoxStandIns.Text = lines[index];
                 }
 
             }
@@ -1019,6 +1030,16 @@ namespace In_Production__Framework_
                 sw.WriteLine(textBoxHospital.Text);
                 sw.WriteLine(textBoxShootNumber.Text);
                 sw.WriteLine(textBoxTotalShootDay.Text);
+                sw.WriteLine(textBoxArtsInfo.Text);
+                sw.WriteLine(textBoxCameraInfo.Text);
+                sw.WriteLine(textBoxGripInfo.Text);
+                sw.WriteLine(textBoxElectricInfo.Text);
+                sw.WriteLine(textBoxMakeUpInfo.Text);
+                sw.WriteLine(textBoxWardrobeInfo.Text);
+                sw.WriteLine(textBoxLaborInfo.Text);
+                sw.WriteLine(textBoxProductionInfo.Text);
+                sw.WriteLine(textBoxLocationInfo.Text);
+                sw.WriteLine(textBoxStandIns.Text);
                 sw.Close();
             }
         }
@@ -2515,6 +2536,11 @@ namespace In_Production__Framework_
                     AllTabs.TabPages.Remove(SceneTeamTab);
                 }
             }
+        }
+
+        private void label37_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
