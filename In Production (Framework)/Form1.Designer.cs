@@ -37,6 +37,7 @@
             this.label30 = new System.Windows.Forms.Label();
             this.textBoxShootNumber = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.chkBoxInfo = new System.Windows.Forms.CheckBox();
             this.lblOptions = new System.Windows.Forms.Label();
             this.chkBoxScenes = new System.Windows.Forms.CheckBox();
             this.chkBoxMakeUp = new System.Windows.Forms.CheckBox();
@@ -151,9 +152,18 @@
             this.textBoxCameraInfo = new System.Windows.Forms.TextBox();
             this.textBoxArtsInfo = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
+            this.SetDescriptionTab = new System.Windows.Forms.TabPage();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.lblSetLocation = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.btnDelSet = new System.Windows.Forms.Button();
+            this.btnAddSet = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.chkBoxInfo = new System.Windows.Forms.CheckBox();
+            this.chkBoxSetInfo = new System.Windows.Forms.CheckBox();
             this.tabPage2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -172,6 +182,7 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.AdditionalInfo.SuspendLayout();
+            this.SetDescriptionTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage2
@@ -220,17 +231,17 @@
             this.panel5.Controls.Add(this.textBoxTotalShootDay);
             this.panel5.Controls.Add(this.label30);
             this.panel5.Controls.Add(this.textBoxShootNumber);
-            this.panel5.Location = new System.Drawing.Point(312, 869);
+            this.panel5.Location = new System.Drawing.Point(312, 870);
             this.panel5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(337, 187);
+            this.panel5.Size = new System.Drawing.Size(337, 186);
             this.panel5.TabIndex = 80;
             // 
             // label33
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(89, 18);
+            this.label33.Location = new System.Drawing.Point(90, 18);
             this.label33.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(181, 29);
@@ -262,7 +273,7 @@
             // textBoxTotalShootDay
             // 
             this.textBoxTotalShootDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTotalShootDay.Location = new System.Drawing.Point(211, 110);
+            this.textBoxTotalShootDay.Location = new System.Drawing.Point(211, 111);
             this.textBoxTotalShootDay.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBoxTotalShootDay.Name = "textBoxTotalShootDay";
             this.textBoxTotalShootDay.Size = new System.Drawing.Size(96, 39);
@@ -283,7 +294,7 @@
             // textBoxShootNumber
             // 
             this.textBoxShootNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxShootNumber.Location = new System.Drawing.Point(29, 110);
+            this.textBoxShootNumber.Location = new System.Drawing.Point(29, 111);
             this.textBoxShootNumber.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBoxShootNumber.Name = "textBoxShootNumber";
             this.textBoxShootNumber.Size = new System.Drawing.Size(96, 39);
@@ -293,6 +304,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel4.Controls.Add(this.chkBoxSetInfo);
             this.panel4.Controls.Add(this.chkBoxInfo);
             this.panel4.Controls.Add(this.lblOptions);
             this.panel4.Controls.Add(this.chkBoxScenes);
@@ -301,11 +313,25 @@
             this.panel4.Controls.Add(this.chkBoxEditorial);
             this.panel4.Controls.Add(this.chkBoxSound);
             this.panel4.Controls.Add(this.chkBoxArt);
-            this.panel4.Location = new System.Drawing.Point(820, 869);
+            this.panel4.Location = new System.Drawing.Point(820, 870);
             this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(592, 189);
+            this.panel4.Size = new System.Drawing.Size(592, 188);
             this.panel4.TabIndex = 76;
+            // 
+            // chkBoxInfo
+            // 
+            this.chkBoxInfo.AutoSize = true;
+            this.chkBoxInfo.Checked = true;
+            this.chkBoxInfo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkBoxInfo.Location = new System.Drawing.Point(374, 146);
+            this.chkBoxInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkBoxInfo.Name = "chkBoxInfo";
+            this.chkBoxInfo.Size = new System.Drawing.Size(161, 29);
+            this.chkBoxInfo.TabIndex = 77;
+            this.chkBoxInfo.Text = "Additional Info";
+            this.chkBoxInfo.UseVisualStyleBackColor = true;
+            this.chkBoxInfo.CheckedChanged += new System.EventHandler(this.chkInfo_CheckedChanged);
             // 
             // lblOptions
             // 
@@ -683,6 +709,7 @@
             this.AllTabs.Controls.Add(this.ActorTeamTab);
             this.AllTabs.Controls.Add(this.LocationTeamTab);
             this.AllTabs.Controls.Add(this.AdditionalInfo);
+            this.AllTabs.Controls.Add(this.SetDescriptionTab);
             this.AllTabs.Location = new System.Drawing.Point(2, 7);
             this.AllTabs.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.AllTabs.Name = "AllTabs";
@@ -1022,7 +1049,7 @@
             this.SceneTeamTab.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.SceneTeamTab.Size = new System.Drawing.Size(1715, 1084);
             this.SceneTeamTab.TabIndex = 9;
-            this.SceneTeamTab.Text = "Behind The Scenes";
+            this.SceneTeamTab.Text = " Behind The Scenes";
             this.SceneTeamTab.UseVisualStyleBackColor = true;
             // 
             // button9
@@ -1658,6 +1685,116 @@
             this.label34.TabIndex = 0;
             this.label34.Text = "ARTS / Props:";
             // 
+            // SetDescriptionTab
+            // 
+            this.SetDescriptionTab.Controls.Add(this.label49);
+            this.SetDescriptionTab.Controls.Add(this.label48);
+            this.SetDescriptionTab.Controls.Add(this.label47);
+            this.SetDescriptionTab.Controls.Add(this.label46);
+            this.SetDescriptionTab.Controls.Add(this.lblSetLocation);
+            this.SetDescriptionTab.Controls.Add(this.label44);
+            this.SetDescriptionTab.Controls.Add(this.btnDelSet);
+            this.SetDescriptionTab.Controls.Add(this.btnAddSet);
+            this.SetDescriptionTab.Location = new System.Drawing.Point(4, 33);
+            this.SetDescriptionTab.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.SetDescriptionTab.Name = "SetDescriptionTab";
+            this.SetDescriptionTab.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.SetDescriptionTab.Size = new System.Drawing.Size(1715, 1084);
+            this.SetDescriptionTab.TabIndex = 13;
+            this.SetDescriptionTab.Text = "Set Description";
+            this.SetDescriptionTab.UseVisualStyleBackColor = true;
+            this.SetDescriptionTab.Click += new System.EventHandler(this.SetDescriptionTab_Click);
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.Location = new System.Drawing.Point(1219, 279);
+            this.label49.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(96, 32);
+            this.label49.TabIndex = 7;
+            this.label49.Text = "Pages";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.Location = new System.Drawing.Point(871, 279);
+            this.label48.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(73, 32);
+            this.label48.TabIndex = 6;
+            this.label48.Text = "Cast";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.Location = new System.Drawing.Point(244, 279);
+            this.label47.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(158, 32);
+            this.label47.TabIndex = 5;
+            this.label47.Text = "Description";
+            this.label47.Click += new System.EventHandler(this.label47_Click);
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.Location = new System.Drawing.Point(72, 279);
+            this.label46.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(96, 32);
+            this.label46.TabIndex = 4;
+            this.label46.Text = "Scene";
+            // 
+            // lblSetLocation
+            // 
+            this.lblSetLocation.AutoSize = true;
+            this.lblSetLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSetLocation.ForeColor = System.Drawing.Color.Red;
+            this.lblSetLocation.Location = new System.Drawing.Point(365, 63);
+            this.lblSetLocation.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblSetLocation.Name = "lblSetLocation";
+            this.lblSetLocation.Size = new System.Drawing.Size(168, 42);
+            this.lblSetLocation.TabIndex = 3;
+            this.lblSetLocation.Text = "Location";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(57, 63);
+            this.label44.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(179, 42);
+            this.label44.TabIndex = 2;
+            this.label44.Text = "Location:";
+            this.label44.Click += new System.EventHandler(this.label44_Click_1);
+            // 
+            // btnDelSet
+            // 
+            this.btnDelSet.Location = new System.Drawing.Point(1173, 181);
+            this.btnDelSet.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnDelSet.Name = "btnDelSet";
+            this.btnDelSet.Size = new System.Drawing.Size(182, 74);
+            this.btnDelSet.TabIndex = 1;
+            this.btnDelSet.Text = "Del Set";
+            this.btnDelSet.UseVisualStyleBackColor = true;
+            // 
+            // btnAddSet
+            // 
+            this.btnAddSet.Location = new System.Drawing.Point(1173, 68);
+            this.btnAddSet.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnAddSet.Name = "btnAddSet";
+            this.btnAddSet.Size = new System.Drawing.Size(182, 74);
+            this.btnAddSet.TabIndex = 0;
+            this.btnAddSet.Text = "Add Set";
+            this.btnAddSet.UseVisualStyleBackColor = true;
+            this.btnAddSet.Click += new System.EventHandler(this.btnAddSet_Click);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -1680,18 +1817,19 @@
             this.label5.TabIndex = 23;
             this.label5.Text = "Director:";
             // 
-            // chkBoxInfo
+            // chkBoxSetInfo
             // 
-            this.chkBoxInfo.AutoSize = true;
-            this.chkBoxInfo.Checked = true;
-            this.chkBoxInfo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkBoxInfo.Location = new System.Drawing.Point(374, 146);
-            this.chkBoxInfo.Name = "chkBoxInfo";
-            this.chkBoxInfo.Size = new System.Drawing.Size(161, 29);
-            this.chkBoxInfo.TabIndex = 77;
-            this.chkBoxInfo.Text = "Additional Info";
-            this.chkBoxInfo.UseVisualStyleBackColor = true;
-            this.chkBoxInfo.CheckedChanged += new System.EventHandler(this.chkInfo_CheckedChanged);
+            this.chkBoxSetInfo.AutoSize = true;
+            this.chkBoxSetInfo.Checked = true;
+            this.chkBoxSetInfo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkBoxSetInfo.Location = new System.Drawing.Point(31, 146);
+            this.chkBoxSetInfo.Margin = new System.Windows.Forms.Padding(4);
+            this.chkBoxSetInfo.Name = "chkBoxSetInfo";
+            this.chkBoxSetInfo.Size = new System.Drawing.Size(198, 34);
+            this.chkBoxSetInfo.TabIndex = 78;
+            this.chkBoxSetInfo.Text = "Set Description";
+            this.chkBoxSetInfo.UseVisualStyleBackColor = true;
+            this.chkBoxSetInfo.CheckedChanged += new System.EventHandler(this.chkBoxSetInfo_CheckedChanged);
             // 
             // InitialScreen
             // 
@@ -1734,6 +1872,8 @@
             this.panel1.PerformLayout();
             this.AdditionalInfo.ResumeLayout(false);
             this.AdditionalInfo.PerformLayout();
+            this.SetDescriptionTab.ResumeLayout(false);
+            this.SetDescriptionTab.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1871,6 +2011,16 @@
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.TextBox textBoxMakeUpInfo;
         private System.Windows.Forms.CheckBox chkBoxInfo;
+        private System.Windows.Forms.TabPage SetDescriptionTab;
+        private System.Windows.Forms.Button btnAddSet;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Button btnDelSet;
+        private System.Windows.Forms.Label lblSetLocation;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.CheckBox chkBoxSetInfo;
     }
 }
 
