@@ -1574,8 +1574,60 @@ namespace In_Production__Framework_
                 roleIndex++;
             }
 
-            MessageBox.Show("Exported To Excel Sucesfully. Remember to 'Save As' so you don't overwrite the template file");
+            roleIndex = 1;
+            row = 15;
+            col = 1;
+            while (roleIndex < maxSetCounter)
+            {
+                col = 1;
+                Control[] tbxs = SetDescriptionTab.Controls.Find("setScene" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    ws.Cells[row,col] = tbxs[0].Text;
+                }
+                else
+                {
+                    ws.Cells[row, col] = "";
+                }
 
+                col = 3;
+                tbxs = SetDescriptionTab.Controls.Find("setDescription" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    ws.Cells[row, col] = tbxs[0].Text;
+                }
+                else
+                {
+                    ws.Cells[row, col] = "";
+                }
+
+                col = 22;
+                tbxs = SetDescriptionTab.Controls.Find("setCast" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    ws.Cells[row, col] = tbxs[0].Text;
+                }
+                else
+                {
+                    ws.Cells[row, col] = "";
+                }
+
+                col = 31;
+                tbxs = SetDescriptionTab.Controls.Find("setPages" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    ws.Cells[row, col] = tbxs[0].Text;
+                }
+                else
+                {
+                    ws.Cells[row, col] = "";
+                }
+
+                roleIndex++;
+                row+= 2;
+            }
+        
+            MessageBox.Show("Exported To Excel Sucesfully. Remember to 'Save As' so you don't overwrite the template file");
         }
 
         private void input_GainFocus(object sender, EventArgs e)
