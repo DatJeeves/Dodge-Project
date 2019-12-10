@@ -1025,18 +1025,15 @@ namespace In_Production__Framework_
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            //MessageBox.Show(System.IO.Directory.GetCurrentDirectory());
-            /*Microsoft.Office.Interop.Excel.Application xla = new Microsoft.Office.Interop.Excel.Application();
-            Workbook wb = xla.Workbooks.Add(XlSheetType.xlWorksheet);
-            Worksheet ws = (Worksheet)xla.ActiveSheet;*/
+
             string callTimeSub = CallTime.Value.ToString();
             int found = callTimeSub.IndexOf(":");
             callTimeSub = callTimeSub.Substring(found - 2, 5) + callTimeSub.Substring(found + 6);
 
             string shootingTimeSub = ShootingTime.Value.ToString();
             found = shootingTimeSub.IndexOf(":");
-            MessageBox.Show(ShootingTime.Value.ToString());
             shootingTimeSub = shootingTimeSub.Substring(found - 2, 5) + shootingTimeSub.Substring(found + 6);
+
 
             _Application excel = new _Excel.Application();
             string workbookPath = System.Windows.Forms.Application.StartupPath + @"\template.xlsx";
@@ -1045,6 +1042,7 @@ namespace In_Production__Framework_
 
             excel.Visible = true;
             ws.Cells[1, 12] = ProductionTitleInput.Text;
+            ws.Cells[12, 1] = setPhone.Text;
             ws.Cells[2, 5] = DirectorTextBox.Text;
             ws.Cells[3, 5] = ProducerTextBox.Text;
             ws.Cells[34, 1] = ProducerTextBox.Text;
@@ -1058,12 +1056,20 @@ namespace In_Production__Framework_
             ws.Cells[7, 12] = callTimeSub;
             ws.Cells[7, 23] = shootingTimeSub;
             ws.Cells[9, 5] = FirstADTextBox.Text;
-            ws.Cells[12, 18] = dateTimePicker2.Value.ToString();
+            ws.Cells[12, 18] = dtpScriptDate.Value.ToString();
             ws.Cells[1, 32] = dateTimePicker2.Value.ToString();
             ws.Cells[15, 34] = LocationTextBox.Text;
             ws.Cells[51, 9] = DPTextBox.Text;
             ws.Cells[51, 17] = callTimeSub;
             ws.Cells[36, 31] = dateTimePicker2.Value.ToString();
+            ws.Cells[12, 32] = dtpLunchTime.Text;
+            ws.Cells[4, 32] = "Sunrise: " + dtpSunRise.Text + " Sunset: " + dtpSunset.Text;
+            ws.Cells[3, 32] = "Weather: High: " + textBoxWeatherHigh.Text + " Low: " + textBoxWeatherLow.Text;
+            ws.Cells[2, 32] = "Day: " + textBoxShootNumber.Text + " / " + textBoxTotalShootDay.Text;
+            ws.Cells[6, 32] = textBoxParking.Text;
+            ws.Cells[10, 32] = textBoxHospital.Text;
+
+
 
             int roleIndex = 1;
             int row = 44;
@@ -1299,7 +1305,7 @@ namespace In_Production__Framework_
             }
 
             roleIndex = 1;
-            row = 41;
+            row = 66;
             col = 21;
             while (roleIndex < maxSceneCounter)
             {
@@ -1332,6 +1338,76 @@ namespace In_Production__Framework_
                 }
                 row++;
 
+                roleIndex++;
+            }
+
+            roleIndex = 1;
+            row = 21;
+            col = 11;
+            while (roleIndex < maxActorCounter)
+            {
+                col = 11;
+                Control[] tbxs = ActorTeamTab.Controls.Find("actorRole" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    ws.Cells[row, col] = tbxs[0].Text;
+                }
+                else
+                {
+                    ws.Cells[row, col] = "";
+                }
+
+                col = 2;
+                tbxs = ActorTeamTab.Controls.Find("actorName" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    ws.Cells[row, col] = tbxs[0].Text;
+                }
+                else
+                {
+                    ws.Cells[row, col] = "";
+                }
+
+                col = 19;
+                tbxs = ActorTeamTab.Controls.Find("actorMakeUpdateTimePicker" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    string makeUpTimeSub = tbxs[0].Text;
+                    found = makeUpTimeSub.IndexOf(":");
+                    makeUpTimeSub = makeUpTimeSub.Substring(found - 2, 5) + makeUpTimeSub.Substring(found + 6);
+                    ws.Cells[row, col] = makeUpTimeSub;
+                }
+                else
+                {
+                    ws.Cells[row, col] = "";
+                }
+
+                col = 23;
+                tbxs = ActorTeamTab.Controls.Find("actorSetTimedateTimePicker" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    string setTimeSub = tbxs[0].Text;
+                    found = setTimeSub.IndexOf(":");
+                    setTimeSub = setTimeSub.Substring(found - 2, 5) + setTimeSub.Substring(found + 6);
+                    ws.Cells[row, col] = setTimeSub;
+                }
+                else
+                {
+                    ws.Cells[row, col] = "";
+                }
+
+                col = 27;
+                tbxs = ActorTeamTab.Controls.Find("actorComments" + roleIndex.ToString(), true);
+                if (tbxs != null && tbxs.Length > 0)
+                {
+                    ws.Cells[row, col] = tbxs[0].Text;
+                }
+                else
+                {
+                    ws.Cells[row, col] = "";
+                }
+
+                row++;
                 roleIndex++;
             }
 
