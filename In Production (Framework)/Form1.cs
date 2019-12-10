@@ -1089,6 +1089,16 @@ namespace In_Production__Framework_
             ws.Cells[2, 32] = "Day: " + textBoxShootNumber.Text + " / " + textBoxTotalShootDay.Text;
             ws.Cells[6, 32] = textBoxParking.Text;
             ws.Cells[10, 32] = textBoxHospital.Text;
+            ws.Cells[25, 5] = textBoxArtsInfo.Text;
+            ws.Cells[26, 5] = textBoxCameraInfo.Text;
+            ws.Cells[27, 5] = textBoxGripInfo.Text;
+            ws.Cells[28, 5] = textBoxElectricInfo.Text;
+            ws.Cells[29, 5] = textBoxMakeUpInfo.Text;
+            ws.Cells[25, 25] = textBoxWardrobeInfo.Text;
+            ws.Cells[26, 25] = textBoxLaborInfo.Text;
+            ws.Cells[27, 25] = textBoxProductionInfo.Text;
+            ws.Cells[28, 25] = textBoxLocationInfo.Text;
+            ws.Cells[29, 25] = textBoxStandIns.Text;
 
 
 
