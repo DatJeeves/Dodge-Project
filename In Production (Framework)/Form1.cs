@@ -37,6 +37,7 @@ namespace In_Production__Framework_
         public int maxSceneCounter = 2;
         public int maxActorCounter = 4;
         public int maxSetCounter = 3;
+        public Boolean ignoreTimeCheck = false;
         public InitialScreen()
         {
             InitializeComponent();
@@ -191,8 +192,14 @@ namespace In_Production__Framework_
                     //The lines in the file are ordered in the following manner
                     ProductionTitleInput.Text = lines[index++];
                     dateTimePicker2.Value = DateTime.Parse(lines[index++]);
+
+                    // Turn off checking of call time during load
+                    ignoreTimeCheck = true;
                     CallTime.Value = DateTime.Parse(lines[index++]);
                     ShootingTime.Value = DateTime.Parse(lines[index++]);
+                    // Turn on call time checks
+                    ignoreTimeCheck = false;
+
                     DirectorTextBox.Text = lines[index++];
                     ProducerTextBox.Text = lines[index++];
                     DPTextBox.Text = lines[index++];
@@ -2330,7 +2337,7 @@ namespace In_Production__Framework_
 
         private void CallTime_ValueChanged(object sender, EventArgs e)
         {
-            if (CallTime.Value > ShootingTime.Value)
+            if ((CallTime.Value > ShootingTime.Value) && (!ignoreTimeCheck))
             {
                 MessageBox.Show("Warning your Call Time is later than your Shoot Time!");
             }
@@ -2338,7 +2345,7 @@ namespace In_Production__Framework_
 
         private void ShootingTime_ValueChanged(object sender, EventArgs e)
         {
-            if (CallTime.Value > ShootingTime.Value)
+            if ((CallTime.Value > ShootingTime.Value) && (!ignoreTimeCheck))
             {
                 MessageBox.Show("Warning your Call Time is later than your Shoot Time!");
             }
@@ -2790,6 +2797,25 @@ namespace In_Production__Framework_
         private void SetDescriptionTab_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void chkBoxSetInfo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkBoxSetInfo.Checked)
+            {
+                if (!AllTabs.TabPages.Contains(SetDescriptionTab))
+                {
+                    AllTabs.TabPages.Add(SetDescriptionTab);
+                }
+
+            }
+            else
+            {
+                if (AllTabs.TabPages.Contains(SetDescriptionTab))
+                {
+                    AllTabs.TabPages.Remove(SetDescriptionTab);
+                }
+            }
         }
     }
 }
