@@ -26,6 +26,7 @@ namespace In_Production__Framework_
         public int makeUpCounter = 1;
         public int sceneCounter = 1;
         public int actorCounter = 1;
+        public int setCounter = 1;
         public int maxDirectorCount = 7;
         public int maxDopCounter = 6;
         public int maxArtCounter = 7;
@@ -35,6 +36,7 @@ namespace In_Production__Framework_
         public int maxMakeUpCounter = 8;
         public int maxSceneCounter = 2;
         public int maxActorCounter = 4;
+        public int maxSetCounter = 3;
         public InitialScreen()
         {
             InitializeComponent();
@@ -95,6 +97,7 @@ namespace In_Production__Framework_
             FirstADLabel.Text = FirstADTextBox.Text;
             DoPLabel.Text = DPTextBox.Text;
             lblLocationValue.Text = LocationTextBox.Text;
+            lblSetLocation.Text = LocationTextBox.Text;
             dtpLunchTime.Value = CallTime.Value;
             dtpLunchTime.Value = dtpLunchTime.Value.AddMinutes(60);
             if (CallTime.Value > ShootingTime.Value)
@@ -709,7 +712,82 @@ namespace In_Production__Framework_
                     textBoxLaborInfo.Text = lines[index++];
                     textBoxProductionInfo.Text = lines[index++];
                     textBoxLocationInfo.Text = lines[index++];
-                    textBoxStandIns.Text = lines[index];
+                    textBoxStandIns.Text = lines[index++];
+
+                    roleIndex = 1;
+
+                    while (roleIndex < maxSetCounter)
+                    {
+
+                        if (lines[index].Length != 0)
+                        {
+                            Control[] tbxs = ActorTeamTab.Controls.Find("setScene" + roleIndex.ToString(), true);
+                            if (tbxs != null && tbxs.Length > 0)
+                            {
+                                tbxs[0].Text = lines[index];
+                            }
+                            else
+                            {
+                                if (setCounter < maxSetCounter)
+                                {
+                                    btnAddSet.PerformClick();
+                                    AddSetSceneTextBox();
+                                    AddSetDescriptionTextBox();
+                                    AddSetCastTextBox();
+                                    AddSetPagesTextBox();
+                                    setCounter++;
+
+                                    tbxs = SetDescriptionTab.Controls.Find("setScene" + roleIndex.ToString(), true);
+                                    tbxs[0].Text = lines[index];
+
+                                }
+                            }
+
+                            //add one to index to get the description
+                            index++;
+                            if (lines[index] != null)
+                            {
+                                tbxs = SetDescriptionTab.Controls.Find("setDescription" + roleIndex.ToString(), true);
+                                if (tbxs != null && tbxs.Length > 0)
+                                {
+                                    tbxs[0].Text = lines[index];
+                                }
+                            }
+
+                            //add one to index to get the Cast
+                            index++;
+                            if (lines[index] != null)
+                            {
+                                tbxs = SetDescriptionTab.Controls.Find("setCast" + roleIndex.ToString(), true);
+                                if (tbxs != null && tbxs.Length > 0)
+                                {
+                                    tbxs[0].Text = lines[index];
+                                }
+                            }
+
+                            //add one to index to get the Pages
+                            index++;
+                            if (lines[index] != null)
+                            {
+                                tbxs = SetDescriptionTab.Controls.Find("setPages" + roleIndex.ToString(), true);
+                                if (tbxs != null && tbxs.Length > 0)
+                                {
+                                    tbxs[0].Text = lines[index];
+                                }
+                            }
+                            
+                        }
+                        else
+                        {
+                            //Skipp this line
+                            index++;
+                        }
+
+                        roleIndex++;
+
+                        // Go to the next line which would be the next role
+                        index++;
+                    }
                 }
 
             }
@@ -1040,6 +1118,53 @@ namespace In_Production__Framework_
                 sw.WriteLine(textBoxProductionInfo.Text);
                 sw.WriteLine(textBoxLocationInfo.Text);
                 sw.WriteLine(textBoxStandIns.Text);
+
+                roleIndex = 1;
+                while (roleIndex < maxSetCounter)
+                {
+                    Control[] tbxs = SetDescriptionTab.Controls.Find("setScene" + roleIndex.ToString(), true);
+                    if (tbxs != null && tbxs.Length > 0)
+                    {
+                        sw.WriteLine(tbxs[0].Text);
+                    }
+                    else
+                    {
+                        sw.WriteLine();
+                    }
+
+
+                    tbxs = SetDescriptionTab.Controls.Find("setDescription" + roleIndex.ToString(), true);
+                    if (tbxs != null && tbxs.Length > 0)
+                    {
+                        sw.WriteLine(tbxs[0].Text);
+                    }
+                    else
+                    {
+                        sw.WriteLine();
+                    }
+
+                    tbxs = SetDescriptionTab.Controls.Find("setCast" + roleIndex.ToString(), true);
+                    if (tbxs != null && tbxs.Length > 0)
+                    {
+                        sw.WriteLine(tbxs[0].Text);
+                    }
+                    else
+                    {
+                        sw.WriteLine();
+                    }
+
+                    tbxs = SetDescriptionTab.Controls.Find("setPages" + roleIndex.ToString(), true);
+                    if (tbxs != null && tbxs.Length > 0)
+                    {
+                        sw.WriteLine(tbxs[0].Text);
+                    }
+                    else
+                    {
+                        sw.WriteLine();
+                    }
+                    
+                    roleIndex++;
+                }
                 sw.Close();
             }
         }
@@ -2560,6 +2685,111 @@ namespace In_Production__Framework_
                     AllTabs.TabPages.Remove(AdditionalInfo);
                 }
             }
+        }
+
+        private void label44_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label44_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label47_Click(object sender, EventArgs e)
+        {
+
+        }
+        public System.Windows.Forms.TextBox AddSetSceneTextBox()
+        {
+            System.Windows.Forms.TextBox setScene = new System.Windows.Forms.TextBox();
+            SetDescriptionTab.Controls.Add(setScene);
+
+            setScene.Text = "SC" + this.setCounter.ToString();
+
+            setScene.Tag = setScene.Text;
+            setScene.Name = "setScene" + this.setCounter.ToString();
+            setScene.Size = new System.Drawing.Size(50, 200);
+            setScene.Location = new System.Drawing.Point(39, (130 + (55 * this.setCounter)));
+            setScene.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+            setScene.Enter += input_GainFocus;
+            setScene.Leave += input_LoseFocus;
+            return setScene;
+        }
+        public System.Windows.Forms.TextBox AddSetDescriptionTextBox()
+        {
+            System.Windows.Forms.TextBox setDescription = new System.Windows.Forms.TextBox();
+            SetDescriptionTab.Controls.Add(setDescription);
+
+            setDescription.Text = "Description" + this.setCounter.ToString();
+
+            setDescription.Tag = setDescription.Text;
+            setDescription.Name = "setDescription" + this.setCounter.ToString();
+            setDescription.Size = new System.Drawing.Size(320, 200);
+            setDescription.Location = new System.Drawing.Point(133, (130 + (55 * this.setCounter)));
+            setDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+            setDescription.Enter += input_GainFocus;
+            setDescription.Leave += input_LoseFocus;
+            return setDescription;
+        }
+        public System.Windows.Forms.TextBox AddSetCastTextBox()
+        {
+            System.Windows.Forms.TextBox setCast = new System.Windows.Forms.TextBox();
+            SetDescriptionTab.Controls.Add(setCast);
+
+            setCast.Text = "Cast" + this.setCounter.ToString();
+
+            setCast.Tag = setCast.Text;
+            setCast.Name = "setCast" + this.setCounter.ToString();
+            setCast.Size = new System.Drawing.Size(150, 200);
+            setCast.Location = new System.Drawing.Point(475, (130 + (55 * this.setCounter)));
+            setCast.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+            setCast.Enter += input_GainFocus;
+            setCast.Leave += input_LoseFocus;
+            return setCast;
+        }
+
+        public System.Windows.Forms.TextBox AddSetPagesTextBox()
+        {
+            System.Windows.Forms.TextBox setPages = new System.Windows.Forms.TextBox();
+            SetDescriptionTab.Controls.Add(setPages);
+
+            setPages.Text = "PG" + this.setCounter.ToString();
+
+            setPages.Tag = setPages.Text;
+            setPages.Name = "setPages" + this.setCounter.ToString();
+            setPages.Size = new System.Drawing.Size(60, 200);
+            setPages.Location = new System.Drawing.Point(665, (130 + (55 * this.setCounter)));
+            setPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+            setPages.Enter += input_GainFocus;
+            setPages.Leave += input_LoseFocus;
+            return setPages;
+        }
+        private void btnAddSet_Click(object sender, EventArgs e)
+        {
+            if (setCounter < maxSetCounter)
+            {
+                AddSetSceneTextBox();
+                AddSetDescriptionTextBox();
+                AddSetCastTextBox();
+                AddSetPagesTextBox();
+                setCounter++;
+
+            }
+            else
+            {
+                MessageBox.Show("You have reached the maximum amount of Set / Scene.");
+            }
+        }
+
+        private void SetDescriptionTab_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
