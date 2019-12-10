@@ -2542,6 +2542,25 @@ namespace In_Production__Framework_
         {
 
         }
+
+        private void chkInfo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkBoxInfo.Checked)
+            {
+                if (!AllTabs.TabPages.Contains(AdditionalInfo))
+                {
+                    AllTabs.TabPages.Add(AdditionalInfo);
+                }
+
+            }
+            else
+            {
+                if (AllTabs.TabPages.Contains(AdditionalInfo))
+                {
+                    AllTabs.TabPages.Remove(AdditionalInfo);
+                }
+            }
+        }
     }
 }
  
