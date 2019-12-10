@@ -74,10 +74,7 @@ namespace In_Production__Framework_
 
         /*
             * This will construct a defalt Player
-            * @Param string name
-            * @Param string nationality
-            * @Param string favoriteMeme
-            * @Param int number   
+            * @Param string directorName              
             * @Return is void
             **/
         private void DirectorTextBox_TextChanged(object sender, EventArgs e)
